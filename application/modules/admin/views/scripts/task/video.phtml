@@ -1,0 +1,48 @@
+<div id="" class="product-upload">
+<?php echo $this->title($this->title); ?>
+<div class="wrapper-content-left-column span-4">
+ <?php  echo $this->render('task/_menu.phtml'); ?>
+</div> 
+
+<div class="wrapper-content-left-column span-19 last"> 
+<!-- has been replaced by a view helper  -->
+  <?php echo $this->errorMessage( $this->message );	?>
+  <?php echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>";?>   
+  <div class='h-separator'></div>   
+  <div id='admin-product-video-table' class='table-div'> 
+	<?php if ( $this->product_media ):?>
+		<?php foreach ( $this->product_media as $medium ) :?>
+		<div style='height: 50px;' class='table-row-div'>
+			<div style='height: 50px;' class='table-cell-div xl-large-cell'  class='table-cell-div large-cell'>
+				<?php echo '<a href=\''.$this->jx_url.'/'.$medium->id.'\' id=\'id-jxupload-'.$medium->id.'\' class=\'jxupload\' rel=\''.$this->jx_url.'/'.$medium->id.'\'>'.$medium->caption.'</a>'?>
+			</div>			
+			<div style='height: 50px;' class='table-cell-div'>
+				<?php if ($medium->displayed):  echo 'Displayed' ; else: echo 'Not Displayed'; endif;?>
+			</div>
+			<div style='height: 50px;'  class='table-cell-div'>
+				<?php echo '<a href=\''.$this->url(array('module' => 'admin', 'controller' => 'product', 'action' => 'delmed', 'id' => $medium->id)).'\'>Delete</a>';?>
+			</div>
+			<div style='height: 50px;'  class='table-cell-div'>			
+					<!-- video displayer section -->
+					<?php 
+						$params = array ( 'class' => 'video-link',  'rel' => 'product-video');
+						if( ($this->video = $medium->media_value) ):	
+							if ( is_array ( $this->video ) ){
+								foreach ( $this->video as $k => $video )
+								{
+									$params['id'] = $k;
+									echo $this->video_helper->video($video, $params );	
+								}
+							}
+							else 
+								echo $this->video_helper->video($this->video, $params );
+						endif;
+					?>
+					<!-- end of video displayer section -->
+			</div>
+		</div>
+		<?php endforeach;?>	
+	<?php endif;?>  
+   </div>
+</div>
+</div>

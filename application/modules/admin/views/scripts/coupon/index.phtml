@@ -1,0 +1,18 @@
+<div class="span-24 last">
+    <div id="" class='wrapper-content-left-column span-5'>
+            <?php echo $this->render('coupon/_menu.phtml');?>
+    </div>
+    <div class="wrapper-content-right-column cms-form-div span-19 last" id="">
+            <?php echo $this->message( $this->message ); ?>
+            <?php foreach( $this->items as $k => $coupon ): $coupon = (object)$coupon; ?>
+                <div class="padded-8 span-19 last <?php echo $coupon->enabled ? 'disabled' : 'enabled';?>" >
+                        <h4><?php echo $coupon->code;?></h4>
+                        <?php echo $coupon->description;?>
+                        <span class="time"><?php echo $coupon->starts;?> -   <?php echo $coupon->expires;?> </span>
+                        <?php echo $coupon->meta;?>
+                        <?php echo $coupon->items_id;?>
+                        <?php echo $coupon->company_id;?>
+               </div>
+            <?php endforeach;?>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+<div id="" class="product-upload">
+   	<?php echo $this->title($this->title); ?>
+	<div class="wrapper-content-left-column span-4">
+		<?php  $banner = $this->smenu; echo $banner;  ?>
+	</div>
+   <div class="wrapper-content-right-column span-19 last">	
+	   <!-- has been replaced by a view helper -->
+	   <?php if( $this->message ) echo $this->message( $this->message );?>
+	   <div class="cms-form-div" id="">
+	   	<?php 
+	   		try{
+	   			echo '<small>The size of the image to be displayed on the front-end, should match the file of the image uploaded. <br/> a 950 x 330 image is required</small>';
+	   			echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>";
+	   		}catch (Exception $e ){
+	   			echo " <div class = 'error' > ".$e->getMessage()."</div>";
+	   		}
+	   ?>   
+	   </div>  
+   </div>    
+</div>

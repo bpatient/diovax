@@ -1,0 +1,11 @@
+<div id="" class="">
+	<?php echo $this->title($this->title); ?>
+
+	<form action='' method='post'> 
+     	<?php if($this->message ):?>
+    	 	<?php $this->message($this->message );?>
+		<?php endif;?>
+		<?php echo $this->content;?><br/>
+    	<input id='button'  class='button' type='submit' value='Delete'/>
+    </form>
+</div>

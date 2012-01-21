@@ -1,0 +1,46 @@
+<?php echo $this->doctype(). "\n"  ?>
+<html>
+<head>
+<?php echo $this->headTitle()."\n";?>
+<?php echo $this->headLink();?>
+</head>
+<body>
+<div class='wrapper' class='wrapper'>	
+
+
+<div id='wrapper-header' class='wrapper-header'>
+	<?php echo "<h1>".$this->title."</h1>"?>
+</div>	
+
+<div class="wrapper-menu" id="wrapper-menu">
+<div class="wrapper-top-menu" id="wrapper-top-menu">	
+	<div class="menu">
+		<div class="menu-item"><a href="<?php echo $this->url(array('module'=>'mcart','controller'=>'store','action'=>'index'))?>">Home</a></div>
+		<div class="menu-item"><a href="<?php echo $this->url(array('module'=>'mcart','controller'=>'category','action'=>'index'))?>">Category</a></div>
+		<div class="menu-item"><a href="<?php echo $this->url(array('module'=>'mcart','controller'=>'product','action'=>'index'))?>">Product</a></div>
+		<div class="menu-item"><a href="<?php echo $this->url(array('module'=>'mcart','controller'=>'order','action'=>'index'))?>">Order</a></div>
+		<div class="menu-item"><a href="<?php echo $this->url(array('module'=>'mcart','controller'=>'customer','action'=>'index'))?>">Customer</a></div>
+		<div class="menu-item"><a href="<?php echo $this->url(array('module'=>'mcart','controller'=>'profile','action'=>'index'))?>">Profile</a></div>
+	</div >
+</div>
+<div class="wrapper-bot-menu" id="wrapper-bot-menu">
+	<div class="menu">
+		<?php 
+			foreach($this->menu_items as $item):
+		  	echo $this->partial('partials/cmenu.phtml',array("menu_item" => $item));
+			endforeach;  
+		?>
+		</div>
+	</div>
+</div>	
+<br clear="all"/>
+<div class='wrapper-content' id='wrapper-content'>	
+	<?php echo $this->layout()->content;?>
+</div>
+<br clear="all"/>
+<div class='wrapper-footer' id='wrapper-footer'></div>
+<!--the end of the wrapper-->
+</div>
+<?php echo $this->headScript();?>
+</body>
+</html>

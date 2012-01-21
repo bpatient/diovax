@@ -1,0 +1,880 @@
+/*
+	Theme Name: Realist
+	Theme URI: http://www.stevebluck.co.uk
+	Description: The Ultimate Real Estate Theme
+	Version: 1.0
+	Author: Stephen Bluck
+	Tags: real estate, wordpress, template
+
+*/
+
+/*colours------------------------------------------------------------*/
+
+/*Universal------------------------------------*/
+
+.background_white{background:#ffffff;}
+.black{ color:#000000;}
+.grey{ color:#585858;}
+.white{ color:#FFFFFF;}
+
+.good, .normal, .bad{ display:block; padding:20px;}
+
+.good{ background:#C6FFD5; border:1px solid #7DFF9E; color:#006600}
+.normal{ background: #EEEEEE; border:1px solid #cccccc; color: #666666;}
+.bad{ background:#FFDFDF; border:1px solid #FFA6A6; color:#990000;}
+
+td{
+	padding:10px;
+}
+
+/*Blues----------------------------------------*/
+
+a{color:#375d81; text-decoration:none;}
+a:hover{ color:#000000;}
+
+.colour_lightest{color:#e1faf0;}
+.colour_light{color:#c5edd5;}
+.colour_medium{color:#aae2ba;}
+.colour_dark{color:#37814f;}
+.colour_darkest{color:#185230;}
+
+.colour_lightest a{color:#e1faf0;}
+.colour_light a{color:#c5edd5;}
+.colour_medium a{color:#aae2ba;}
+.colour_dark a{color:#37814f;}
+.colour_darkest a{color:#185230;}
+
+.border_lightest{border:1px solid #e1faf0;}
+.border_light{border:1px solid #c5edd5;}
+.border_medium{border:1px solid #aae2ba;}
+.border_dark{border:1px solid #37814f;}
+.border_darkest{border:1px solid #185230;}
+
+.border_bottom_lightest{border-bottom:1px solid #e1faf0;}
+
+.background_lightest{background:#e1faf0;}
+.background_light{background:#c5edd5;}
+.background_medium{background:#aae2ba;}
+.background_dark{background:#37814f;}
+.background_darkest{background:#185230;}
+
+#sidebar_image{
+	background:url(..//assets/images/sidebar_forest.jpg) repeat-y;
+}
+	
+#search{
+	background:url(..//assets/images/search_forest.jpg);
+}
+/* header -----------------------------------------------------------*/
+
+body{
+	background:url(..//assets/images/bg.gif) #f0f0f0 repeat-x;
+}
+
+.spacer{
+	height:20px;
+}
+
+#header_shine{
+	background:url(..//assets/images/header_shine.png);
+	width:507px;
+	height:363px;
+	position:absolute;
+}
+
+#wrap{ position:relative;}
+
+.logo{
+	background:url(..//assets/images/logo.png);
+	width:300px;
+	height:65px;
+}
+	.logo h1{
+		text-indent:-9999px;
+	}
+	
+#phone_number{
+	font-size:1.5em;
+	padding:0 0 0 30px;
+	line-height:25px;
+	height:20px;
+	width:590px;
+	text-align:right;
+}
+
+	#phone_number img{
+		margin-right:8px;
+	}
+	
+	.tagline{
+		font-size:0.55em;
+		line-height:13px;
+		color:#585858;
+	}
+
+/* navigation -----------------------------------------------------------*/
+
+#nav{
+	border-bottom: 1px solid #bcbcbc;
+	font-size:0.8em;
+	padding-bottom:10px;
+	float:left;
+	z-index:2;
+	position:relative;
+}
+	
+	#nav ul{
+		float:left;
+	}
+	
+	#nav ul li {
+		float:left;
+		margin:0;
+		width:100px;
+	}
+	
+	#nav ul li a{
+		display:block;
+		float:left;
+		color:#585858;
+		text-decoration:none;
+		padding-right:70px;
+	}
+	
+	#nav ul li a:hover{
+		color:#000000;
+	}
+	
+	#nav ul li ul{
+		margin:-4px 0 0 -37%;
+		font-size:0.9em;
+		line-height:15px;
+		width:100%;
+		text-align:center;
+		
+	}
+	
+	#nav ul li ul li ul{
+		margin:0 0 0 6px;
+		font-size:1em;
+		line-height:15px;
+		width:100%;
+		text-align:center;
+		
+	}
+	
+	#nav ul li ul li a{
+		background-color:#F0F0F0;
+		border-bottom:1px solid #bcbcbc;
+		border-left:1px solid #bcbcbc;
+		border-right:1px solid #bcbcbc;
+		display:block;
+		padding:10px;
+		width:100%;
+	}
+	
+	#nav ul li ul li a:hover{
+		background-color:#FFFFFF;
+	}
+	
+	/*** ESSENTIAL STYLES ***/
+	.sf-menu, .sf-menu * {
+		margin:			0;
+		padding:		0;
+		list-style:		none;
+	}
+	.sf-menu {
+		line-height:	1.0;
+	}
+	.sf-menu ul {
+		position:		absolute;
+		top:			-999em;
+		width:			10em; /* left offset of submenus need to match (see below) */
+	}
+	.sf-menu ul li {
+		width:			100%;
+	}
+	.sf-menu li:hover {
+		visibility:		inherit; /* fixes IE7 'sticky bug' */
+	}
+	.sf-menu li {
+		float:			left;
+		position:		relative;
+	}
+	.sf-menu a {
+		display:		block;
+		position:		relative;
+	}
+	.sf-menu li:hover ul,
+	.sf-menu li.sfHover ul {
+		left:			0;
+		top:			2.5em; /* match top ul list item height */
+		z-index:		99;
+	}
+	ul.sf-menu li:hover li ul,
+	ul.sf-menu li.sfHover li ul {
+		top:			-999em;
+	}
+	ul.sf-menu li li:hover ul,
+	ul.sf-menu li li.sfHover ul {
+		left:			10em; /* match ul width */
+		top:			0;
+	}
+	ul.sf-menu li li:hover li ul,
+	ul.sf-menu li li.sfHover li ul {
+		top:			-999em;
+	}
+	ul.sf-menu li li li:hover ul,
+	ul.sf-menu li li li.sfHover ul {
+		left:			10em; /* match ul width */
+		top:			0;
+	}
+
+
+	
+/*search-----------------------------------------------------------------*/
+
+#search{
+	width:310px;
+	height:286px;
+	float:left;
+	color:#FFFFFF;
+	overflow:hidden;
+}
+
+	#search h3{
+		font-weight:normal;
+		margin:20px 0 20px 20px;
+	}
+	
+	.row{
+		margin:0 0 20px 20px;
+		font-size:0.8em;
+	}
+	
+	#search label{
+		float:left;
+		margin-bottom:10px;
+		margin-right:15px;
+	}
+	
+	#search input, #search select{
+		background:none;
+		border:none;
+		font-size:0.8em;
+		position:relative;
+		z-index:1;
+	}
+	
+	.box{
+		background:#FFFFFF;
+		padding:6px;
+		float:left;
+		cursor:pointer;
+		margin:0 10px 20px 0px;
+	}
+	
+	.small{
+		width:50px;
+	}
+	
+	.medium{
+		width:70px;
+	}
+	
+	.medium2{
+		width:180px;
+	}
+	
+	.medium3{
+		width:180px;
+	}
+	
+	.large{
+		width:246px;
+	}
+	
+	#submit{
+		margin:-2px 0 0 0;
+	}
+
+/*sidebar-----------------------------------------------------------------*/
+
+#sidebar{
+	width:310px;
+	float:left;
+	color:#FFFFFF;
+	position:relative;
+}
+
+	#sidebar h3{
+		font-weight:normal;
+		margin:20px 0 20px 20px;
+	}
+	
+	#sidebar h4{
+		font-weight:normal;
+		font-size:0.9em;
+		margin-right:3px;
+		padding:10px 0 10px 20px;
+		display:block;
+	}
+	
+	#sidebar ul{
+		margin-right:3px;
+		position:relative;
+	}
+	
+	#sidebar ul li{
+		margin:0;
+	}
+
+	
+	#sidebar ul li a{
+		display:block;
+		padding:10px 10px 10px 30px;
+		text-decoration:none;
+		font-size:0.8em;
+		position:relative;
+		width:267px;
+	}
+	
+	#sidebar ul li ul{
+		margin:0;
+	}
+	
+	#sidebar ul li ul li a{
+		display:block;
+		padding:10px 10px 10px 50px;
+		text-decoration:none;
+		font-size:0.7em;
+		width:247px;
+	}
+	
+	#sidebar ul li a:hover{
+		background:#FFFFFF;
+		color:#000000;
+	}
+	
+	#sidebar label{
+		float:left;
+		margin-bottom:10px;
+		margin-right:15px;
+	}
+	
+	#sidebar input, #sidebar select{
+		background:none;
+		border:none;
+		font-size:0.8em;
+		
+	}
+	
+/*banner-----------------------------------------------------------------*/
+
+#banner{
+	height:286px;
+	background-color:#FFFFFF;
+	padding:1px;
+	width:936px;
+}
+
+#random_posts{
+	float:left;
+	width:626px;
+	height:286px;
+	overflow:hidden;
+	position:relative;
+	z-index:1;
+}
+
+
+	#random_posts h2{
+		font-size:1.2em;
+		line-height:25px;
+		cursor:default;
+	}
+	
+	#random_posts p{
+		font-size:0.8em;
+		font-weight:normal;
+		cursor:default;
+	}
+	
+	#random_posts p.random_price{
+		font-size:1.5em;
+		position:absolute;
+		text-align:right;
+		width:586px;
+		margin-top:-28px;
+		cursor:default;
+	}
+
+	.description{
+		background: url(..//assets/images/black_bar.png);
+		width:586px;
+		padding:15px 20px 15px 20px;
+		color:#FFFFFF;
+		margin-top:-68px;
+		z-index:2;
+		position:relative;
+
+	}
+	
+	.random_image{
+		position:relative;
+		z-index:1;
+	}
+	
+
+/*holder-----------------------------------------------------------------*/
+
+#holder{
+	background-color:#FFFFFF;
+	padding:1px;
+	width:936px
+}
+
+	#sidebar_image{
+		width:938px; !important
+	}
+
+/*right_side----------------------------------------------------------*/
+
+#search_query{
+	padding:20px;
+	color:#585858;
+	width:584px;
+	font-size:0.75em;
+}
+
+#search_query h2{	
+	position:absolute;
+	margin:-18px 0 0 0;
+	text-align:right;
+	display:block;
+	width:584px;
+}
+
+#right_side{
+	width:626px;
+	float:left;
+}
+
+.result{
+	padding:20px;
+	color:#585858;
+	width:584px;
+	font-size:0.75em;
+	margin:1px 0 0 0;
+	position:relative; !important /*for IE6*/
+}
+
+	.result_image a{
+		padding:10px;
+		display:block;
+		float:left;
+		width:125px;
+		text-align:center;
+		font-size:0.8em;
+		color:#585858;
+		text-decoration:none;
+	}
+
+.result_text{
+	float:left;
+	margin:0 0 0 20px;
+	width:410px;
+}
+
+	.result_text h1{
+		color:black;
+		font-weight:normal;
+		font-size:1.3em;
+		margin:10px 0 10px 0;
+	}
+	
+	.result_text h2 a:hover{
+		color:#000000;
+	}
+	
+	.text_small{
+		font-size:0.8em;
+		color:#585858;
+		line-height:20px;
+	}
+	
+	.result_text p{
+		font-size:0.9em;
+		line-height:18px;
+	}
+	
+	.result_text p.links{
+		font-size:0.9em;
+		line-height:18px;
+		margin:10px 0 0 0;
+	}
+	
+	.result_text p.links a{
+		text-decoration:none;
+	}
+	
+	.result_text p.links a:hover{
+		text-decoration:none;
+		color:#000000;
+	}
+	
+	.details{
+		position:absolute;
+		width:410px;
+		margin:-20px 0 0 0;
+		text-align:right;
+	}
+	
+		.details .icon_number{
+			font-size:1.5em;
+			margin-right:10px;
+		}
+
+/*single-------------------------------------------*/
+
+#single_image a{
+		padding:10px;
+		display:block;
+		float:left;
+		width:250px;
+		text-align:center;
+		font-size:0.8em;
+		color:#585858;
+		text-decoration:none;
+	}
+	
+	#multiple_images{
+		float:left;
+		margin:5px 0 20px 4px;
+	}
+	
+	#multiple_images h1{
+		font-size:1.5em;
+		display:block;
+		border-bottom:1px solid #CCCCCC;
+		color:#000000;
+		padding:0 0 10px 0;
+		margin:0 0 20px 0;
+		font-weight:normal;
+	}
+	
+	#multiple_images p{
+		text-align:center;
+		font-size:0.8em;
+	}
+	
+	.image{
+		float:left;
+		margin:0 6px 10px 0;
+	}
+	
+	.image a{
+		width:93px;
+		height:94px;
+		padding:5px;
+		display:block;
+	}
+	
+	#description h1, #description h2, #description h3, #description h4, #description h5, #description h6{
+		font-weight:normal;
+		display:block;
+		border-bottom:1px solid #CCCCCC;
+		color:#000000;
+		padding:0 0 10px 0;
+		margin:0 0 20px 0;
+	}
+	
+	#description h1{
+		font-size:1.5em;
+	}
+
+	
+	#description h2{
+		font-size:1.4em;
+	}
+	
+	#description h3{
+		font-size:1.3em;
+	}
+	
+	#description h4{
+		font-size:1.2em;
+	}
+	
+	#description h5{
+		font-size:1em;
+	}
+	
+	#description h6{
+		font-size:0.9em;
+	}
+	
+	#description label{
+		display:block;
+		padding:0 0 10px 0;
+	}
+	
+	#description input, #description textarea{
+		margin: 0 0 20px 0;
+		border:1px solid #999999;
+		padding:10px;
+		background:#FFFFFF;
+		font-family:Arial;
+		font-size:1em;
+		width:200px;
+	}
+	
+	#description form{
+		margin:0 0 20px 0;
+	}
+	
+	#description textarea{
+		width:450px;
+	}
+	
+	#description input.submit{
+		width:150px;
+		cursor:pointer;
+	}
+	
+	#description p{
+		line-height:18px;
+		margin:0 0 20px 0;
+	}
+	
+	#description ul{
+		margin:0 0 20px 20px;
+	}
+	
+	#description ul li{
+		list-style: square;
+		line-height:20px;
+		color:#000000;
+	}
+	
+	#contact_info p{
+		margin:0;
+		padding:0;
+	}
+	
+	.simple_overlay {
+	
+	/* must be initially hidden */
+	display:none;
+	
+	/* place overlay on top of other elements */
+	z-index:10000;
+	
+	/* styling */
+	
+	width:675px;	
+	min-height:200px;
+	padding:10px;
+	}
+	
+	/* close button positioned on upper right corner */
+	.simple_overlay .close {
+		background-image:url(..//assets/images/close.png);
+		position:absolute;
+		right:-15px;
+		top:-15px;
+		cursor:pointer;
+		height:35px;
+		width:35px;
+	}
+
+	
+	/* the large image. we use a gray border around it */
+	#img {
+		border:1px solid #666;
+	}
+
+	/* "next image" and "prev image" links */
+	.next, .prev {
+		
+		/* absolute positioning relative to the overlay */
+		position:absolute;
+		top:40%;	
+		border:1px solid #666;	
+		cursor:pointer;
+		display:block;
+		padding:10px 20px;
+		color:#fff;
+		font-size:11px;
+		
+		/* upcoming CSS3 features */
+		-moz-border-radius:5px;
+		-webkit-border-radius:5px;	
+	}
+
+	.prev {
+		left:0;
+		border-left:0;
+		-moz-border-radius-topleft:0;
+		-moz-border-radius-bottomleft:0;
+		-webkit-border-bottom-left-radius:0;
+		-webkit-border-top-left-radius:0;
+	}
+	
+	.next {
+		right:0;
+		border-right:0;
+		-moz-border-radius-topright:0;
+		-moz-border-radius-bottomright:0;
+		-webkit-border-bottom-right-radius:0;
+		-webkit-border-top-right-radius:0;	
+	}
+	
+	.next:hover, .prev:hover {
+		text-decoration:underline;
+		background-color:#000;
+	}
+	
+	/* when there is no next or previous link available this class is added */
+	.disabled {
+		visibility:hidden;		
+	}
+	
+	/* the "information box" */
+	.info {
+		position:absolute;
+		bottom:0;
+		left:0;	
+		padding:10px 15px;
+		color:#fff;
+		font-size:11px;
+		border-top:1px solid #666;
+	}
+	
+	.info strong {
+		display:block;	
+	}
+	
+	/* progress indicator (animated gif). should be initially hidden */
+	.progress {
+		position:absolute;
+		top:45%;
+		left:50%;
+		display:none;
+	}
+	
+	/* everybody should know about RGBA colors. */
+	.next, .prev, .info {
+		background:#333 !important;
+		background:rgba(0, 0, 0, 0.6) url(/img/global/gradient/h80.png) repeat-x;		
+	}
+
+
+
+/*listings--------------------------------------------------------------*/
+
+#listing{
+	width:645px;
+}
+
+#listing ul li{
+	float:left;
+	margin-bottom:20px;
+}
+
+#listing ul li a{
+	padding:20px;
+	display:block;
+	text-decoration:none;
+	float:left;
+}
+	
+	
+	.hover{
+		cursor:pointer;
+	}
+	
+	
+	.listing_image{
+		width:125px;
+		height:91px;
+		vertical-align:top;
+		float:left;
+	}
+	
+	.text_wrap{
+		float:left;
+		width:123px;
+		margin-left:10px;
+		margin-top:4px;
+	}
+	
+	.city{
+		font-size:0.7em;
+		color:#585858;
+		margin:4px 0 0 0;
+	}
+	
+	.address{
+		color:#000000;
+		font-size:0.9em;
+		line-height:30px;
+	}
+	
+	.price{
+		font-size:0.75em;
+		font-weight:bold;
+		display:block;
+		margin-bottom:10px;
+	}
+	
+	.icon_number{
+		color:#585858;
+		font-size:1.1em;
+	}
+	.icon{
+		width:18px;
+		height:14px;
+		margin-right:5px;
+	}
+	
+/*welcome-------------------------------------------*/
+
+#welcome h2{
+	font-size:1.8em;
+	font-weight:normal;
+	margin-bottom:10px;
+	color:#303030;
+	width:
+}
+
+	#welcome p{
+		color:#585858;
+		font-size:0.9em;
+		line-height:23px;
+		margin-bottom:10px;
+	}
+
+
+/*footer--------------------------------------------*/
+
+#footer{
+	border-top:1px solid #bcbcbc;
+	background:url(..//assets/images/footer_bg.jpg);
+	padding:20px 0 20px 0;
+	font-size:0.7em;
+	color:#585858;
+}
+
+	#footer a{
+		color:#585858;
+		text-decoration:none;
+	}
+	
+	#footer a:hover{
+		color:#000000;
+	}
+
+.left{ float:left;}
+.right{ float:right;}
+

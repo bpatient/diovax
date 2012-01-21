@@ -1,0 +1,133 @@
+	
+	/**
+     * This function lists, blog items by category, and displays and interface to add a new 
+     * blog category, or subcategory 
+     * 
+     * it can be used from all children cms controllers 
+     * 
+     * @param void 
+     */
+	/*
+	public function settingsAction(){
+		
+		$id = $this->_getParam("id",0);
+		$parent = $this->_getParam("parent",-1);		
+		//enhance this form with categories selected from select box, in order to let the 
+		//the user switch categories
+		$this->view->form = new Core_Form_CmsCategory(array('id' => $id,'parent' => $parent));
+		if($this->getRequest()->isPost()):
+			if($this->view->form->isValid($this->getRequest()->getPost())):
+				$this->cms_service->editCategory($this->view->form->mapToObject()->toArray());	
+				$this->_redirect("/".$this->_request->getModuleName()."/".$this->_request->getControllerName()."/settings");				
+			endif;
+		elseif( ($id > 0) && ($data = $this->cms_service->getCategory($id)) != null ):
+			$this->view->form->populate($data->toArray());
+		endif;
+		
+		
+		//changing selected element
+		$this->view->form->getElement('cms_entity')->setValue($this->_request->getControllerName());
+		//to change the id, or parent, form-getField- change field value and save.
+	
+	}
+	
+	*/
+	
+	
+	
+	/**
+	 * this function is used to edit a user. 
+	 * it is possible to use reflection and use this edit function to edit any form sent to it.
+	 * 
+	 * 
+	 * @return void
+	 * @param null  
+	 */
+	/*
+	public function editAction(){
+			
+			$controller = strtolower($this->_request->getControllerName());
+			$this->view->lower_title = ucfirst($controller)."::. Edit::.";
+			//change the following ID 
+			$id = $this->_getParam("id", 0);			
+			$fields = array("id","category");
+			
+			
+			$options = array("language" => "en","entity" => $controller); 
+			$data = $this->cms_service->getCmsEntry(array("id" => $id));
+			
+			foreach( ($this->cms_service->getCategories()->toArray()) as $K => $v):
+					$categories[$K]["key"] = $v["id"];
+					$categories[$K]["value"] = $v["category"];
+			endforeach;
+			
+			$options = array('id' => $id,'cms_category_id' => 0, 'displayed' => true, 'position' => 1);
+			$this->view->form  = new Core_Form_CmsContent($options, $categories );
+			//changing options, to something else 
+			$categorizer = new Ma_Categorizer($categories);
+			//$this->view->form  = new Core_Form_CmsContent($options, $categorizer->_list );
+			$this->view->form->setMultiOptions($categories);
+			
+			if($this->getRequest()->isPost()):
+				//validate the form and persist data using Form::persist(); 
+				//internal form will be responsible of persisting objects. add/save 
+				if($this->view->form->isValid($this->getRequest()->getPost())):
+					//this will be implemented after database initialization
+					$this->cms_service->editEntry($this->view->form->mapToObject()->toArray());	
+					$this->_redirect("massist/".$controller."/index");				
+				endif;
+			//check if there is an ID or a positive parameter to load a pre-filled form 	
+			elseif((int)$id > 0 && count($data) > 0):	
+				$data = $data->toArray();
+				$this->view->form->populate($data[0]);
+			endif;
+		
+			
+	}//end of edition 
+	*/
+	
+	/**
+	 * 
+	 * 
+	 * this function is used to delete cms entry. 
+	 * it is possible to improve it by using the reflection and delete any entry in the database that 
+	 * uses the id.  
+	 * @return void 
+	 * @param null
+	 */
+	
+	/*
+	 public function deleteAction(){		
+		$controller = strtolower($this->_request->getControllerName());
+		$this->view->lower_title = ucfirst($controller)."::. Delete::.";
+		
+		$id = $this->_getParam("id", 0); 
+		$id = $this->getRequest()->getParam("id");	
+		//its better to check wether the item to delete exists or not. 
+		if($id > 0 && ($this->getRequest()->isPost() || $this->getRequest()->isGet())):			
+				$this->cms_service->deleteEntry($id);	
+				$this->_redirect("massist/$controller/index"); 
+		else:
+			$this->view->content = "Delete Not posted...";
+		endif;
+	}	
+	*/
+	
+	/*
+	
+	public function viewAction()
+    {
+    	
+    	$controller = strtolower($this->_request->getControllerName());
+		$this->view->lower_title = ucfirst($controller)."::. View::.";
+		$id = $this->getRequest()->getParam("id");	
+		if($id > 0 && ($this->getRequest()->isPost() || $this->getRequest()->isGet())):			
+			$this->view->item  = $this->cms_service->getCmsEntry(array("id" => $id));// = null;//this will be replaced by element deletion from ContentModel->delete()
+		endif;
+		
+		
+		if(!$id || !(count($this->view->item) > 0 )):
+			$this->view->content = "Sorry the content you are requesting is not found.";
+		endif;
+    }//
+	*/

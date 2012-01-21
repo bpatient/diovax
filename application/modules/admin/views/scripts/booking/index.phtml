@@ -1,0 +1,37 @@
+<div class='span-24 last'>    
+<div class="wrapper-content-left-column span-4">
+  <?php echo $this->render('booking/_menu.phtml');?>
+</div>
+<div class="wrapper-content-right-column span-20 last">
+    <?php echo $this->message( $this->message ); ?>
+    <?php
+    $odd = 0; 
+    foreach( $this->data as $k => $_dt ):
+
+        $alt = ( (++$odd)&1 )? "even" : "odd";
+        $_dt = (object)$_dt; $_o = $_dt->booking;
+        $_adr = (object)$_dt->address; $_adr = $_dt->address;
+
+        if( is_array( $_dt->address[0] ) ) { $_adr = (object)$_dt->address[0]; $_adr =  $_adr->value; }
+        else { $_adr = (object)$_dt->address; $_adr =  $_adr->value;}
+
+        if( is_array( $_dt->customer[0] ) ) $_cust = (object)$_dt->customer[0];
+        else $_cust = (object)$_dt->customer;
+
+		/**property*/
+        if( isset( $_dt->property[0]) && is_array( $_dt->property[0] ) ) $_pt = (object)$_dt->property[0];
+        else $_pt = (object)$_dt->customer;
+
+        $_edit = $this->edit(array( 'edit' => "/admin/booking/edit/".$_o->id."/?property=".$_pt->id."&user=".$_cust->id, 'features' => "/admin/property/features/?property=".$_pt->id ));
+        $_im = "";
+		
+		
+		
+        echo $this->booking( $_o , array( 'user' => $_cust, 'address' => $_adr, 'class' => ''.$alt.' span-19 last', 'strip' => true, 'site' => '', 'location' => '', 'image' => $_im, 'long' => true, 'editing' => $_edit ) );/***/
+    
+		//echo "<pre>".print_r( $_dt , 1 )."</pre>";
+	
+	endforeach;
+    ?>
+</div>
+</div>

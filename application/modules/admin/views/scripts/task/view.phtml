@@ -1,0 +1,88 @@
+<div id="" class="">
+<?php echo $this->title($this->title); ?>
+<?php if ($this->product):?>
+
+   <div class="wrapper-content-left-column span-4">
+   	<?php  echo $this->render('task/_menu.phtml'); ?>
+   </div> 
+   <div class="wrapper-content-left-column span-20 last">
+   	<div class='table-div' id='admin-product-view-cart'>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >ID</div><?php echo $this->product->id; ?></div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >SKU </div> 
+				<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'product', 'action' => 'edit', 'id' => $this->product->id ) )?>'><?php echo $this->product->sku?></a>
+			</div>
+			<div class='table-row-div' ><div  class='table-cell-div  medium-cell' >Name</div>
+				<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'product', 'action' => 'edit', 'id' => $this->product->id ) )?>'><?php echo $this->product->name?></a>
+  			</div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Price</div><?php echo $this->product->price ?></div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >On Sale</div>  
+				<?php 
+					if ( $this->product->onsale): 
+						echo 'On Sale'; 
+					else: 
+						echo 'Regular Price'; 
+					endif; 
+				?> 
+			</div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Category </div>
+				<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'category', 'action' => 'view', 'id' => $this->product->product_category_id ) )?>'><?php echo $this->category?></a>
+			</div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >dimension </div><?php echo $this->product->dimension; ?></div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >status </div><?php echo $this->product->status; ?></div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Last Update</div><?php echo $this->product->modified;?></div>
+	</div>
+	<?php endif;?>
+   
+
+
+
+   
+ 	<!-- product images  -->  
+   <?php if($this->image ): ?>
+   		<div id='admin-product-view-cart' class='image-box'>
+   			<?php echo $this->image;  ?> 
+   		</div>  
+   <?php endif;?>
+   
+   
+   
+   	<?php if ( $this->product_details ) :?>
+	   	<div class='h-separator'> <strong> Product Details </strong></div>	
+			<!-- product details  -->  	   
+	   		<div id='admin-product-view-details-table' class='table-div' >	
+				<?php foreach ( $this->product_details as $k => $product_detail): ?>
+	   	   		<?php if( !isset($odd) ) $odd = 0; ?>   	
+					<div class='table-row-div <?php echo ( (++$odd & 1)? 'odd':'even')?>'>
+				        <?php echo '<b>'.$product_detail['detail_key'].'</b>'; ?>
+				       	<?php echo $product_detail['detail_value']; ?>
+				     </div>
+		   		<?php endforeach;?>  
+      		</div>
+    <?php endif;?>   	   	 
+   
+   
+   
+   		
+		
+      	<?php if ( $this->product_comments ) :?>
+      		<div class='h-separator'></div>
+   	   		<div  id='admin-product-view-comments-table' class='table-div' >	
+			<?php foreach ( $this->product_comments as $k => $product_comment): ?>
+   	   	   		<?php if( !isset($odd) ) $odd = 0; ?>   	
+			   	<div class='table-row-div <?php echo ( (++$odd & 1)? 'odd':'even')?>'>
+			        <div  class='table-cell-div' ><?php echo $product_comment['title']; ?></div>
+			        <div  class='table-cell-div' ><?php echo $product_comment['rating']; ?></div>
+			        <div  class='table-cell-div' ><?php echo $product_comment['status']; ?></div>
+			        <div  class='table-cell-div' ><?php echo $product_comment['displayed']; ?></div>
+			    </div>
+	   	   		<!--  -->
+	   		<?php endforeach;?>   	   	
+   	  		</div>
+   	  	<?php endif;?>   	   	
+   	
+   	
+   <div class='h-separator'></div>		
+   <!-- product rating  -->  
+   	<?php echo $this->rating;  ?>
+</div>
+</div> 

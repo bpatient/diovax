@@ -1,0 +1,23 @@
+<div id="" class="">
+	<?php echo $this->title($this->title); ?>
+<div class="wrapper-content-right-column span-3">
+    <div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'tax', 'action' => 'index', 'id' => "" ))."'>Back</a>";?></div>
+</div>
+<div class="wrapper-content-right-column span-20">
+    <form action='' method='post'>
+    <?php echo $this->message($this->message );?>
+    	<?php
+        if($this->content){
+            echo $this->content;
+        ?>
+    	<br/>
+    	<input type='hidden' name='pid' value='<?php echo $this->id;?>' />
+    	<input type='submit' id='button'  class='button' value='<?php echo $this->option_rate == 0? 'Disable' : 'Enable'?>'/>
+        <?php
+            }
+        ?>
+    </form>
+</div>
+<div class='h-separator'></div>
+
+</div>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>	
+<navigation>
+    <users>
+      <label>Customer</label>
+       <uri>/admin/user/index</uri>
+         <pages>
+          <landlord><label>Landlord</label><uri>/admin/user/landlords</uri></landlord>
+          <technician><label>Technician</label><uri>/admin/user/technicians</uri></technician>
+          <tenant><label>Tenant</label><uri>/admin/user/tenants</uri></tenant>
+          <agent><label>Agents</label><uri>/admin/user/technicians</uri></agent>
+        </pages>  
+    </users>
+    <properties>      
+      <label>Properties</label>     
+      <uri>/admin/property/index</uri>
+    	<pages>
+        	<location><label>Location</label><uri>/admin/location/index</uri></location>
+      	</pages>      
+    </properties>
+    <leases>      
+      <label>Lease</label>
+      <uri>/admin/lease/index</uri>
+      <pages>
+        <lease><label>Leases</label><uri>/admin/lease/index</uri></lease>
+        <booking><label>Booking</label><uri>/admin/booking/index</uri></booking>
+      </pages>      
+    </leases>   
+    <tickets>      
+      <label>Tickets</label>
+      <uri>/admin/task/index</uri>
+    </tickets>   
+    <messages>      
+      <label>Message</label>
+      <uri>/admin/message/index</uri>
+    </messages>   
+    <settings>
+      <label>Settings</label>
+      <uri>/admin/settings/index</uri>
+     <pages>
+        <amenities><label>Amenities</label><uri>/admin/settings/amenities</uri></amenities>
+        <plans><label>Plans</label><uri>/admin/settings/plans</uri></plans>
+      </pages>
+    </settings>
+    <analytics>
+      <label>Analytics</label>
+      <uri>/admin/analytics/index</uri>
+      <pages>
+        <users><label>Users</label><uri>/admin/analytics/users</uri></users>
+        <properties><label>Property</label><uri>/admin/analytics/property</uri></properties>
+        <sfees><label>Expenses</label><uri>/admin/analytics/sfees</uri></sfees>
+        <ttable><label>Taxes</label><uri>/admin/analytics/ttable</uri></ttable>
+        <system><label>System</label><uri>/admin/analytics/system</uri></system>
+      </pages>
+    </analytics>    
+ </navigation> 
+</configdata>

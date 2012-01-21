@@ -1,0 +1,17 @@
+<div id="" class="">
+   	<?php echo $this->title($this->title); ?>
+ 	<?php echo $this->message($this->message); ?>
+</div>
+
+<div class="left_column span-3">
+    <?php echo '<a href=\''.$this->url(array('module' => $this->mdl,'controller' => 'user','action' => 'profile','id' => $this->user_id )).'\'>Profile</a>'; ?>
+</div>
+<div class="cms-form-div span-20" id="">
+    	<a style="cursor:pointer;" id='gen-pswd-link'>Generate (Click here to generate automatically)</a>
+        <br />
+        <br />
+        <?php echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>";?>
+</div>
+
+<br clear='all'/>
+<br clear='all'/>

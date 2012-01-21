@@ -1,0 +1,16 @@
+<div>	
+<?php echo $this->title($this->title); ?>
+
+	<div class="wrapper-content-right-column span-4">
+		<div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'attribute', 'action' => 'edit', 'id' => "" ))."'>Add</a>";?></div>
+		<div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'attribute', 'action' => 'options', 'id' => $this->id ))."'>Edit</a>";?></div>
+	<?php if( $this->id != "" && is_string( $this->id )  ) :?>
+			<div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'attribute', 'action' => 'options', 'id' => $this->id ))."'>Add Options</a>";?></div>
+	<?php endif;?>
+	<div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'attribute', 'action' => 'index', 'id' => "" ))."'>Back</a>";?></div>
+	</div>
+	<div class="wrapper-content-left-column span-19 last">
+		<?php echo $this->content; ?>
+	</div>
+</div>
+

@@ -1,0 +1,9 @@
+<div id="" class="">
+<?php echo $this->title($this->title); ?>
+<div class="wrapper-content-left-column span-4">
+ <?php  echo $this->render('property/_menu.phtml'); ?>
+</div>	
+<?php if ($this->widget):?>
+   <div class="wrapper-content-left-column span-20 last"><?php echo $this->widget;?></div>
+<?php endif;?>   
+</div> 

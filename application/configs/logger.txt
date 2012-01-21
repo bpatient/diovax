@@ -1,0 +1,13 @@
+2010-10-27T14:34:37-04:00 DEBUG (7): MediaController ::   enabled banner type banner_image
+2010-10-27T14:36:19-04:00 DEBUG (7): MediaController ::   enabled banner type banner_flash
+2010-10-27T14:36:20-04:00 DEBUG (7): MediaController ::   enabled banner type banner_image
+2010-10-27T14:36:39-04:00 DEBUG (7): MediaController ::   enabled banner type banner_image
+2010-10-27T14:37:33-04:00 DEBUG (7): MediaController ::   enabled banner type banner_image
+2010-11-08T12:01:43-05:00 DEBUG (7): running anyways
+2010-11-08T12:02:15-05:00 DEBUG (7): running anyways
+2010-12-04T22:24:43-05:00 DEBUG (7):  1st display index 
+2010-12-04T22:24:43-05:00 DEBUG (7):  display index 
+2010-12-04T22:36:43-05:00 DEBUG (7):  1st display index 
+2010-12-04T22:36:43-05:00 DEBUG (7):  display index 
+2010-12-04T22:36:54-05:00 DEBUG (7):  1st display index 
+2010-12-04T22:36:54-05:00 DEBUG (7):  display index 

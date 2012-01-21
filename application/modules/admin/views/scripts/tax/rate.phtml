@@ -1,0 +1,15 @@
+<div id="" class="">
+ <?php echo $this->title($this->title); ?>  
+  
+  <div class='wrapper-content-left-column span-4 back-div-section'> 
+   		<div class='link'><a href = "<?php echo $this->url(	array('module' => $this->mdl,  'controller' => 'tax',  'action' => 'tclass', 'id' => ''));?>">Add Tax Class</a></div>
+		<div class='link'><a href = "<?php echo $this->url(array('module' => $this->mdl,  'controller' => 'tax',  'action' => 'index', 'id' => ''));?>">Back</a></div>
+   </div> 
+   
+   
+   <div class="store-form-div wrapper-content-left-column span-19 last" id="">
+    <?php echo $this->message( $this->message );	?>
+   	<?php echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>";?>
+   </div>
+      
+</div>

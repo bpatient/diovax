@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configdata>	
+	<!--
+		This section will configure navigation menu bar 
+		To make translation work, the label should have either its value as it will be apeal in the menu,
+		or translation unit Id (tui) in languages/language.xml
+	-->
+	<navigation>
+		<!--custom pages goes here-->
+		<home>		
+			<!--using directly the translation id to allow translator to handle language specific values-->	
+			<label>Home</label>
+			<uri>/app/index/index</uri>
+			<order>1</order>
+		</home>
+		<contact>			
+			<label>Contact</label>
+			 <uri>/app/index/contact</uri>
+			<order>2</order>
+		</contact>
+		<register>			
+			<label>Register</label>
+		  <uri>/app/auth/index</uri>
+			<order>3</order>
+		</register>		
+	</navigation>	
+</configdata>

@@ -1,0 +1,98 @@
+<div id='' class='span-24 last'>	
+<?php echo $this->title($this->title); ?>   
+<form action='<?php echo $this->url(array('controller'=>'authlog','action'=>'delete')); ?>' method='post'>
+
+	
+<!-- The controls section -->	
+
+<!--  End of controls section -->	
+	
+<div  class='table-div' id='payment-methods-index' style=''>	
+	<!-- the header of the table  -->
+	<div class='table-header-div' >
+		<div  class='table-cell-div nano-cell' >
+			<?php echo "<a class='authlog-checkall' id='authlog-checkall' href='./' >#</a>";?>
+		</div>
+		<div  class='table-cell-div small-cell' >
+			<?php 
+				echo $this->sortLink($this->baseUrl, 
+				array ( 'title'=>"Customer", 'field' => 'note', 'limit' => $this->limit, 'order' => $this->order )); 
+			?>
+		</div>
+		<div  class='table-cell-div nano-cell' >
+			<?php 
+				echo $this->sortLink($this->baseUrl, 
+				array ( 'title'=>"Bag", 'field' => 'modified', 'limit' => $this->limit, 'order' => $this->order )); 
+			?>
+		</div>
+		<div  class='table-cell-div small-cell' >
+			<?php 
+				echo $this->sortLink($this->baseUrl, 
+				array ( 'title'=>"Agent", 'field' => 'modified', 'limit' => $this->limit, 'order' => $this->order )); 
+			?>
+		</div>
+		
+		<div  class='table-cell-div small-cell' ><?php echo "location";?></div>
+		<div  class='table-cell-div small-cell' ><?php echo "IP";?></div>
+		<div  class='table-cell-div small-cell' ><?php echo "Duration";?></div>
+		<div  class='table-cell-div small-cell' ><?php echo "Last visit";?></div>
+		<div  class='table-cell-div small-cell' ><?php echo "";?></div>
+	</div>
+	
+	
+	
+	
+	
+		<?php foreach($this->items as $k => $entry): ?>
+		<?php if(!isset($odd) ) $odd = 0; ?>    
+		<div class='table-row-div <?php echo ( (++$odd & 1)? 'odd':'even')?>' id='' style=''>
+	        <div  class='table-cell-div nano-cell' >
+		        <?php echo '<input type=\'checkbox\' name=\'authid['.$entry['id'].']\' value=\''.$entry['id'].'\' class=\'class-'.$entry['id'].'\' />';?>
+		        <?php /**echo $this->ajaxCheckable( array( 'status' => 0, 'name' => 'id['.$entry['id'].']', 'class' => 'checkbox-delete', 'id' => 'checkbox_delete-'.$entry['id']) );*/?>
+	        </div>
+	        <div  class='table-cell-div small-cell' ><?php echo '<a href=\''.$this->url(array('action'=>'index','id'=>$entry['id'])).'\'>'.( $entry['auth_id'] > 0 ? $entry['auth_id'] : 'Guest' ).'</a>'; ?></div>
+			<div  class='table-cell-div nano-cell num-cell'>
+				<?php 
+					/*$bag = @unserialize( $entry['bag']);
+					echo count($bag->custom_products);*/
+				?>
+			</div>
+		    <div  class='table-cell-div small-cell' ><?php 	$br = new Core_Util_Browser($entry['agent']);    echo $br->getBrowser(); ?></div>
+	        <div  class='table-cell-div small-cell' ><?php echo $entry['location']?></div>
+	        <div  class='table-cell-div small-cell' ><?php echo $entry['ip']?></div>
+	        <div  class='table-cell-div small-cell' >
+		        <?php 
+				        /**it initializes only $entry['starts'] and $entry['stops']*/	
+				        $date = new Core_Util_Date( $entry ); echo $date->elapsed(); 
+				 ?>
+			 </div>
+	        <div  class='table-cell-div small-cell' ><?php echo $entry['modified']; ?></div>
+	        <div  class='table-cell-div small-cell' >
+	        	<?php $url = $this->url(array('controller'=>'authlog') );?>
+	        	<?php echo '<a class=\'index-authlog-delete\' id=\'index_authlog_delete-'.$entry['id'].'\' href=\''.$url.'/jxdel/'.$entry['id'].'\' rel=\''.$url.'\'>Delete</a>';?>
+	        	<?php echo '<a class=\'index-authlog-view\' id=\'index_authlog_view-'.$entry['id'].'\' href=\''.$url.'/jxview/'.$entry['id'].'\' rel=\''.$url.'\'><span rel="htmltooltip" style=\'cursor:pointer\'>View</span></a>';
+                              echo '<div id=\'index_authlog_htmltooltip_view-'.$entry['id'].'\' class="htmltooltip"></div>';//style="display:none;"'.$this->bag_helper->bag($bag).'
+                            ?>
+
+	        </div>
+	    </div>
+		<?php endforeach;?>	
+		<!--  the footer of the table + paging division -->
+		<div class='table-footer-div' >
+			<div  class='table-paging-div' >
+				<?php 
+					$links = '';
+					if ( $this->show_paged_links )
+						$links = implode ( $this->paged_links, " | ");	
+					echo ( $links )?' Pages '.$links : ''; 	
+				?>	
+			</div>
+		</div>
+	</div>
+        <br class="clear" />
+        <input type='submit' value='Delete' class='button' name='delete' />
+</form>
+</div>
+<div class='span-24 last'>
+       
+</div>

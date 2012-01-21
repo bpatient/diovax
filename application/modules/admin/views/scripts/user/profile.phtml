@@ -1,0 +1,260 @@
+<div id="" class="profile-div">
+   	<?php echo $this->title($this->title); ?>
+	<!-- the following section has a link to generate password-->
+   <div class="">
+<div class="h-separator">
+    <?php
+            $generate_password = '<a href=\''.$this->url(array('module' => 'admin', 'controller' => 'user', 'action' => 'pswd', 'id' => $this->user_id)).'\'>Gen. Password </a>';
+            if (!$this->hasAuth ):
+                    echo '<span class=\'notice\' style=\'width:300px; float:left;\'>'.
+                                    'This user has no Password '.
+                                    $generate_password.
+                             '</span><br/>';
+            endif;
+    ?>
+</div>
+       <br>
+<div class="left_column span-3">
+                <?php  if ($this->hasAuth ){ echo $generate_password;} ?>
+		<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'user', 'action' => 'edit', 'id' => 0 ) )?>'>
+	   		Add
+	   	</a> <br>
+
+
+	   	<!--<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'user', 'action' => 'index', 'id' => 0 ) )?>'>
+	   		Back
+	   	</a>-->
+</div>
+<div class="right_column span-20">
+
+	<?php if ($this->user['user']):?>
+	<!-- The following section has a Customer contact card  -->
+	<div id="admin-user-profile-card-table" class="table-div">
+	<!--  in the user fetch the user info, address, shopping adderss,  profile info[for now credit cards ]  -->
+		<?php foreach ( $this->user['user'] as $k => $user ):?>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >ID</div><?php echo $user['id']?></div>
+			<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Name </div>
+				<a href ='<?php echo $this->url(
+										array ( 'module' => $this->mdl,
+							   					'controller' => 'user',
+							   					'action' => 'edit',
+							   					'id' => $user['id'] ) );
+							?>'>
+					<?php echo $user['name']?>
+				</a>
+			</div>
+				<div class='table-row-div' ><div  class='table-cell-div medium-cell' >DOB</div><div  class='table-cell-div medium-cell' ><?php echo $user['birthday']?></div></div>
+				<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Cat.</div><div  class='table-cell-div medium-cell' ><?php echo $user['category']?></div></div>
+				<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Banned</div>
+					<div  class='table-cell-div medium-cell' ><?php echo ( $user['banned'])? 'Banned' : 'Allowed';?></div></div>
+				</div>
+				<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Active</div>
+					<div  class='table-cell-div medium-cell' ><?php echo ( $user['active'])? 'Active' : 'Inactive';?></div></div>
+				</div>
+				<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Last Update </div><div  class='table-cell-div medium-cell' ><?php echo $user['modified']?></div></div>
+				<div class='table-row-div' ><div  class='table-cell-div medium-cell' >Member since </div><div  class='table-cell-div medium-cell' ><?php echo $user['created']?></div></div>
+		<?php endforeach;?>
+		<!-- this div separates horizontally two sections -->
+		</div>
+		<?php endif;?>
+
+			<?php if  ( $this->auth ):	?>
+			<!-- The following section lists all authentication methods this customer is using. -->
+			<div class='h-separator'><strong>Authentication methods</strong></div>
+			<div class='table-div' id='profile-authentication-table'>
+			<!-- the header of the table  -->
+			<div class='table-header-div' >
+				<div  class='table-cell-div' >
+					<?php echo $this->sortLink("#", array ( 'title'=>"Service" ) );	?>
+				</div>
+				<div  class='table-cell-div' >
+					<?php echo $this->sortLink("#", array ( 'title'=>"Key" )); ?>
+				</div>
+				<div  class='table-cell-div x-large-cell' >
+					<?php echo $this->sortLink("#", array ( 'title'=>"Hash" )); ?>
+				</div>
+				<div  class='table-cell-div'>
+					<?php echo $this->sortLink("#", array ( 'title'=>"Action" )); ?>
+				</div>
+			</div>
+
+			<?php foreach ( $this->auth as $auth ):?>
+				<div class='table-row-div' >
+					<div  class='table-cell-div' ><?php echo $auth->service?></div>
+					<div  class='table-cell-div' ><?php echo $auth->key?></div>
+					<div  class='table-cell-div x-large-cell' ><?php echo $auth->value?></div>
+					<div  class='table-cell-div' ><?php echo "Delete" ?></div>
+				</div>
+			<?php endforeach;?>
+			<!-- This div separates horizontally both two divisions -->
+			</div>
+			<?php endif;?>
+
+
+
+
+
+
+	<!-- The following section displays the content of profile table -->
+	<?php if ($this->user['profile']): ?>
+	<div class='h-separator'><strong>Profile details</strong></div>
+	<div class='table-div' id='profile-details-table'>
+	<!-- the header of the table  -->
+	<div class='table-header-div' id=''>
+		<div  class='table-cell-div' >
+			<?php
+			echo $this->sortLink("#",
+				array ( 'title'=>"Profile Key", 'field' => 'name', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+		<div  class='table-cell-div' >
+			<?php
+				echo $this->sortLink("#",
+				array ( 'title'=>"Profile Type", 'field' => 'email', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+		<div  class='table-cell-div  x-large-cell' >
+			<?php
+				echo $this->sortLink("#",
+				array ( 'title'=>"Profile Value", 'field' => 'category', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+		<div  class='table-cell-div' >
+			<?php
+				echo $this->sortLink("#",
+				array ( 'title'=>"Action", 'field' => 'banned', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+	</div>
+	<?php foreach ( $this->user['profile'] as $k => $profile ): ?>
+				<div class='table-row-div' >
+					<div class='table-cell-div' ><?php echo $profile['profile_key']?><?php $obj = unserialize( $profile['profile_value']  )?></div>
+					<div class='table-cell-div' ><?php echo $obj->type; ?></div>
+					<div class='table-cell-div x-large-cell' ><?php echo $obj->cardnumber; ?></div>
+					<div class='table-cell-div' ><?php echo "Delete"; ?></div>
+				</div>
+	<?php endforeach; ?>
+	</div>
+	<?php endif; ?>
+
+
+	<?php if ($this->user['address']):?>
+	<!-- This div separates horizontally both two divisions -->
+	<div class='h-separator'>Address</div>
+	<div class='table-div' id='profile-details-table'>
+	<?php
+			foreach ( $this->user['address'] as $k => $address ):
+			if ( !( unserialize($address['address_value']) instanceof Models_Address ) ):
+				echo "<div class='table-row-div' >";
+					echo "<div class='table-cell-div' >$address[address_key]</div>";
+					echo "<div class='table-cell-div' >$address[address_type]</div>";
+					echo "<div class='table-cell-div' >$address[address_value]</div>";
+				echo "</div>";
+			endif;
+			?>
+	<?php endforeach;?>
+	</div>
+	<?php endif;?>
+
+
+
+	<?php if ( $this->user['address_shopping']): ?>
+	<!-- This div separates horizontally both two divisions -->
+	<div class='h-separator'>Addresses</div>
+	<div class='table-div' id=''>
+		<?php
+				foreach ( $this->user['address_shopping'] as $k => $address ):
+					echo "<div class='table-row-div' >";
+					echo "<a href ='".$this->url(
+									array ( 'module' => 'customer',
+									   'controller' => 'address',
+									   'action' => 'address',
+										'id' => $address['id'])
+									)."'>$address[address_type]  - $address[address_key]</a>";
+						$addr = unserialize( $address['address_value'] );//address_shopping
+						echo "<div class='table-row-div' >";
+							echo "<div class='address'>";
+									echo $addr->name.'<br/>';
+									echo $addr->street.'<br/>';
+									echo $addr->city." ".$addr->prs." ".$addr->postal.'<br/>';//
+									echo $addr->country.'<br/>';
+									echo  $addr->telephone.'<br/>';
+							echo "</div>";
+						echo "</div>";
+					echo "</div><br/>";
+				endforeach;?>
+	</div>
+	<?php endif;?>
+
+
+
+	<?php if ($this->orders): ?>
+	<div class='h-separator'><strong>Orders</strong></div>
+	<div  id='admin-user-profile-orders-table' class='table-div'>
+	<!-- the header of the table -->
+	<div class='table-header-div' >
+		<div  class='table-cell-div' >
+			<?php
+			echo $this->sortLink($this->baseUrl,
+				array ( 'title'=>"ID", 'field' => 'name', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+		<div  class='table-cell-div' >
+			<?php
+				echo $this->sortLink($this->baseUrl,
+				array ( 'title'=>"Status", 'field' => 'category', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+		<div  class='table-cell-div small-cell' >
+			<?php
+				echo $this->sortLink($this->baseUrl,
+				array ( 'title'=>"Shipping", 'field' => 'banned', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+		<div  class='table-cell-div' >
+			<?php
+				echo $this->sortLink($this->baseUrl,
+				array ( 'title'=>"Started", 'field' => 'active', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+		<div  class='table-cell-div' >
+			<?php
+				echo $this->sortLink($this->baseUrl,
+				array ( 'title'=>"Stopped", 'field' => 'modified', 'limit' => $this->limit, 'order' => $this->order ));
+			?>
+		</div>
+	</div>
+		<?php foreach ( $this->orders as $k => $order ):?>
+		<div class='table-row-div' >
+			<div class='table-cell-div' >
+				<a href ='<?php echo $this->url(
+											array ( 'module' => $this->mdl,
+											   'controller' => 'order',
+											   'action' => 'view',
+												'id' => $order['id'])
+											)?>'>
+						<?php echo $order['id']?>
+				</a>
+			</div>
+			<div class='table-cell-div' ><?php echo $order['status']?></div>
+			<div class='table-cell-div small-cell' >
+				<?php
+                    	if ( ( $shipping = @unserialize($order['shipping_service'])) && is_object ( $shipping ) ):
+                    		echo strtoupper($shipping->service);
+                    	elseif (is_string($order['shipping_service']) ) :
+                    		echo $order['shipping_service'];
+                    	endif;
+                 ?>
+				<?php //echo $order['shipping_service']; ?>
+			</div>
+			<div class='table-cell-div' ><?php echo date( 'Y-m-d', strtotime($order['starts']) )?></div>
+			<div class='table-cell-div' ><?php echo date( 'Y-m-d', strtotime($order['stops']) )?></div>
+		</div>
+		<?php endforeach;?>
+	</div>
+	<!-- -Sorting on this page should be better with ajax. we have many sections on the same page. -->
+	<?php endif;?>
+	<!-- end of orders table -->
+</div>
+</div>
+</div>

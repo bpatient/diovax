@@ -1,0 +1,57 @@
+<?php echo $this->doctype();?>
+<html>
+<head>
+<base href="<?php echo BASE_URL;?>"/>
+<?php echo $this->headMeta();?>
+<?php echo $this->headTitle();?>
+<?php echo $this->headLink();?>
+<link rel="stylesheet" media="screen" href="/css/superfish-navbar.css" /> 
+<!-- followin files are needed to make YUI editor work -->
+<!-- Skin CSS file -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.2r1/build/assets/skins/sam/skin.css">
+<!-- no such links in views, except it extremely needed -->
+</head>
+<body class="yui-skin-sam admin">
+<!-- container is bluepring specific -->
+<div class='container'  id="container">
+<!-- blueprint specific-->
+<!-- start header -->
+<div id="header" class="header span-24 last">
+    <div id="logo" class='logo span-24 last'>
+        <a href='/app/index/index'><?php echo $this->logo('<h1>rentable</h1>', array( 'class' => 'widget-logo-index-top span-4'));?></a>
+    </div>
+	<div id="menu" class="menu span-21">
+            <?php if($this->menu):?>
+                <?php echo $this->menu; ?>
+            <?php endif;?>
+        </div>
+        <?php echo " ".$this->welcome('', array('welcome_class' => 'span-2 last', 'cart' => $this->memo)); ?>
+	
+</div>
+<!-- end header -->
+<div id="wrapper"  class='wrapper span-24 last'>
+		<!-- start content -->
+			<div id="content" class='content'>
+				<?php echo $this->layout()->content; ?>		
+			</div>	
+		<!-- end content -->
+</div>
+<!-- footer -->
+<div id="footer" class="footer span-24 last"><?php echo $this->render('_footer.phtml'); ?></div>
+<!-- end of footer -->	
+<!-- End of the container -->
+</div>
+<!--<div class='debug' id='debug'>Hey</div>
+<script>var elts = document.getElementsByTagName('*').length;document.getElementById('debug').innerHTML = ' Number of elements on this page <strong>'+elts+' </strong>';</script>-->
+<!-- Utility Dependencies -->
+<?php echo $this->headScript();?>
+<script src="http://yui.yahooapis.com/2.8.2r1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
+<script src="http://yui.yahooapis.com/2.8.2r1/build/element/element-min.js"></script> 
+<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
+<script src="http://yui.yahooapis.com/2.8.2r1/build/container/container_core-min.js"></script>
+<script src="http://yui.yahooapis.com/2.8.2r1/build/menu/menu-min.js"></script>
+<script src="http://yui.yahooapis.com/2.8.2r1/build/button/button-min.js"></script>
+<!-- Source file for Rich Text Editor-->
+<script src="http://yui.yahooapis.com/2.8.2r1/build/editor/editor-min.js"></script>
+</body>
+</html>

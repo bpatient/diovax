@@ -1,0 +1,59 @@
+<div id='' class="" >	
+	<?php echo $this->title($this->title); ?>
+	
+	
+<!-- The controls section -->	
+	<div class='wrapper-content-left-column span-4'>
+	   	<div class='add-link link'><a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'payment', 'action' => 'edit', 'id' => 0 ) )?>'>Add</a></div>
+	   	<div class='add-link link'><a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'payment', 'action' => 'index', 'id' => 0 ) )?>'>Back</a></div>  
+   	</div>
+<!--  End of controls section -->	
+<div class='wrapper-content-right-column span-19 last'>
+<div  class='table-div ' id='payment-methods-index' style=''>	
+	<!-- the header of the table  -->
+	<div class='table-header-div' >
+		<div  class='table-cell-div small-cell' >
+			<?php echo $this->sortLink($this->baseUrl,	array ( 'title'=>"Provider", 'field' => 'name', 'limit' => $this->limit, 'order' => $this->order ));?>
+		</div>
+		<div  class='table-cell-div  large-cell' >
+			<?php echo $this->sortLink($this->baseUrl, array ( 'title'=>"Description", 'field' => 'note', 'limit' => $this->limit, 'order' => $this->order ));?>
+		</div>
+		<div  class='table-cell-div' >
+			<?php echo $this->sortLink($this->baseUrl,array ( 'title'=>"Enabled", 'field' => 'modified', 'limit' => $this->limit, 'order' => $this->order ));?>
+		</div>
+		<div  class='table-cell-div small-cell' >
+			<?php echo $this->sortLink($this->baseUrl, array ( 'title'=>"Last Modification", 'field' => 'modified', 'limit' => $this->limit, 'order' => $this->order ));?>
+		</div>
+		<div  class='table-cell-div small-cell' ><?php echo "Action";?></div>
+	</div>
+	<!-- end of table header div-->
+	<!-- table body -->
+		<?php foreach($this->items as $k => $entry): ?>
+		<?php if(!isset($odd) ) $odd = 0; ?>    
+		<div class='table-row-div <?php echo ( (++$odd & 1)? 'odd':'even')?>' id='' style=''>
+	        <div  class='table-cell-div small-cell' ><?php echo '<a href=\''.$this->url(array('action'=>'index','id'=>$entry['id'])).'\'>'.$entry['service'].'</a>'; ?></div>
+			<div  class='table-cell-div large-cell' ><?php echo $this->strObj->cutText($entry['note'], array( 'words' => 8) ); ?></div>
+	        <div  class='table-cell-div' ><?php echo $this->ajaxCheckable( array( 'status' => ( $entry['allowed'] == 1), 'name' => 'payment', 'class' => 'checkbox-payment', 'id' => 'checkbox_payment-'.$entry['id']) ); ?></div>
+	        <div  class='table-cell-div small-cell' ><?php echo $entry['modified']; ?></div>
+	        <div  class='table-cell-div small-cell' >
+				<?php echo '<a href=\''.$this->url(array('action'=>'edit','id'=>$entry['id'])).'\'>Edit</a>';?>
+				<?php echo '<a href=\''.$this->url(array('action'=>'delete','id'=>$entry['id'])).'\'>Delete</a>';?>
+			</div>
+	    </div>
+		<?php endforeach;?>	
+	<!-- ennd of table body -->	
+		<!--  the footer of the table + paging division -->
+		<div class='table-footer-div' >
+			<div  class='table-paging-div' >
+				<?php 
+					$links = '';
+					if ( $this->show_paged_links )
+						$links = implode ( $this->paged_links, " | ");	
+					echo ( $links )?' Pages '.$links : ''; 	
+				?>	
+			</div>
+		</div>
+		<!-- end table footer navigation -->
+	</div>
+</div>	
+</div>

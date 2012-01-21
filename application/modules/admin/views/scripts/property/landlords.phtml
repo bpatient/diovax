@@ -1,0 +1,46 @@
+<?php echo $this->title($this->title); ?>
+<?php echo $this->message( $this->message , array( 'class' => $this->_class ) );?>
+<div id='' class='span-24 last' >    
+    <div class="wrapper-content-left-column span-4">
+      <?php echo $this->render('property/_menu.phtml');?>
+    </div>    
+    <div class="wrapper-content-right-column span-20 last">
+    <?php $this->data = (object)$this->data;?>
+    <?php
+        if( is_array( $this->data->media ) ){
+            $_media = is_array( $this->data->media[0] ) ? $this->data->media[0] : $this->data->media;
+            $_media = ( object ) $_media;
+        }
+        $_im = is_object ( $_media ) ? '/assets/img/t/'.$_media->media_value : '/assets/img/gallery.png';
+        echo $this->property( $this->data->property , array( 'long' => true, 'image' => $_im ));
+        ?>
+    <form accept-charset="utf-8">
+    <!-- the header of the table  -->
+	<?/**to get landlord who are registered to this this thing we will send an extra parameter*/?>
+        <?php $this->data = ( object )$this->data;?> 
+        <?php foreach($this->page_data as $k => $_ob ): ?>
+                <?php $_o = (object) $_ob['landlord']; ?>
+		<?php
+                    $_options = array();
+                    $_options['class'] = 'ajax-checkable';
+                    $_options['value'] = $this->property_id;
+                    $_options['id'] = $_o->id;
+                    $_options['data'] = "{url:/admin/property/jxlandlord/?ajx=true, property: ".$this->property->id."}";
+                    $_options['class'] = 'ajax-checkable';
+                    $_options['status'] =  ($_ob['owner'] && $_ob['owner'] != false) ? true : false;
+                ?>
+                <?php $_checkbox = $this->ajaxCheckable( $_options );?>
+                <?php echo $this->landlord( $_o , array( 'class' => 'span-18 last',  'checkbox' => $_checkbox ) ); ?>
+    <?php endforeach;?>
+    <!--  the footer of the table + paging division -->
+    <div  class='table-paging-div' >
+        <?php   $links = '';
+                if ( $this->show_paged_links )
+                        $links = implode ( $this->paged_links, " | ");
+                echo ( $links )?' Pages '.$links : '';
+        ?>
+    </div>
+<!-- end of the table  -->
+</form>
+</div>
+</div>

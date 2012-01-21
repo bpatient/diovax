@@ -1,0 +1,16 @@
+<div class="span-24 last">
+   <div class="wrapper-content-left-column span-4">
+   	<?php  echo $this->render('lease/_menu.phtml'); ?>
+   </div> 
+   <div class="wrapper-content-left-column span-20 last"> 
+	   	<?php if ($this->product):?>
+			<?php echo $this->property( $this->property, array( 'long'=> true,'class' => 'span-18 last') ); ?>
+		<?php endif;?>
+		<?php if ( is_array( $this->data ) ):?>
+			<?php foreach( $this->data as $k => $_o ):?>
+				<?php echo $this->property( $this->property, array( 'long'=> true, 'class' => 'span-18 last') ); ?> 
+			<?php endforeach;?>
+		<?php endif;?>
+	</div>
+</div>
+</div> 

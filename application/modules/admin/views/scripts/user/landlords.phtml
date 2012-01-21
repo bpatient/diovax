@@ -1,0 +1,56 @@
+<div id="" style="margin: auto 0;">	
+<?php echo $this->title($this->title); ?>
+
+<div class="wrapper-content-left-column span-4">
+  <?php echo $this->render('user/_menu.phtml');?>
+</div> 
+
+
+<div class="wrapper-content-right-column span-20 last">
+    <?php echo $this->message( $this->message ); ?>
+    <?php
+    $odd = 0;
+    foreach( $this->items as $k => $_o ):
+        $alt = ( (++$odd)&1 )? "even" : "odd";
+        $_o = (object)$_o;
+
+        $options= array () ;
+        $options['status'] = ( $_o->banned ) ?  true : false ;//
+        $options['name'] = $options['class'] = 'banned';//
+        $options['id'] = 'banned-'.$_o->id;//
+        $options['url'] = '/admin/user/ajax';//
+        $_bn = $this->ajaxCheckable($options);
+
+        $options= array () ;
+        $options['status'] = ( $_o->active ) ? true : false ;//
+        $options['name'] = $options['class'] = 'active';//
+        $options['id'] = 'active-'.$_o->id;//
+        $options['url'] = '/admin/user/ajax';//
+        $_act = $this->ajaxCheckable($options);
+
+        $_im = '/assets/gallery.png';
+        $_edit = $this->edit(
+           array(
+                'edit' => "/admin/user/edit/".$_o->id,
+                'view' => "/admin/user/view/".$_o->id,
+                'profile' => "/admin/user/profile/".$_o->id,
+                'address' => "/admin/user/addresses/".$_o->id,
+                'leases' => "/admin/user/leases/".$_o->id,
+                'booking' => "/admin/user/booking/".$_o->id,
+                'upload' => "/admin/user/upload/".$_o->id,
+                'delete' => "/admin/user/delete/".$_o->id
+            )
+        );
+        echo $this->user( $_o , array( 'class' => ''.$alt.' span-19 last', 'strip' => true, 'site' => '', 'location' => '', 'image' => $_im, 'long' => true, 'editing' => $_edit, 'link' => '/admin/', 'active' => $_act, 'banned' => $_bn ) );/***/
+    endforeach;
+    ?>
+</div>
+<div  class='table-paging-div' >
+<?php
+    $links = '';
+    if ( $this->show_paged_links )
+            $links = implode ( $this->paged_links, " | ");
+    echo ( $links )?' Pages '.$links : '';
+?>
+</div>
+</div>

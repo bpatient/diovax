@@ -1,0 +1,36 @@
+<div class="wrapper-content-left-column span-4">
+  <?php echo $this->render('property/_menu.phtml');?>
+</div>
+<div class='span-24 last'>    
+<div class="wrapper-content-right-column span-24 last">
+    <?php echo $this->message( $this->message ); ?>
+    <?php
+    $odd = 0; 
+    foreach( $this->data as $k => $_dt ):
+        $alt = ( (++$odd)&1 )? "even" : "odd";
+        $_dt = (object)$_dt; $_o = $_dt->property;
+        $_edit = $this->edit( 
+			array(
+                'edit' => "/admin/property/edit/".$_o->id, 
+                'features' 	=> "/admin/property/features/?property=".$_o->id,
+                'preview' 	=> "/admin/property/property/".$_o->id,
+                'landlords' => "/admin/property/landlords/?property=".$_o->id,
+                'locations' => "/admin/property/locations/?property=".$_o->id,
+                'reservations' => "/admin/property/booking/?property=".$_o->id,
+                'upload' => "/admin/property/upload/".$_o->id."/?token=".$_o->token,
+                'tasks'  => "/admin/task/property/".$_o->id."/?property=".$_o->id."&token=".$_o->token,
+                'lease'  => "/admin/lease/property/".$_o->id."/?property=".$_o->id."&token=".$_o->token,
+                'delete' => "/admin/property/delete/".$_o->id ) 
+		, array( 'span' => true )  );
+        /**first image in the array*/
+        if( is_array( $_dt->media ) ){
+            $_dt->media = ( isset( $_dt->media[0] ) && is_array( $_dt->media[0] ) ) ? $_dt->media[0] : $_dt->media ;
+            $_dt->media = ( object ) $_dt->media;
+        }
+        $_im = ( is_object( $_dt->media ) && isset( $_dt->media->media_value ) )? '/assets/img/t/'.$_dt->media->media_value : '/assets/gallery.png';
+        if( is_array( $_im ) ) $_im = $_im[0]['media_value'];/**getting the first image*/
+        echo $this->property( $_o , array( 'class' => ''.$alt.' span-24 last', 'strip' => true, 'site' => '', 'location' => '', 'image' => $_im, 'long' => true, 'editing' => $_edit ) );/***/
+    endforeach;
+    ?>
+</div>
+</div>

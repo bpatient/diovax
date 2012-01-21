@@ -1,0 +1,24 @@
+<div id='' class='span-24 last' >
+    <div class="wrapper-content-left-column span-4">
+      <?php echo $this->render('property/_menu.phtml');?>
+    </div>
+<div class="wrapper-content-right-column span-20 last">
+	<?php echo $this->message( $this->message , array( 'class' => $this->_class ) );?>
+	<?php if( is_array($this->data) ): ?>
+    <?php foreach($this->data as $k => $_o ): ?>
+		<?php if( !isset($odd) ) { $odd = 0; } ?>
+		<?php echo $this->location ( $_o,  array( 'class' => ' span-18 last '.( (++$odd & 1) ? 'odd':'even' ) ) ); ?>
+  	<?php endforeach; ?>
+	<?php endif; ?>
+	<!--  the footer of the table + paging division -->
+		<div  class='table-paging-div' >
+				<?php
+					$links = '';
+					if ( $this->show_paged_links )
+						$links = implode ( $this->paged_links, " | ");
+					echo ( $links )?' Pages '.$links : '';
+				?>
+			</div>
+<!-- end of the table  -->
+</div>
+</div>

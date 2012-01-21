@@ -1,0 +1,10 @@
+<div id="" class="">
+    <h1><?php echo $this->lower_title;?></h1>
+</div>
+<div id="" class="register-form-div">
+  <?php
+	$_class = isset($this->error) && !empty($this->error)? $this->error : "error";
+        echo $this->message(  $this->message , array( "class" => $_class ) );
+    ?>
+    <?php echo $this->form;?>
+</div>

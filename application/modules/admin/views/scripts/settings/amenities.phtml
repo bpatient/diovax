@@ -1,0 +1,19 @@
+<div class="span-24 last">
+    <div id="" class='wrapper-content-left-column span-5'>
+            <?php echo $this->render('settings/_menu.phtml');?>
+    </div>
+    <div class="wrapper-content-right-column cms-form-div span-19 last" id="">
+            <?php echo $this->message( $this->message ); ?>
+
+        <?php
+            $odd = 0;
+            #looping throught amenities
+            foreach( $this->amenities as $k => $amenity ):
+                $amenity  = ( object )$amenity;
+                $_edit = $this->edit( array( "edit" => "/admin/settings/amenity/".$amenity->id, "delete" => "/admin/settings/delete/?object=amenity&id=".$amenity->id ) );
+                $_cls = ( (++$odd & 1) ? 'odd':'even' );
+                echo $this->amenity( $amenity , array( "class" => " table span-18 last ".$_cls , "edit" =>$_edit ) );
+            endforeach;
+        ?>
+     </div>
+</div>

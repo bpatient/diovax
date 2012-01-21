@@ -1,0 +1,35 @@
+<div class='span-24 last'>    
+<div class="wrapper-content-left-column span-4">
+   	<?php  echo $this->render('property/_menu.phtml'); ?>
+</div>
+<div class="wrapper-content-left-column  span-18 last">
+<?php $this->data = (object)$this->data;?>
+<?php
+    if( is_array( $this->data->media ) ){
+        $_media = is_array( $this->data->media[0] ) ? $this->data->media[0] : $this->data->media;
+        $_media = ( object ) $_media;
+    }
+    $_im = is_object ( $_media ) ? '/assets/img/t/'.$_media->media_value : '/assets/img/gallery.png';
+    echo $this->property( $this->data->property , array( 'long' => true, 'image' => $_im ));
+?>
+
+
+
+<?php
+   $odd = 0;
+   foreach ( $this->data->details as $k => $detail ):
+            $alt = ( (++$odd)&1 )? "even" : "odd";
+            $_o = ( object )$detail;
+             $_edit = $this->edit( array (
+                'edit' => "/admin/property/features/".$_o->id."/?property=".$_o->property_id,
+                'preview' => "/admin/property/property/".$_o->property_id,
+                'delete' => "/admin/property/features/".$_o->id."/?property=".$_o->property_id."&act=dlt") );
+            echo $this->feature( $detail, array( 'editing' => $_edit , 'class' => "span-18 last long $alt"  ) );
+
+  endforeach;?>
+<div class="wrapper-content-left-column  span-18 last">
+    <?php echo $this->message ? $this->message : '';?>
+    <?php echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>"; ?>
+</div>
+</div>
+</div>

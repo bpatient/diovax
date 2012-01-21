@@ -1,0 +1,10 @@
+<div id="form" class="auth-form-sign-up-issues-div auth">
+	<div id="form" class="form auth">
+	<?php echo $this->lower_title;?>
+	<?php
+            $_class = isset($this->error) && !empty($this->error)? $this->error : "error";
+            echo  $this->message(  $this->message , array( "class" => $_class ) );
+        ?>
+	<?php echo $this->form;?>
+	</div>
+</div>

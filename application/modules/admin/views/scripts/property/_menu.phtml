@@ -1,0 +1,13 @@
+<?php /**this file will contain menu used with property controller**/?>   
+<div class='link'><?php echo '<a href=\'/admin/property/edit/\'>Add</a>';?></div>
+<?php if(is_object($this->property) && $this->property->id > 0 ): ?>
+	<div class='link'><?php echo '<a href=\'/admin/property/view/'.$this->property->id.'\'>View</a>'; ?></div>
+	<div class='link'><?php echo '<a href=\'/admin/property/detail/'.$this->property->id.'\'>Features</a>';?></div>
+	<div class='link'><?php echo '<a href=\'/admin/property/booking/?property='.$this->property->id.'\'>Booking</a>';?></div>
+        <div class='link'><?php echo '<a href=\'/admin/property/leases/?property='.$this->property->id.'\'>Leases</a>';?></div>
+        <div class='link'><?php echo '<a href=\'/admin/property/landlords/?property='.$this->property->id.'\'>Landlords</a>';?></div>
+        <div class='link'><?php echo '<a href=\'/admin/property/locations/?property='.$this->property->id.'\'>Locations</a>';?></div>
+        <div class='link'><?php echo '<a href=\'/admin/property/photos/?property='.$this->property->id.'\'>Photos</a>';?></div>
+<?php endif;?>
+<div class='link'><?php echo '<a href=\'/admin/location/edit/\'>Add Location</a>';?></div>
+<div class='link'><?php echo '<a href=\'/admin/property/index/\'>Back</a>';?></div>

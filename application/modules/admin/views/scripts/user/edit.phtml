@@ -1,0 +1,18 @@
+<div id="" class="">
+   	<?php echo $this->title($this->title); ?>
+   	<?php echo $this->message( $this->message );	?>
+    <div class="cms-form-div" id="">
+	   	<?php echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>";?>   
+    </div>	
+	<?php if ( $this->user_id > 0 ): ?>
+	<a href='<?php echo $this->url( 
+		array( 
+			'module' => $this->mdl,
+			'controller' => $this->ctlr, 
+			'action' => 'profile', 
+			'id' => $this->user_id ) 
+		)?>' >
+	Profile </a>
+	<?php endif; ?>
+	 
+</div>

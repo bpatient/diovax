@@ -1,0 +1,19 @@
+<div id="" class="">
+<?php echo $this->title($this->title); ?>
+<?php 
+    if ( $this->product_details ):
+            foreach ( $this->product_details as $k => $detail ):
+?>
+<div class='product-detail'>
+<?php 	echo '<span class=\'product-detail-title\'><b>'.$detail->detail_key.' : </b></span>'; 
+        echo $detail->detail_value;
+?> 		
+</div>
+<?php 			
+  		endforeach;
+ 	endif; 
+?>
+<br clear='all'/>
+<br clear='all'/>
+<?php echo '<a href=\''.$this->url(array('module' => $this->mdl,'controller' => 'product','action' => 'view','id' => $this->id )).'\'>Product</a>'; ?>
+</div>

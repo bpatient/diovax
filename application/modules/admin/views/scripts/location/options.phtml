@@ -1,0 +1,18 @@
+<div>	
+<?php echo $this->title($this->title); ?>
+<div class="wrapper-content-right-column span-4">
+	<div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'attribute', 'action' => 'options', 'id' => $this->id ))."'>Add</a>";?></div>
+	<?php if( is_string($this->id) && strlen( $this->id ) >=3 ) :?>
+			<div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'attribute', 'action' => 'view', 'id' => $this->id ))."'>View</a>";?></div>
+	<?php endif;?>
+	<div class='link'><?php echo "<a href='".$this->url(array('module' => $this->mdl, 'controller' => 'attribute', 'action' => 'index', 'id' => "" ))."'>Back</a>";?></div>
+</div>
+<div class="wrapper-content-left-column span-19 last">
+   	<?php if($this->content)  echo $this->content; ?>
+   	<div class='h-separator' > <strong>Add Option </strong></div>
+	<div class="cms-form-div" id="">	
+		<?php echo $this->message( $this->message );	?>
+   		<?php if($this->form) echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>"; ?>	
+	</div>
+ </div>
+</div>

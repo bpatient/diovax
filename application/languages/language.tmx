@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tmx version="1.4" xmlns="http://www.lisa.org/tmx14">
+<header creationtool="eclipse"	creationtoolversion="1.0" datatype="winres" segtype="sentence"	adminlang="en-us"	srclang="en-us"	o-tmf="txt">
+</header>
+<body>
+
+
+<!--front end translation section --> 
+<!--Form  translations-->
+<tu tuid="confirm_password">
+	<tuv xml:lang="en"><seg>Confirm password</seg></tuv>
+	<tuv xml:lang="fr"><seg>Confirmer</seg></tuv>
+</tu>
+<tu tuid="full_name">
+	<tuv xml:lang="en"><seg>Full name</seg></tuv>
+	<tuv xml:lang="fr"><seg>Nom</seg></tuv>
+</tu>
+<tu tuid="signup">
+	<tuv xml:lang="en"><seg>Sign up</seg></tuv>
+	<tuv xml:lang="fr"><seg>Inscription</seg></tuv>
+</tu>
+<tu tuid="signin">
+	<tuv xml:lang="en"><seg>Sign in</seg></tuv>
+	<tuv xml:lang="fr"><seg>Connection</seg></tuv>
+</tu>
+<!--form-->
+
+<tu tuid="front_search">
+	<tuv xml:lang="en"><seg>Search</seg></tuv>
+	<tuv xml:lang="fr"><seg>Recherche</seg></tuv>
+</tu>
+
+<tu tuid="front_rating_message_login">
+	<tuv xml:lang="en"><seg>You should log in before rating this Item</seg></tuv>
+	<tuv xml:lang="fr"><seg>Vous devez vous connecter avant d'évaluer cet article</seg></tuv>
+</tu>
+<tu tuid="front_cart_empty">
+	<tuv xml:lang="en"><seg>Your cart is empty, start shopping by clicking this link</seg></tuv>
+	<tuv xml:lang="fr"><seg>Votre panier est vide, clicker le lien suivant pour commencer vos achats</seg></tuv>
+</tu>
+
+        <tu tuid="front_navigation_home">
+            <tuv xml:lang="en"><seg>Home</seg></tuv>
+            <tuv xml:lang="fr"><seg>Accueil</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_profile">
+            <tuv xml:lang="en"><seg>Profile</seg></tuv>
+            <tuv xml:lang="fr"><seg>Profil</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_orders">
+            <tuv xml:lang="en"><seg>Orders</seg></tuv>
+            <tuv xml:lang="fr"><seg>Commandes</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_shopping">
+            <tuv xml:lang="en"><seg>Shopping</seg></tuv>
+            <tuv xml:lang="fr"><seg>Achats</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_store">
+            <tuv xml:lang="en"><seg>Store</seg></tuv>
+            <tuv xml:lang="fr"><seg>Boutique</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_cart">
+            <tuv xml:lang="en"><seg>Cart</seg></tuv>
+            <tuv xml:lang="fr"><seg>Panier</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_register">
+            <tuv xml:lang="en"><seg>Sign up</seg></tuv>
+            <tuv xml:lang="fr"><seg>S'inscrire</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_about">
+            <tuv xml:lang="en"><seg>About</seg></tuv>
+            <tuv xml:lang="fr"><seg>A propos</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_contact">
+            <tuv xml:lang="en"><seg>Contact-us</seg></tuv>
+            <tuv xml:lang="fr"><seg>Nous Contacter</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_about">
+            <tuv xml:lang="en"><seg>About</seg></tuv>
+            <tuv xml:lang="fr"><seg>A propos</seg></tuv>
+        </tu>
+        <tu tuid="front_navigation_products">
+            <tuv xml:lang="en"><seg>Products</seg></tuv>
+            <tuv xml:lang="fr"><seg>Produits</seg></tuv>
+        </tu>
+        <tu tuid="front_in_cart">
+            <tuv xml:lang="en"><seg>Cart</seg></tuv>
+            <tuv xml:lang="fr"><seg>Panier</seg></tuv>
+        </tu>
+<!-- endFront menu -->
+<tu tuid="sign_out">
+    <tuv xml:lang="en"><seg>Sign out</seg></tuv>
+    <tuv xml:lang="fr"><seg>Déconnexion</seg></tuv>
+</tu>
+<tu tuid="sign_up">
+    <tuv xml:lang="en"><seg>Sign up</seg></tuv>
+    <tuv xml:lang="fr"><seg>Enregistrer</seg></tuv>
+</tu>
+<tu tuid="sign_in">
+    <tuv xml:lang="en"><seg>Sign in</seg></tuv>
+    <tuv xml:lang="fr"><seg>Connexion</seg></tuv>
+</tu>
+
+<tu tuid="price">
+    <tuv xml:lang="en"><seg>Price</seg></tuv>
+    <tuv xml:lang="fr"><seg>Prix</seg></tuv>
+</tu>
+<tu tuid="photos">
+    <tuv xml:lang="en"><seg>Pictures</seg></tuv>
+    <tuv xml:lang="fr"><seg>Images</seg></tuv>
+</tu>
+<!-- end -->
+
+<!-- -->
+<tu tuid="Pyt">
+    <tuv xml:lang="en"><seg>Payment</seg></tuv>
+    <tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+<tu tuid="forgot">
+    <tuv xml:lang="en"><seg>forgot password</seg></tuv>
+    <tuv xml:lang="fr"><seg>mot de passe oublié</seg></tuv>
+</tu>
+<tu tuid="address">
+    <tuv xml:lang="en"><seg>address</seg></tuv>
+    <tuv xml:lang="fr"><seg>adresse</seg></tuv>
+</tu>
+<tu tuid="edit">
+    <tuv xml:lang="en"><seg>edit</seg></tuv>
+    <tuv xml:lang="fr"><seg>éditer</seg></tuv>
+</tu>
+<tu tuid="back">
+    <tuv xml:lang="en"><seg>back</seg></tuv>
+    <tuv xml:lang="fr"><seg>retourner</seg></tuv>
+</tu>
+<!--  -->
+
+<!-- cart -->
+<tu tuid="remove">
+    <tuv xml:lang="en"><seg>remove</seg></tuv>
+    <tuv xml:lang="fr"><seg>supprimer</seg></tuv>
+</tu>
+<tu tuid="update">
+    <tuv xml:lang="en"><seg>update</seg></tuv>
+    <tuv xml:lang="fr"><seg>mettre  jour</seg></tuv>
+</tu>
+<tu tuid="ckeckout">
+    <tuv xml:lang="en"><seg>checkout</seg></tuv>
+    <tuv xml:lang="fr"><seg>passer la commande</seg></tuv>
+</tu>
+<tu tuid="items">
+    <tuv xml:lang="en"><seg>items</seg></tuv>
+    <tuv xml:lang="fr"><seg>produits</seg></tuv>
+</tu>
+<tu tuid="description">
+    <tuv xml:lang="en"><seg>description</seg></tuv>
+    <tuv xml:lang="fr"><seg>description</seg></tuv>
+</tu>
+<tu tuid="quantity">
+    <tuv xml:lang="en"><seg>Quantity</seg></tuv>
+    <tuv xml:lang="fr"><seg>quantité</seg></tuv>
+</tu>
+<!-- login -->
+<tu tuid="email">
+    <tuv xml:lang="en"><seg>e-mail</seg></tuv>
+    <tuv xml:lang="fr"><seg>courriel</seg></tuv>
+</tu>
+<tu tuid="password">
+    <tuv xml:lang="en"><seg>Password</seg></tuv>
+    <tuv xml:lang="fr"><seg>Mot de passe</seg></tuv>
+</tu>
+
+<!--translation keys for login issue view helper -->
+<tu tuid="front_signup_link_label">
+    <tuv xml:lang="en"><seg>Create an account</seg></tuv>
+    <tuv xml:lang="fr"><seg>Créez un compte</seg></tuv>
+</tu>
+<tu tuid="front_forgot_link_label">
+    <tuv xml:lang="en"><seg>Forgot password</seg></tuv>
+    <tuv xml:lang="fr"><seg>Mot de passe oublié</seg></tuv>
+</tu>
+<tu tuid="front_login_issue_title">
+    <tuv xml:lang="en"><seg>Not yet a member?</seg></tuv>
+    <tuv xml:lang="fr"><seg>Vous n'avez pas de compte client?</seg></tuv>
+</tu>
+<tu tuid="front_register_link_title">
+    <tuv xml:lang="en"><seg>Login</seg></tuv>
+    <tuv xml:lang="fr"><seg>Ouvrir une session</seg></tuv>
+</tu>
+<tu tuid="front_forgot_link_title">
+    <tuv xml:lang="en"><seg>Login</seg></tuv>
+    <tuv xml:lang="fr"><seg>Ouvrir une session</seg></tuv>
+</tu>
+<tu tuid="front_forgot_content">
+    <tuv xml:lang="en"><seg>Login</seg></tuv>
+    <tuv xml:lang="fr"><seg>Ouvrir une session</seg></tuv>
+</tu>
+<tu tuid="front_signup_content">
+    <tuv xml:lang="en"><seg>Sign-up for free to be able to track your orders status, review your previous orders and much more.</seg></tuv>
+    <tuv xml:lang="fr"><seg>Créer un compte pour afficher le suivi de vos commandes, voir l'historique de vos achats et bien d'autres avantages.</seg></tuv>
+</tu>
+<!--end of login issue view helper translation keys -->
+
+
+
+
+
+
+<!-- CheckAdress -->
+<tu tuid="front_chkaddr_message">
+    <tuv xml:lang="en"><seg>Please select an address before continuing</seg></tuv>
+    <tuv xml:lang="fr"><seg>Veuillez choisir une adresse avant de continuer</seg></tuv>
+</tu>
+<tu tuid="front_Edit">
+    <tuv xml:lang="en"><seg>Edit</seg></tuv>
+    <tuv xml:lang="fr"><seg>Modifier</seg></tuv>
+</tu>
+<tu tuid="front_Delete">
+    <tuv xml:lang="en"><seg>Delete</seg></tuv>
+    <tuv xml:lang="fr"><seg>Supprimer</seg></tuv>
+</tu>
+<tu tuid="front_btn_select_address">
+    <tuv xml:lang="en"><seg>Use checked address for shipping</seg></tuv>
+    <tuv xml:lang="fr"><seg>Continer la commande</seg></tuv>
+</tu>
+<tu tuid="front_btn_add_new_address">
+    <tuv xml:lang="en"><seg>New address</seg></tuv>
+    <tuv xml:lang="fr"><seg>Nouvelle adresse</seg></tuv>
+</tu>
+
+<!--review order section-->
+<tu tuid="customer_order_description">
+    <tuv xml:lang="en"><seg>Description</seg></tuv>
+    <tuv xml:lang="fr"><seg>Description</seg></tuv>
+</tu>
+<tu tuid="customer_order_unit_price">
+    <tuv xml:lang="en"><seg>Unit Price</seg></tuv>
+    <tuv xml:lang="fr"><seg>Prix Unitaire</seg></tuv>
+</tu>
+<tu tuid="customer_order_quantity">
+    <tuv xml:lang="en"><seg>Quantity</seg></tuv>
+    <tuv xml:lang="fr"><seg>Quantité</seg></tuv>
+</tu>
+<tu tuid="customer_order_amount">
+    <tuv xml:lang="en"><seg>Amount</seg></tuv>
+    <tuv xml:lang="fr"><seg>Prix</seg></tuv>
+</tu>
+<!--end of review order section-->
+
+
+<!-- Ship -->
+<tu tuid="front_btn_cont_checkout">
+    <tuv xml:lang="en"><seg>Continue checkout</seg></tuv>
+    <tuv xml:lang="fr"><seg>Continuer la commande</seg></tuv>
+</tu>
+<tu tuid="front_ship_message">
+    <tuv xml:lang="en"><seg>Please select a shipping service</seg></tuv>
+    <tuv xml:lang="fr"><seg>Choisissez une adresse de livraison</seg></tuv>
+</tu>
+<!-- Summary -->
+<tu tuid="front_Summary">
+    <tuv xml:lang="en"><seg>Order overview</seg></tuv>
+    <tuv xml:lang="fr"><seg>Votre commande</seg></tuv>
+</tu>
+<!--Articles dans votre panier pour un achat immédiat-->
+<tu tuid="front_handling">
+    <tuv xml:lang="en"><seg>handling</seg></tuv>
+    <tuv xml:lang="fr"><seg>livraison</seg></tuv>
+</tu>
+<tu tuid="front_taxes">
+    <tuv xml:lang="en"><seg>Taxes</seg></tuv>
+    <tuv xml:lang="fr"><seg>Taxes</seg></tuv>
+</tu>
+<tu tuid="front_reductions">
+    <tuv xml:lang="en"><seg>Reductions</seg></tuv>
+    <tuv xml:lang="fr"><seg>Rabais</seg></tuv>
+</tu>
+<tu tuid="front_total">
+    <tuv xml:lang="en"><seg>Total</seg></tuv>
+    <tuv xml:lang="fr"><seg>Total</seg></tuv>
+</tu>
+<tu tuid="front_name_card">
+    <tuv xml:lang="en"><seg>Name on card</seg></tuv>
+    <tuv xml:lang="fr"><seg>Nom sur la carte</seg></tuv>
+</tu>
+<tu tuid="front_card_type">
+    <tuv xml:lang="en"><seg>Card type</seg></tuv>
+    <tuv xml:lang="fr"><seg>Type de la carte</seg></tuv>
+</tu>
+<tu tuid="front_card_number">
+    <tuv xml:lang="en"><seg>Card number</seg></tuv>
+    <tuv xml:lang="fr"><seg>Numéro de la carte</seg></tuv>
+</tu>
+<tu tuid="front_card_cvc">
+    <tuv xml:lang="en"><seg>Card verification code</seg></tuv>
+    <tuv xml:lang="fr"><seg>Code de vérification</seg></tuv>
+</tu>
+<tu tuid="front_card_expires">
+    <tuv xml:lang="en"><seg>Expires</seg></tuv>
+    <tuv xml:lang="fr"><seg>Date d'expiration</seg></tuv>
+</tu>
+<tu tuid="front_btn_checkout">
+    <tuv xml:lang="en"><seg>Check out</seg></tuv>
+    <tuv xml:lang="fr"><seg>Passer la commande</seg></tuv>
+</tu>
+
+<!-- Register -->
+<tu tuid="front_full_name">
+    <tuv xml:lang="en"><seg>Full name</seg></tuv>
+    <tuv xml:lang="fr"><seg>Nom complet</seg></tuv>
+</tu>
+<tu tuid="front_captcha">
+    <tuv xml:lang="en"><seg>Enter verification code</seg></tuv>
+    <tuv xml:lang="fr"><seg>Entrer le code de verification</seg></tuv>
+</tu>
+<tu tuid="front_confirm">
+    <tuv xml:lang="en"><seg>Verify</seg></tuv>
+    <tuv xml:lang="fr"><seg>Confirmation</seg></tuv>
+</tu>
+
+<!-- Forgot -->
+<tu tuid="front_forgot_btn">
+    <tuv xml:lang="en"><seg>Send to email</seg></tuv>
+    <tuv xml:lang="fr"><seg>Envoyer par courriel</seg></tuv>
+</tu>
+
+<!--end of front translation section -->
+
+<!--Admin translation section-->
+<tu tuid="admin_">
+	<tuv xml:lang="en"><seg></seg></tuv>
+	<tuv xml:lang="fr"><seg></seg></tuv>
+</tu>
+<tu tuid="admin_">
+	<tuv xml:lang="en"><seg></seg></tuv>
+	<tuv xml:lang="fr"><seg></seg></tuv>
+</tu>
+<tu tuid="admin_">
+	<tuv xml:lang="en"><seg></seg></tuv>
+	<tuv xml:lang="fr"><seg></seg></tuv>
+</tu>
+<tu tuid="admin_product_id">
+	<tuv xml:lang="en"><seg>Product id</seg></tuv>
+	<tuv xml:lang="fr"><seg>Id Produit</seg></tuv>
+</tu>
+<!--end of Admin translation section-->
+
+
+<!--view helper translations-->
+<tu tuid="system_view_helper_express_checkout_content">
+	<tuv xml:lang="en"><seg>The safer, easier way to pay</seg></tuv>
+	<tuv xml:lang="fr"><seg>Paiement par PayPal</seg></tuv>
+</tu>
+<!--end of view helper translations-->
+
+<!--system forms translation section-->
+<!--some translations didn't follow this approach-->
+<tu tuid="system_form_credit_card_years">
+	<tuv xml:lang="en"><seg>Year</seg></tuv>
+	<tuv xml:lang="fr"><seg>Année</seg></tuv>
+</tu>
+<tu tuid="system_form_credit_card_months">
+	<tuv xml:lang="en"><seg>Month</seg></tuv>
+	<tuv xml:lang="fr"><seg>Mois</seg></tuv>
+</tu>
+<!--end of system forms translation section-->
+
+
+
+
+<!--Customer translation section-->
+<tu tuid="system_powered_by">
+	<tuv xml:lang="en"><seg><![CDATA[Powered by mCart&trade;]]></seg></tuv>
+	<tuv xml:lang="fr"><seg><![CDATA[Propulsé par mCart&trade;]]></seg></tuv>
+</tu>
+
+<tu tuid="customer_checkout_riview_title">
+	<tuv xml:lang="en"><seg>Review</seg></tuv>
+	<tuv xml:lang="fr"><seg>Revue</seg></tuv>
+</tu>
+<tu tuid="customer_checkout_shipping_address_title">
+	<tuv xml:lang="en"><seg>Shipping Address</seg></tuv>
+	<tuv xml:lang="fr"><seg>Lieu de livraison</seg></tuv>
+</tu>
+<tu tuid="customer_checkout_shipping_method_title">
+	<tuv xml:lang="en"><seg>Shipping rates</seg></tuv>
+	<tuv xml:lang="fr"><seg>Prix de livraison</seg></tuv>
+</tu>
+<tu tuid="customer_checkout_checkout_title">
+	<tuv xml:lang="en"><seg>Checkout</seg></tuv>
+	<tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+
+
+<!--module translations-->
+<tu tuid="customer_checkout_checkout_title">
+  <tuv xml:lang="en"><seg>Checkout</seg></tuv>
+  <tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+<!--landlord translation-->
+<tu tuid="landlord_navigation_">
+  <tuv xml:lang="en"><seg>Checkout</seg></tuv>
+  <tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+
+<!--customer translation-->
+<tu tuid="customer_navigation_">
+  <tuv xml:lang="en"><seg>Checkout</seg></tuv>
+  <tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+
+<!--agent translation-->
+<tu tuid="agent_navigation_">
+  <tuv xml:lang="en"><seg>Checkout</seg></tuv>
+  <tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+
+<!--admin translation-->
+<tu tuid="admin_navigation_">
+  <tuv xml:lang="en"><seg>Checkout</seg></tuv>
+  <tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+
+
+
+
+<!-- 
+"Customers", 
+"Products",  
+"Orders",
+"Connected Users", 
+"Products appreciation",
+"Sales overview", 
+"Tax Table", 
+"Shipping Fees",  
+"System Performance"
+-->
+
+
+<!--
+    'submenu' => array(
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "authlog","action" => "index", 'id' => '')), "title" => "Cleanup"),
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "store","action" => "index", 'id' => '')), "title" => "Store settings"),
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "media","action" => "banners", 'id' => '')), "title" => "Banner Manager"),
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "media","action" => "banners", 'id' => '')), "title" => "Banner Manager"),
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "tax","action" => "countries", 'id' => '')), "title" => "Countries"),
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "shipping","action" => "index", 'id' => '')), "title" => "Shipping Methods"),
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "payment","action" => "index", 'id' => '')), "title" => "Payment Methods"),
+    array("url"=>$vh->url(array("module"=> 'admin',"controller"=> "tax","action" => "index", 'id' => '')), "title" => "Tax Table")
+)
+-->
+
+
+
+<!--guest translation-->
+<tu tuid="default_navigation_">
+  <tuv xml:lang="en"><seg>Checkout</seg></tuv>
+  <tuv xml:lang="fr"><seg>Paiement</seg></tuv>
+</tu>
+
+
+
+
+
+<tu tuid="footer">
+	<tuv xml:lang="en"><seg><![CDATA[&copy;&nbsp;&nbsp;2009 All Rights Reserved &nbsp;&bull;&nbsp; <a href='http://murindwaz.com/rentis'>Powered by Rentis&trade;</a>]]></seg></tuv>
+	<tuv xml:lang="fr"><seg><![CDATA[&copy;&nbsp;&nbsp;2009 Tous les Droits Reservés &nbsp;&bull;&nbsp; <a href='http://murindwaz.com/rentis'>Powered by Rentis&trade;</a>]]></seg></tuv>
+</tu>
+
+</body> 
+</tmx>
