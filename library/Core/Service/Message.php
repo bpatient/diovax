@@ -17,7 +17,6 @@ class Core_Service_Message extends Core_Service_Abstract{
 
 
 	private $mail;
-	private $cart;
 	private $subject;
 	private $options;
 	private $message;
@@ -151,7 +150,7 @@ class Core_Service_Message extends Core_Service_Abstract{
 	function forgot( $email, $options = array() ){
 		if( $options ) $this->options = $options;
 		if( $options['object'] ) $this->subject = $options['object'];
-		$this->message = $this->invoice_helper->invoice($cart, $options );
+		$this->message = "Forgotten";
 		return $this->_send();
 	}
 
@@ -171,13 +170,7 @@ class Core_Service_Message extends Core_Service_Abstract{
 
 
 
-	/***/
-	function reset( $cart, $options = array() ){
-		if( $options ) $this->options = $options;
-		if( $options['object'] ) $this->subject = $options['object'];
-		$this->message = $this->invoice_helper->invoice($cart, $options );
-		return $this->_send();
-	}
+	
 
 
 

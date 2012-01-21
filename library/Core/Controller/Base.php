@@ -90,6 +90,8 @@ class Core_Controller_Base extends Zend_Controller_Action{
 
 
 
+		
+		
 
 		//initialization
 		$this->_entities();
@@ -173,13 +175,13 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		$this->logger = Zend_Registry::get("logger");//logging events
 
 
-		/**if the user logs out, check session::cart and synchronize again */
+		
 		$this->client = new stdClass();
 		$this->client->ip = $this->getRequest()->getServer("REMOTE_ADDR");
 		if ( $this->getRequest()->getServer("HTTP_VIA") )$this->client->ip = $this->getRequest()->getServer("HTTP_X_FORWARDED_FOR");
 		$this->client->user_agent = $this->getRequest()->getServer("HTTP_USER_AGENT");
 		$this->client->proxy = $this->getRequest()->getServer("HTTP_VIA");
-		$this->client->location = $this->auth_service->ipToGeolocation( $this->client->ip );
+		$this->client->location = $this->client->ip;
 
 			
 		$options = array ();
@@ -195,21 +197,19 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		if ( !$this->session->initialized ){
 			Zend_Session::regenerateId();
 			$sessionid_cookie = $this->getRequest()->getCookie('sessionid');
-			if (  $sessionid_cookie ) $options['cookie'] = $sessionid_cookie;//this will help to initialize the previous cart to current operation
+			if (  $sessionid_cookie ) $options['cookie'] = $sessionid_cookie;
 			$this->session->sessionid = Zend_Session::getId();
 			$cookie  = new Zend_Http_Cookie('sessionid', $this->session->sessionid,	$this->config->system->app->base->url , time() + 7200, "/" );
 			$this->session->initialized = true;
 		}
-		if( !$this->session->memo){
-			$this->session->memo = new Core_Util_Cart();/**stores anything related to houses, booking and so on*/
-		}
+		
 
 
 
 
 		$this->view->header = $this->config->system->app->name;
 		$this->per_page = $this->config->system->backend->page->perpage;
-		$this->calendar = new Core_Util_Calendar();
+		
 
 
 

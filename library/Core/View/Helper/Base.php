@@ -1,15 +1,7 @@
 <?php
-/**
- * This helper will be used in all helper to help access translate
- * @todo make the cart in the session accessed from this helper. it will allow us to access the object from anywehre in the application
- */
+
 class Core_View_Helper_Base extends Zend_View_Helper_Abstract {
     protected  $translate;
-    /**
-     * allows to access the cart with minimal cost. there is no need to change things in layout files 
-     * @var unknown_type
-     */
-    protected $cart; /**this cart may be used to store houses the user chose to */
     protected $module, $controller, $request, $router;
 
 

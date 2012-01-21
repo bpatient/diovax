@@ -1,20 +1,16 @@
 <?php
 
 
-/**
- *
- * switch Rt_ naming to the App_ naming about library
- */
 class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 
 
-	//HTTP_UPLOADS_IMAGE_PATH
+
 	protected function _initAutoload(){
 
 
 
-		/**autoloading Rt_ library along Zend_ and Zendx_*/
+		
 		$autoloader = Zend_Loader_Autoloader::getInstance();
 		$autoloader->registerNamespace('Core_');
 		$moduleAutoloader = new Zend_Application_Module_Autoloader(
@@ -22,16 +18,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
                                 'namespace' => '',
                                 'basePath' => APPLICATION_PATH,
                                 'namespace' => 'Admin'
-		)
+			)
 		);
-		/***auto-loading resources*/
-		/**
-		 * @see http://framework.zend.com/manual/en/zend.loader.autoloader-resource.html
-		 */
+
 		$resourceLoader = new Zend_Loader_Autoloader_Resource(array( 'basePath'  => APPLICATION_PATH, 'namespace' => '' ) );
-		//adding resource types to auto-load
 		$resourceLoader->addResourceTypes( array( 'model' => array( 'path' => 'models', 'namespace' => 'Models')) );
-		//return the module auto-loader
 		return $moduleAutoloader;
 
 	}//
@@ -62,15 +53,11 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 
 
-	/***
-	 * It's better to load all view helpers in this ini method while refactoring or
-	* autoload/register these libraries
-	*/
+
 
 	protected function _initViewHelpers(){
 		$this->bootstrap('layout');
 		$layout = $this->getResource('layout');
-		//$view = $this->getResource('layout')->getView();
 		$view = Zend_Layout::getMvcInstance()->getView();
 		$view->addHelperPath('Core/View/Helper/','Core_View_Helper');
 
@@ -79,21 +66,20 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 
 
-	/**
-	 * Initialization of session variable
-	 * enables each page to have each page enhanced with session facility.
-	 * This function works on dev/deployment but leads to an output before initialization session bug.
-	 * comment session initialization when unit testing, and enable those after unit testing
-	 */
+
 	protected function _initSession(){
+		
+		
+		
 		Zend_Session::start();
-		Zend_Session::setOptions( array ('strict'=> true) ); //reducing overhead by enhancing the session functionality for only pages that needs a session /
+		//echo "<pre>".print_r( Zend_Controller_Front::getInstance() , 1 )."</pre>"; exit();
+		Zend_Session::setOptions( array ('strict'=> true) );
 	}
 
 
 
 
-	/**keeps modular structure of this application*/
+
 	protected function _initLayoutHelper(){
 		$this->bootstrap('frontController'); //instead of this, use the following
 		$layout = Zend_Controller_Action_HelperBroker::addHelper(
@@ -101,21 +87,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	}
 
 
-	/**
-	 *
-	 *
-	 * @todo load language configuration with Zend_Translation file instead of using system defined ones
-	 *
-	 *Initializing translation files
-	 *Translation needs a fix in terms of loading languages from the session,
-	 *using entirely configs/application.ini variables
-	 */
+
 	protected function _initTranslation(){
 		$config = Zend_Registry::get("config");
 		$language = $config->system->translate->language;/***/
-		/**initialization**/
 		if( $language && strlen($language) == 2 ) $language = $language;
-		else $language = 'en'; /*****/
+		else $language = 'en';
 		$translate = new Zend_Translate('tmx', APPLICATION_PATH.'/languages/language.tmx', $language );
 		Zend_Registry::set('language', $translate);
 	}
@@ -135,32 +112,20 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 
 		$front = Zend_Controller_Front::getInstance();
-		/***why not use this->bootstrap('layout')->getView()??? **/
 		$view = new Zend_View();
-		$view->doctype('XHTML1_STRICT');//initialization of the doctype
+		$view->doctype('XHTML1_STRICT');
 		$config =  Zend_Registry::get("config");
 		$view->setBasePath($config->system->app->base->url);
-		/**fetch the site title either from the database or from config file */
 		$view->headTitle($config->system->app->title);
 		$view->headMeta()->setName('keywords', 'php application')
 		->appendHttpEquiv('Cache-control', 'no-cache')
 		->appendHttpEquiv('Content-Type', 'text/html;charset=UTF-8')
 		->appendHttpEquiv('Expires', date( DATE_RFC822, mktime(0,0,0,date("m"),date("d"),date("Y")+10 )) )
 		->appendHttpEquiv('Accept-Encoding', 'gzip, deflate');
-		// keywords
-		/**
-		 * defer="defer"
-		 * http://www.websiteoptimization.com/speed/tweak/defer/
-		 * the defer key word tells the browser that the script is not creating dom element,
-		 * this improves performance rather than putting all content at the bottom
-		 */
+
 		$view->headMeta()->appendName('keywords', $config->system->keywords);
 		$view->headMeta()->appendName('description', $config->system->description);
-		/**
-		 * Getting JQuery copies from google
-		 */
 
-		// /js/jquery-ui-1.8.4.js
 
 		$view->headScript()->appendFile('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')->appendFile('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js');///js/jquery-ui-custom-combined-min.js
 		$view->headScript()->appendFile('/js/fancybox/jquery.fancybox-1.3.1.pack.js');
@@ -168,13 +133,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		->appendFile('/js/jquery.json-2.2.min.js')
 		->appendFile('/js/yui-min.js');
 
-		//gantt js file
+
 
 		$view->headLink()->appendStylesheet('/js/fancybox/jquery.fancybox-1.3.1.css');
 		$view->headLink()->appendStylesheet('/css/gantt.style.css')->appendStylesheet('/css/jquery.timepicker.css')->appendStylesheet("/css/dijit/themes/tundra/tundra.css");//->appendStylesheet("http://o.aolcdn.com/dojo/1.0.0/dojo/resources/dojo.css");
 		$view->headLink()->appendStylesheet("/css/main.css")->appendStylesheet("http://fonts.googleapis.com/css?family=Cuprum");
-		$view->env = APPLICATION_ENV; //this has been used in ErrorCotnroller to check in which environmenet
-		return $view; //check what happens here
+		$view->env = APPLICATION_ENV;
+		return $view;
 
 
 	}//
@@ -206,25 +171,22 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	protected function _initControllerPlugins(){
 		$front = Zend_Controller_Front::getInstance();
 		$auth = Zend_Auth::getInstance();//once initialized, it becomes available thought the application and might be changed at any stage
+		
+		
+		
 		$front->registerPlugin(new Core_Controller_Plugin_AclManager($auth));
 	}
 
 
 
-	/**
-	 * _initServices
-	 * this function starts application services objects and makes them available to the whole application
-	 * there will be no other need to initialize them in controllers
-	 * @return
-	 */
+
 	protected function _initServices(){
 
-
-		/**
-		 * @todo database service should be shut down.
-		 */
+		
 		Zend_Registry::set('database_service', new Core_Service_Database());
 		Zend_Registry::set('auth_service',new Core_Service_Auth() );
+		Zend_Registry::set('media_service',new Core_Service_Media() );
+		Zend_Registry::set('user_service', new Core_Service_User());
 		Zend_Registry::set('user_manager', new Core_Service_UserManager() );
 		Zend_Registry::set('message_service', new Core_Service_Message());
 		Zend_Registry::set('analytics_service', new Core_Service_Analytics());

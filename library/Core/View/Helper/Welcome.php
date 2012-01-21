@@ -6,7 +6,7 @@ class Core_View_Helper_Welcome extends Core_View_Helper_Base{
 
 
 
-	public function welcome( Core_Entity_User $user , $options = array('welcome_class' => '', 'cart' => null ) ){
+	public function welcome( Core_Entity_User $user , $options = array('welcome_class' => '' ) ){
 			//
 		
 		
@@ -62,26 +62,7 @@ class Core_View_Helper_Welcome extends Core_View_Helper_Base{
 			$_html .= "<li>
 						".( $this->identity != null && $this->identity->role && $this->identity->role != "guest" ?  "<a href='/".($this->identity->role)."/settings/account' title=''><img src='/assets/icons/topnav/profile.png' alt='' /><span>Profile</span></a>" : "" ). " 
 					  </li>";
-			/**there is ne need to add tasks as I have so many people who dont need tasks*/
-			/**
-			if( $this->auth->hasIdentity() ){
-				$_html .= "<li>
-							<a href='#' title=''><img src='/assets/icons/topnav/tasks.png' alt='' /><span>Tasks</span> </a>
-						</li>";
-			}
-			*/
-			/**enable this section when messages are enabled for this application*/
-			/**
-			if( $this->auth->hasIdentity() ){
-				$_html .= "<li class='dd'><img src='/assets/icons/topnav/messages.png' alt='' /><span>Messages</span><span class='numberTop'>#</span>
-					<ul class='menu_body'>
-						<li><a href='#' title=''>new message</a></li>
-						<li><a href='#' title=''>inbox</a></li>
-						<li><a href='#' title=''>outbox</a></li>
-						<li><a href='#' title=''>trash</a></li>
-					</ul></li>";
-			}	
-			*/	
+	
 				$_html .= "
 					<li>
 						".( $this->identity != null && $this->identity->role && $this->identity->role != "guest" ?  "<a href='/".($this->identity->role)."/settings/index' title=''><img src='/assets/icons/topnav/settings.png' alt='' /><span>Settings</span></a>" : "" ). " 
