@@ -227,14 +227,7 @@ public function agentsAction()
 		
 		$this->view->totals = array();/**/
 		$this->view->user = $this->user_service->getUserInfo(array('id'=>$id));
-		//$this->view->orders = $this->shop_service->getOrder(array ( 'user_id' => $id));
-		//$this->view->totals = 0.00;
-		//if ( $this->view->orders ) $this->view->totals = $this->tax_service->getOrderTotals($this->view->orders->toArray());
-		//print_r( $this->view->orders->toArray() );
-		//this function is live, and if there is any change in tax calculations, it wont reflect the same tax 
 		$this->view->auth = $this->auth_service->getAuth(array('user_id' => $id) );	
-		/**if a user has no authentication password, or openid | fb |, 
-		 * generate one for him and send it to him/her */
 		$this->view->hasAuth = (  (count($this->view->auth->toArray() )  > 0 )  );
 		$this->view->user_id = $id;//
 	}
@@ -246,21 +239,16 @@ public function agentsAction()
 			
 		if ( !( $id = $this->_getParam("id")) || !($id > 0) )
 			$this->_redirect('admin/user/index');//	
-		/*
-		 * it should be better to set active time so that we ask the user to change the 
-		 * password once he connects 
-		 * 
-		 */
+
+		
 		$this->view->form = new Core_Form_GenPassword();
 		$post = $this->getRequest()->getPost();		
 		if ( $this->getRequest()->isPost() ){
+			
 			if ( $this->view->form->isValid($post) ){
-				
 				$auth_id = 0;	
 				$verif_auth = $this->auth_service->getAuth(array( 'user_id'=> $id, 'service'=> 'system', 'key'=> 'password' ))->toArray();
 				$user = $this->user_service->getUsers(array( 'id'=> $id ) )->toArray();
-				
-				
 				$this->trace( $user[0]['email'] );
 				
 				if ( isset($verif_auth[0]['id']) && $verif_auth[0]['id']  > 0 ){
@@ -298,7 +286,6 @@ public function agentsAction()
 	 */
 	public function deleteAction(){
 		throw new Exception ( " UserControlle::deleteAction not Implemented ... ");
-		//$this->view->content = "Delete User";
 	}
 	
 

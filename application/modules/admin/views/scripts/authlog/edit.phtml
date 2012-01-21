@@ -1,24 +1,9 @@
-<?php 
+<?php
 
-	$id = $this->form->id->getValue();
+$id = $this->form->id->getValue();
 ?>
-<div id="" class="">
-<?php echo $this->title($this->title); ?>
- <div class="form-div" id="">
-   	<div class='h-separator'>
-	   	<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'category', 'action' => 'edit', 'id' => 0 ) )?>'>
-	   		Add 
-	   	</a> |
-	   	<?php if ($id > 0 ): ?>
-	   	<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'category', 'action' => 'view', 'id' => $id) )?>'>
-	   		View 
-	   	</a> |
-	   	<?php endif;?>
-	   	<a href ='<?php echo $this->url( array ( 'module' => $this->mdl, 'controller' => 'category', 'action' => 'index', 'id' => 0 ) )?>'>
-	   		Back
-	   	</a>  
-   	</div>
-	<?php echo $this->message( $this->message );	?>
-    <?php echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>";?>  
-   	</div>   
+<div class="form-div" id="">
+
+
+<?php echo "<div class='widget'><div class='head'><h5 class=''>...</h5></div>".( $this->form)."</div>";?>
 </div>

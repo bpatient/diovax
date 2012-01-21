@@ -12,8 +12,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	//HTTP_UPLOADS_IMAGE_PATH
 	protected function _initAutoload(){
 
-		
-		
+
+
 		/**autoloading Rt_ library along Zend_ and Zendx_*/
 		$autoloader = Zend_Loader_Autoloader::getInstance();
 		$autoloader->registerNamespace('Core_');
@@ -43,8 +43,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		$config = new Zend_Config_Ini(APPLICATION_PATH . '/configs/application.ini', APPLICATION_ENV);
 		Zend_Registry::set("config", $config);
 		define('BASE_URL', $config->system->app->base->url);
-		
-		
+
+
 	}
 
 
@@ -56,12 +56,12 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		$database = $db = $resource->getDbAdapter();
 		Zend_Registry::set( 'database', $database );
 		Zend_Registry::set( 'db', $db );
-		
-		
+
+
 	}
 
 
-	 
+
 	/***
 	 * It's better to load all view helpers in this ini method while refactoring or
 	* autoload/register these libraries
@@ -73,8 +73,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		//$view = $this->getResource('layout')->getView();
 		$view = Zend_Layout::getMvcInstance()->getView();
 		$view->addHelperPath('Core/View/Helper/','Core_View_Helper');
-	
-		
+
+
 	}
 
 
@@ -159,31 +159,31 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		/**
 		 * Getting JQuery copies from google
 		 */
-		
+
 		// /js/jquery-ui-1.8.4.js
-		
+
 		$view->headScript()->appendFile('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')->appendFile('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js');///js/jquery-ui-custom-combined-min.js
 		$view->headScript()->appendFile('/js/fancybox/jquery.fancybox-1.3.1.pack.js');
 		$view->headScript()->appendFile('/js/superfish.js')
-				->appendFile('/js/jquery.json-2.2.min.js')
-				->appendFile('/js/yui-min.js');
-		
-			//gantt js file
-		
+		->appendFile('/js/jquery.json-2.2.min.js')
+		->appendFile('/js/yui-min.js');
+
+		//gantt js file
+
 		$view->headLink()->appendStylesheet('/js/fancybox/jquery.fancybox-1.3.1.css');
 		$view->headLink()->appendStylesheet('/css/gantt.style.css')->appendStylesheet('/css/jquery.timepicker.css')->appendStylesheet("/css/dijit/themes/tundra/tundra.css");//->appendStylesheet("http://o.aolcdn.com/dojo/1.0.0/dojo/resources/dojo.css");
 		$view->headLink()->appendStylesheet("/css/main.css")->appendStylesheet("http://fonts.googleapis.com/css?family=Cuprum");
 		$view->env = APPLICATION_ENV; //this has been used in ErrorCotnroller to check in which environmenet
 		return $view; //check what happens here
-		
-		
+
+
 	}//
 
 
 
 
 
-	 /**
+	/**
 	 * The default configuration is such as default has been replaced by app, IndexController replaced by SiteController
 	 */
 	protected function _initRouters(){
@@ -215,13 +215,13 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 	 * _initServices
 	 * this function starts application services objects and makes them available to the whole application
 	 * there will be no other need to initialize them in controllers
-	 * @return 
+	 * @return
 	 */
 	protected function _initServices(){
 
 
 		/**
-		 * @todo database service should be shut down. 
+		 * @todo database service should be shut down.
 		 */
 		Zend_Registry::set('database_service', new Core_Service_Database());
 		Zend_Registry::set('auth_service',new Core_Service_Auth() );
@@ -229,16 +229,16 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		Zend_Registry::set('message_service', new Core_Service_Message());
 		Zend_Registry::set('analytics_service', new Core_Service_Analytics());
 		Zend_Registry::set('property_manager_service',  new Core_Service_PropertyManager());
-		 
+			
 		try{
 			$writter = new Zend_Log_Writer_Stream(APPLICATION_PATH.'/configs/logger.txt');
 			$logger = new Zend_Log( $writter );
 			Zend_Registry::set( 'logger', $logger );
 		}catch(Exception $e ){
-			 
+
 		}
-		
-		
+
+
 
 	}
 
@@ -267,8 +267,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		Zend_Registry::set('admin_navigation',$admin_navigation);
 
 
-		
- }
-  
+
+	}
+
 }
 ?>
