@@ -1,0 +1,634 @@
+/**
+ * Author Pascal Maniraho 
+ * Product Rentable App. 
+ */
+body {color: #333333; font-size: 13px; font-weight: normal; font-family: Verdana, Arial, Helvetica, sans-serif; }
+select { width: 120px; }
+input[type="text"], input[type="password"]{ width:398px;  }
+a, a:hover, a:active{ color: #333333; text-decoration: none; font-weight: bolder;  display: inline-block; }
+
+.spaced-8 div{ margin-left: 8px;  margin-right: 8px; }
+.padded-8 { padding: 8px; }
+.odd{ background-color:#f0f5fe; }
+.even { }
+/**header specific style**/
+.header{ }
+.queuetime-header{ height: 75px; float: left; }
+.queuetime-logo{ height: 75px; }
+.queuetime-logo a{ float: left; display: inline-block; height: 75px; line-height: 75px; vertical-align: middle; }
+.queuetime-logo  h1{ height: 75px; display: inline-block; }
+
+.queuetime-menu  ul {  margin: 0;  padding: 0; }
+.queuetime-search input.search{ width: 400px; margin: 0; padding: 0; float: left; display: inline-block; }
+.queuetime-search .button{  display: inline-block; height: 25px;  line-height: 25px; width: 100px; margin: 0 8px; padding: 0; top: 0; }
+.queuetime-search .button .search{  display: inline-block; line-height: 25px; margin: 0; padding: 0; width: 100%; text-align: center;  text-indent: 0; }
+
+.admin .header, .landlord .header ,.customer .header ,.tech .header { height: 136px; }
+.header .menu.front,.header .view-helper-logo,.header .welcome{ float: left; } 
+.header .menu.front,.header .menu.front  ul.navigation {  width: 480px; border: none;}
+.header .menu.front  ul.navigation li, .header .menu.front  ul.navigation li a{  width: 100px; border: none; }
+.header .welcome span{ display: inline-block; width: 50px; line-height: 18px; float: left; }
+.header .welcome ul { padding: 0px; display: block; width: 150px; }
+	.header .welcome ul li{ margin: 0; padding: 0px; width: 100%; display: block; text-align: left; }
+
+.header  .menu, .header  .menu  ul   { height: 40px; float: left; height: 31px;}
+.header .menu  { float: left; display: inline; }
+.header .menu  ul { width: 100%; }
+.header .menu  ul li{ display: inline; width: 118px; margin: 0; padding: 0px; background: none; }
+.header .menu ul li a{ display: inline-block; width: 120px;  line-height: 32px; height: 32px; margin: 0; padding: 0px; }
+.header .menu ul li a, .header .menu ul li  a:hover, .header .menu ul li  a:active{  background: none; }
+	.header .menu.front-end, .header .menu.front-end  ul  { width: 550px; 	}
+.queuetime-search{ float: left; height: 25px; line-height: 25px; vertical-align: middle; text-align: right; /*position: relative; right: 100px;*/ }
+.queuetime-search input{ float: left;  width: 120px; height: 22px; padding: 0px; }
+.queuetime-search button{ padding: 0px; margin: 0px; border: none; display: inline-block; float: left; width: 120px; height: 22px;  }
+.queuetime-search button span{ padding: 0px; margin: 0px; border: none; display: inline-block; float: left; width: 100%; height: 100%; text-align: center;  }
+.header { margin: 0px 10px 0px 0px; }
+.welcome{ text-align: right;  }
+.menu ul, .navigation ul{ width: 230px;   text-decoration: none;    list-style: none; }
+.sidebar .menu ul.navigation li{ width: 90%; }
+/******************************************rental page styles****************************************/
+/***the same layout is used either in the backend or front end. */
+.menu.front-end .navigation.front .sf-menu li{ background: none; }
+.menu.front-end .navigation.front .sf-menu a { border: none; }
+
+.wrapper, .content { height: 100%; line-height: 12px; float: left; /*width: 100%;*/ }
+.view-rental div, .view-rental span,.view-rental p,.view-rental ul{	margin: 0px; 	padding: 0px;	float: left;	}
+.view-rental .media, .view-rental .title,
+.view-rental .price,
+.view-rental .widgets,
+.view-rental .carousel,
+.view-rental .description{	width: 474px; float: left; }
+.view-rental .title, .view-rental .description{ width: 100%; }
+
+/**free division on bottom of rental page, will have a carousel on it */
+.suggestions { margin-top: 40px; } 
+.view-rental .widgets .address,
+.view-rental .widgets .rating, 
+.view-rental .widgets .booking{ width: 118px; }
+.view-rental p.media{	height: 376px; 	margin: 2px;	overflow: hidden; }
+.view-rental .details, .view-rental .comments, 
+.view-rental .owners,.view-rental .tasks,
+.view-rental .tenants,.view-rental .leases{ width: 100%; }
+
+/***/
+.wrapper .content .link{ margin: 4px 0px;}
+a.link{ margin:0 0 0 4px; display: block;  width: 190px; height: 20px; color: #333; line-height: 20px; }
+a.link span{ background: #F0F5FE; display: block; width: 190px; height: 20px; padding: 0 0 0 4px; }
+ul.menu { list-style-type: none; padding: 0; margin: 0; }
+ul.menu li {display: inline-block; list-style-type: none; height: 20px;  margin: 1px 0; }
+
+/**listing results .res*/
+ul.menu.res, ul.menu.res li {
+	min-height: 20px;
+	height: 100%; 
+	float: left;
+}
+
+/**this is division that hosts buttons */
+div.button {  margin: 10px; padding: 10px; width: 100%; }
+
+
+
+
+
+/***/
+ul.carousel{ list-style-type: none; }
+/* Tiny Carousel */
+div.carousel { height: 145px; overflow:hidden; padding: 0 0 10px;   }
+div.carousel .viewport { float: left; width: 240px; height: 125px; overflow: hidden; position: relative; }
+div.carousel .buttons { background:url("/img/buttons.png") no-repeat scroll 0 0 transparent; display: block; margin: 30px 10px 0 0; background-position: 0 -38px; text-indent: -999em; float: left; width: 39px; height: 37px; overflow: hidden; position: relative; }
+div.carousel .next { background-position: 0 0; margin: 30px 0 0 10px;  }
+div.carousel .disable { visibility: hidden; }
+div.carousel .overview { list-style: none; position: absolute; padding: 0; margin: 0; width: 240px; left: 0px; top: 0px; }
+div.carousel .overview li{ float: left; margin: 0 20px 0 0; padding: 1px; height: 121px; border: 1px solid #dcdcdc; width: 236px;}
+
+/**content in property widget*/
+.view-helper-property-widget{  float: left;  border-bottom: 1px solid #000; }
+.view-helper-property-widget div{  float: left;  padding: 0px; margin: 0px; }
+.view-helper-property-widget .image{  width: 140px;  height: 140px; }
+
+
+.view-helper-property-widget .description, .view-helper-property-widget .title{	width: 500px; }
+.view-helper-property-widget .title,
+.view-helper-property-widget .social,
+.view-helper-property-widget .rating,
+.view-helper-property-widget .share-bookmarklet{
+  margin: 0 0 0 4px;
+}
+.view-helper-property-widget .price, 
+.view-helper-property-widget .social,
+.view-helper-property-widget .booking,
+.view-helper-property-widget .address{	background: none repeat 0 0 #D0DCE0;	width: 130px; }
+.view-helper-property-widget .price{	width: 80px;}
+ 
+ /*Fancybox */
+.fancybox-div{	width: 100%;	height : 100px; 	float: left; }
+.fancybox-div ul,  .fancybox-div ul li {	width: 100%; display: inline; list-style-type : none;		margin: 10px;	padding: 0px 2px 0px 2px;	 } 
+.fancybox-div div {	height: 100px; } 
+.fancybox-wrap{ 	height: 80px; }
+ 
+/**Title*/
+.title {display : inline;	font-weight: 900;	width: 100%;}
+div .title{ float: left; }
+  
+  /***
+   * formatting fancybox title 
+   */
+  .fancybox-title-div{  	 text-align: left;		 float: right;	 margin-right: 8px;	 	 width: 50px;  }
+  .fancybox-title-div b {  	display: block; margin-right: 80px;   }  
+  .fancybox-title-div span{  	float: right;  }    
+  /**
+   * styling star rating system
+   * 
+   */
+.star{  	padding:  1px;	border: 1px;	width: 40px;	height: 16px;	float: left; }
+.stars-div{  	width : 140px; 	height: 20px; 	clear: both;	float: left;  }
+.star.dark, .star.shining{	padding: 1px;	border: 1px;	width: 16px;	height: 16px;	float: left;	cursor: pointer;}
+.star.dark{	background:transparent url(./dark.png) no-repeat scroll 0 0;}
+.star.shining{	background:transparent url(./shining.png) no-repeat scroll 0 0;}
+.star_hover {	background:transparent url(./shining.png) no-repeat scroll 0 0;}
+
+
+/***
+ * comment textarea 
+ */
+
+ textarea.comment{ 	width: 300px;	height: 120px;  }
+ textarea.no-rich-text{ 	height: 40px; }
+#admin-banner-upload-div{	float: left; }
+#admin-analytics-index-table{	float: left;	width: 500px;  }
+#admin-settings-index-table{	float: left;	width: 500px;  }
+#admin-analytics-rating-table{	float: left;	width: 670px;  }
+div#admin-analytics-rating-table div.table-div div.table-row-div div.table-cell-div{ text-align: right; }
+/***
+ * styling table cells 
+ */
+.num-cell{text-align: right; font-weight: 700;}
+.text-cell{	text-align: left;}
+.nano-cell{	min-width: 30px; width: 30px;}
+.nano-cell input{	width: 10px;	margin: auto 4px;}
+.little-cell{min-width: 60px;    width: 60px;}
+.small-cell{width: 120px;}
+.medium-cell{	width: 160px;}
+.large-cell {width: 240px; }
+.x-large-cell{	width: 260px; }
+.xl-large-cell{	width: 300px; }
+.xll-large-cell{	width: 420px; }
+/***/
+.small-cell, .medium-cell, .large-cell, .x-large-cell, .xl-large-cell{
+	overflow: hidden; 
+}   
+
+
+/**removing borders*/
+.no-border{ border: none; }
+/**Paging division */
+.table-paging-div{	float: left; }
+.extended-textfield { width:398px;  } 
+textarea.note { width:398px; height: 120px; }
+/***this section should be used to display any details widget***/
+.details-widget{	float: left;	width: 280px;	padding: 0px 4px 0 4px;	border-left: 1px solid #999999;}
+.price, .price-sale{	width: 200px;	float: left;}
+input.qty{		width: 30px;}
+/*authentication forms have to be a litle different from other forms 
+ * they have to be in center and intuitive ( eye catching elements )
+ */
+.auth {	height: auto ;	margin: 0 auto; 	float: left; line-height: 17px; font-size: 17px;  }
+.auth input[type="text"], .auth input[type="password"], .auth select{	padding: 8px; margin: 0 8px 0 0; width: 296px; height: 20px; }
+.auth select{	width: 310px; height: 35px; }
+.auth .element-row{ margin: 8px 0; }
+.auth input[type="submit"]{ min-width: 200px; max-width: 220px; margin: 0; padding: 0; text-align: center; line-height: 17px; height: 28px;  display: block; clear: left; border: 1px solid #999; }
+/*this is for credit card form :: it gonna be better if it looks the same way as the authentication forms */
+.creditcard {}
+/*following lines styles checkout buttons **/
+.creditcard .element-row .button{    clear: left; }	    
+div .form.creditcard{	float: left;	width: 300px;}
+/***Styling form decorators */
+.small-element-row , .small-element-row input {	width: 150px;	float: left;	margin: 2px; }
+
+
+
+
+/**
+ * Styling notification messages 
+ */
+.error, .notice, .success { 	float: left;	width: 100%;	clear: both;}
+.error ul, .error ul li , .notice ul , .notice ul li , .success ul, .success ul li {	margin: 0px; 	padding: 0px; 	list-style: none; 	list-style-type: none;	} 
+/**Styling the search bar section */
+.search-button{	width: 80px; }
+/**
+ * formatting the form on admin/product/fxupload
+ */
+.form-product-jxupload{	text-align: left;	font-weight: 600px; }
+.form-product-jxupload{	text-align: left;	font-wight: 600px;}
+textarea.product-jxupload{	height: 100px; 	}
+
+/**Styling the address viewer in the backend section*/
+.address-viewer {	background-color:#f0f5fe; }
+
+.noborder{ border: none; }
+.reset-input{	width: inherit;	height: auto;}
+/****/
+.widget-object-update-button{	width: 100px;}
+.widget-object-add-to-cart-button{	width: 140px;}
+/**This section will be displaying price updates **/
+.widget-object-price-div{ }
+
+/**Cart widget buttons. Attribute Table order input*/
+input.attribute-table-order-element{	height: 16px; width: 30px; 	margin: -2px 0 0 0; 	padding: 0px;	text-align: center; }
+select.attribute-table-order-element{	height: 16px; 	width: auto; 	margin: 0 0 0 0; 	padding: 0px;	text-align: center;	border: 0px; }
+.column-header{ background:url("img/sort_row_bg.gif") repeat-x scroll 0 50% transparent; float: left;  }
+.wrapper-content-left-column-div {}
+.wrapper-content-right-column-div {}
+.left-column-div div{margin-top: -5px; }
+/*****Menus **********************************************************************/
+.wrapper-content-left-column{	float: left; height: 100%;    min-height: 600px; }
+/**styling the medium-view-helper*/
+.medium-view-helper{  float: left;   margin: 0; padding: 0;   width: 750px;  display: inline;    border-bottom: 1px solid #000; }
+/***/
+.medium-view-helper{ }
+.app-fancybox-overlay{
+  width: 550px;
+  height: 350px;
+}
+
+
+/**location view helper displays only one location**/
+.helper-site, .helper-photo, .helper-property,
+.helper-booking ,.helper-location, 
+.helper-lease { 
+	float: left; width: 750px; margin: 8px 0 0 0; 
+}
+/***/
+.site .name, .site .location, 
+.site .description, .site .geo {	width: 100%;	padding: 0 0 0 40px;}
+.site .checkbox , .photo .checkbox{	width: 40px;}
+.site, .site .checkbox, .photo , .photo .checkbox{	float: left;	}
+
+/***helper-medium*/
+.helper-medium{}
+.medium{}
+/**styling photo holder**/
+.helper-photo{	border-bottom: 1px solid #000; }
+.helper-photo .left{	width: 410px;	height: auto;}
+.helper-photo .thumbnail{	width: 210px;	height: 134px;	float: left; margin: 0 0 0 40px; text-align: center; }
+.helper-photo .photo .left{	float: left; } 
+.helper-photo .note{	height: 50px;	padding: 0px; }
+.site{ } 
+
+
+/***property view helper displays only one property*/
+.landlord{ }
+/**small displayer mode*/
+.landlord-view-helper { float: left; height: 120px; }
+.landlord-view-helper .left, .landlord-view-helper .right { float: left; width: 80%;}
+.landlord-view-helper .right { width: 20%;}
+.landlord-view-helper .image{ width: 100%; float: left; height: 100%; } 
+.landlord-view-helper .description, 
+.landlord-view-helper .title, 
+.landlord-view-helper .price{ 
+	float: left; 
+}
+.landlord-view-helper .price{ font-weight: bolder; }
+.landlord-view-helper .description{
+	visibility: hidden;
+	display: none;
+}
+
+/**styling the landlord contact view helper*/
+.landlord-contact-view-helper { float: left; }
+/***property view helper displays only one property*/
+.property{ }
+/**small displayer mode*/
+.property-view-helper { float: left;  }
+.property-view-helper .image, .property-view-helper .description, .property-view-helper .title, .property-view-helper .price{ 	float: left; }
+.property-view-helper .price{ font-weight: bolder; }
+.property-view-helper .description{ 	visibility: hidden;	display: none; }
+.property-view-helper { float: left; }
+/**long displayer mode*/
+.property-view-helper.long{ margin: 8px 0; float: left;  }
+.property-view-helper.long .image{ float: left; width: 120px; height: 100%;  } 
+.property-view-helper.long.image a {display: inline-block;width: 100%;float: left;height: 100%;}
+.property-view-helper.long .right{ float: left; height: 100%; width: 54%; text-align: left; margin: 0 4px; } 
+	.property-view-helper.long .right .title,
+	.property-view-helper.long .right .price,
+	.property-view-helper.long .right .description{ float: left; margin: 4px 8px; width: 100%; }
+	.property-view-helper.long .contact{ float: left; width: 162px; height: 80px; }	
+.property-view-helper.long .title, .property-view-helper.long .price, 
+.property-view-helper.long .title  { float: left;  }
+.property-view-helper.long { float: left; }
+.property-view-helper.long { float: left; }
+.property-view-helper.long .description{ 	visibility: visible;	display: block; } 
+.property-view-helper.long .edit-widget,.property-view-helper.long .header-widget{ height: 20px; float: left; width: 100%; }
+.property-view-helper.long .header-widget{ background-color: #CFDEFF; }
+.property-view-helper.long .edit-widget ul{  list-style-type: none; display: inline-block; }
+.property-view-helper.long .edit-widget ul li{ display: inline-block; margin: 0 8px; }
+/***property view helper displays only one property*/
+.property-view-helper.long.front-end .edit-widget{	}
+.property-view-helper.long.front-end .edit-widget .edit-helper-list,
+.property-view-helper.long.front-end .header-widget .edit-helper-list{	padding-left: 0px;margin-left: 0px; width: 100%; }
+/***/
+.property-view-helper.long.front-end .header-widget .edit-helper-list{ float: right; width: 200px; }
+.property-view-helper.long.front-end .header-widget ul{  float: right; width: 200px;  list-style-type: none; margin: 0px; }
+.property-view-helper.long.front-end .header-widget  ul li{ display: inline-block; margin: 0; width: 30px; }
+.property-view-helper.long.front-end .header-widget .edit-helper-list { float: right; }
+
+/**the carousel on rental page should float on left*/
+.property-view-helper div.carousel{ float: left; border: 2px solid #CFDEFF; }
+.property-view-helper div.carousel .viewport { width: 260px; height: 200px; }
+.property-view-helper div.carousel .buttons { margin-top: 16%; }
+
+/**the propertyt view helper card**/
+.property-view-helper.long.front-end { border: 2px solid #CFDEFF; }
+/**the map section of rental page*/
+.convas { /**it has the width by its own, set the height and we are done*/ height: 204px;/**equals the height of the image*/ }
+
+/**nahanditse nasinze*/
+/**this section will show the content on the front end section,
+the image is a little bigger and should allow the content to show up as expected*/
+.property-view-helper.span-24.last.long{ }
+
+.feature-view-helper.rental .title{ background-color:#f0f5fe; }
+.feature-view-helper.rental .title, .feature-view-helper.rental  .description{ float: left;  overflow: hidden;  width: 50%; }
+
+.property-view-helper.span-24.last.long .image { width: 30%; }
+.property-view-helper.span-24.last.long .right { width: 60%; }
+/**carousels on rental page*/
+.property-view-helper{}
+/***the carousel section of related properties**/
+/***location view helper*/
+.location-view-helper { float: left; margin: 4px 0; }
+.location-view-helper .left, .location-view-helper  .right{ float: left; width: 80%; }
+.location-view-helper  .left{ width: 5%; }
+/***Property feature view helper**/
+.feature-view-helper{	margin: 2px 0; 	padding: 2px 0; }
+.edit-widget{ height: 20px; float: left; width: 100%; }
+.edit-widget ul{  margin-left: 0px;  padding-left: 0px; list-style-type: none; display: inline-block; }
+.edit-widget ul li{ display: inline-block; margin: 0 8px; }
+/***property view helper displays only one property*/
+
+.user{ }
+/**small displayer mode*/
+.user-view-helper { float: left; width: 200px; }
+.user-view-helper .image, .user-view-helper .image, 
+.user-view-helper .name, .user-view-helper .name, 
+.user-view-helper .email{ float: left; width: 200px; }
+.user-view-helper .price{ font-weight: bolder; }
+.user-view-helper .description{	visibility: hidden;	display: none; }
+.user-view-helper { float: left; width: 200px; }
+
+/**long displayer mode*/
+.user-view-helper.long{ margin: 8px 0; float: left; width: 700px; }
+.user-view-helper.long .image{ float: left; width: 120px; height: 120px;  } 
+.user-view-helper.long .right{ float: left; width: 560px; height: 120px; margin: 0px 8px ;  } 
+	.user-view-helper.long .right .name,.user-view-helper.long .right .email,
+	.user-view-helper.long .right .price,.user-view-ehelper.long .right .category,
+	.user-view-helper.long .right .banned,.user-view-helper.long .right .active, .user-view-helper.long .right .category,
+	.user-view-helper.long .right .description{ float: left; width: 560px; margin: 4px 8px; } 
+.user-view-helper.long .title, .user-view-helper.long .price, 
+.user-view-helper.long .title  { float: left; width: 700px; }
+.user-view-helper.long { float: left; width: 700px; }
+.user-view-helper.long { float: left; width: 700px; }
+.user-view-helper.long .description{
+	visibility: visible;	display: block;
+}
+.user-view-helper.long .edit-widget{ height: 20px; float: left; width: 100%; }
+.user-view-helper.long .edit-widget ul{  list-style-type: none; display: inline-block; }
+.user-view-helper.long .edit-widget ul li{ display: inline-block; margin: 0 8px; }
+
+/***/
+.house-widget{ float: left; width: 100%; height: 150px;  }
+    .house-widget .w-param{ width: 100%; }
+    .house-widget .w-param .image{ float: left; width: 20%; height: 150px; }
+    .house-widget .w-param .name{ float: left; width: 70%;  }
+    .house-widget .w-param .unit{ float: left; width: 70%; }
+    .house-widget .w-param .description{ float: left; width: 70%; }
+    .house-widget .w-param .built{ float: left; width: 70%; }
+.house-widget .w-edit{ float: left; width: 70%; }
+.house-widget .w-edit div{ float: left; padding: 0px 10px; }
+
+/***/
+.booking-view-helper div{ float: left; width: 100%; }
+.booking-view-helper .image{ height: 120px; width: 20%; }
+.booking-view-helper .date , .booking-view-helper .address, .booking-view-helper  .user { 	width: 80%; margin: 2px 0 0 0; }
+.booking-view-helper .date .from, .booking-view-helper .date .to { width: 200px; }
+.booking-view-helper .user-property{  float: left;  width: 80%; }
+.booking-view-helper .user-property .user, .booking-view-helper .user-property .property{  float: left; width: 50%; height: 100%; }
+.booking-view-helper .booking-details , .booking-view-helper .booking-detail{ float: left; width: 50%; height: 100%;  }
+
+.amenity-view-helper {	float: left; }
+.amenity-view-helper.table { padding: 4px 0; }
+.amenity-view-helper.table .id{ width: 10%; float: left; }
+.amenity-view-helper.table .name{  width: 20%;  float: left; }
+.amenity-view-helper.table .description{ width: 50%;   float: left; }
+.amenity-view-helper.table .displayed{ width: 20%; float: left; }
+
+.amenity-edit-view-helper {	float: left; width: 100%; }
+.amenity-edit-view-helper.table { padding: 4px 0; }
+.amenity-edit-view-helper.table .id{ width: 10%; float: left; }
+.amenity-edit-view-helper.table .name{  width: 20%;  float: left; }
+.amenity-edit-view-helper.table .description{ width: 50%;   float: left; }
+.amenity-edit-view-helper.table .displayed{ width: 20%; float: left; }
+.amenity-edit-view-helper  select{ margin: 0; padding: 0; }
+
+.plan-view-helper {	float: left; }
+.plan-view-helper.table { padding: 4px 0; }
+.plan-view-helper.table .id{ width: 10%; float: left; }
+.plan-view-helper.table .price{ width: 10%; float: left; }
+.plan-view-helper.table .name{  width: 20%;  float: left; }
+.plan-view-helper.table .description{ width: 40%;   float: left; }
+.plan-view-helper.table .displayed{ width: 20%; float: left; }
+.queuetime-content .property-details{ min-height: 150px; }
+.queuetime-content .property-view-helper div.image{ /*width: 358px;*/ }
+
+.footer { text-align: center; margin: 10px 0 0 0; }
+.footer  .menu{ float: left; text-align: left;  width: 200px; }
+.footer .menu  ul   { float: left; display: block;   width: 200px;  }
+.footer .menu  ul   li { display: inline-block;  width: 200px; margin: 0; padding: 0px; }
+.footer .menu  ul   li a{ display: inline-block; width: 200px; line-height: 32px; height: 32px; margin: 0; padding: 0px; }
+
+
+/**the following script css code accompanies js script attached on account ul*/
+/**the snippet is from http://javascript-array.com/scripts/jquery_simple_drop_down_menu */
+#account{	margin: 0;	padding: 0 }
+#account li{	float: left; list-style: none; font: 12px Tahoma, Arial }
+#account li a{	display: block;		background: #BDD2FF;		padding: 1px 12px; height: 32px;	text-decoration: none; border-right: 1px solid white; width: 70px; width: 120px; color: #13A; line-height: 32px; white-space: nowrap}
+#account li a:hover{	background: #BDD2FF }
+#account li ul{	margin: 0; padding: 0;	position: absolute;			visibility: hidden;			border-top: 1px solid white }
+#account li ul li{	float: none;		display: inline }
+#account li ul li a		{	width: auto;			background: #BDD2FF }
+#account li ul li a:hover{	background: #BDD2FF }
+
+
+
+/***styling buttons*/
+.button {	
+	margin: 0px; padding : 0px; display: block; min-width: 40px; float : left; min-width: 100px;
+	display: inline-block; color:#555555; font-weight:bolder; height:20px; line-height:19px; text-decoration:none; 
+	/*border:solid 1px #DEDEDE; color:#222222;*/
+}
+.button span { display: block; margin: 0; padding: 0; width: 100%; height: 100%; text-indent:30px; display:block; background-repeat: no-repeat; background-position: 5px 2px; background-attachment: scroll; }
+/**adding images to commonly used button spans*/
+.button span.add{ background-image: url('/assets/icons/add.png'); }
+.button span.accept{ background-image: url('/assets/icons/accept.png'); }
+.button span.delete{ background-image: url('/assets/icons/delete.png'); }
+.button span.view{ background-image: url('/assets/icons/view.png');  }
+.button span.watch{ background-image: url('/assets/icons/eye.png'); }
+.button span.map{ background-image: url('/assets/icons/map.png'); }
+.button span.like{ background-image: url('/assets/icons/heart.png'); }
+.button span.date{ background-image: url('/assets/icons/date.png');  }
+.button span.save{ background-image: url('/assets/icons/disk.png'); }
+.button span.book{ background-image: url('/assets/icons/book.png'); }
+.button span.check{ background-image: url('/assets/icons/tick.png'); }
+.button span.edit{ background-image: url('/assets/icons/pencil.png'); }
+.button span.memo{ background-image: url('/assets/icons/heart.png'); }
+/***/
+
+
+/**paging object style **/
+.pg { padding: 0; height: 50px; line-height: 50px; vertical-align: middle; text-align: center; text-transform: capitalize; }
+.pg span.a, .pg a{ border: 1px solid #eee; display: inline-block; line-height: 18px; height: 18px; min-width: 20px; max-width: 30px; margin-left: 4px;  margin-right: 4px; }
+.pg a{ background-color: #CFDEFF; }
+ /**
+ Defaults
+ */
+ html, body{ width: 100%; height: 100%; font-family: "Lucida Sans Unicode", "Lucida Grande", Sans-Serif; font-size: 13px;	 }
+ a, a:hover, a:visited a:active{ text-decoration: none;  }
+ ul, ol { list-style: none; float: left; width: 100%;  margin: 0; }
+
+ ul li, ol li  { float: left; list-sytle-type: none; margin: 0 8px; height: 100%; }
+ ul li a { list-sytle-type: none; }
+ 
+ 
+ 
+ .container { height: 100%; }
+  .container .top{ height: 39px; border-bottom: 1px solid #000; border-bottom: 1px solid #000; }
+ 	.wrapper { min-height: 500px; }
+ 	.menu { height: 100%; }
+ 		.menu ul, .menu ul li{ width: 100%; float: left; height: 20px; padding: 0 8px; }
+ 	ul.navigation, ol.navigation  { width: auto; padding-left: 0px; }
+ 	ul.navigation li, ol.navigation li{ width: 100%; }
+.toolbar{ margin: 10px 0; } 		
+ 		
+ /**Tables*/
+ .table { border-collapse: collapse;  }
+ .table.wrapper { 		}
+	.tr.wrapper-header {  color: #ffffff; }
+	.tr.wrapper-body { background: #ffffff; }
+	.tr.wrapper-footer {color: #ffffff; text-align: center; }
+
+
+.tr{ float: left; width: 100%; }
+	.td{ float:  left; padding: 2px 4px; width: 110px; overflow: hidden; }
+		/**hm*/
+		.td.span-16{ width: 630px; }
+		.td.action { width: 220px; }
+.thead,  .tfooter{ background-color: #B9C9FE; }
+
+/**http://hp.copilaser.com.mx/encuestas/tablecss/ for tables to use*/
+.hor-minimalist-outer{	background: #fff;	border-collapse: collapse; }
+.hor-minimalist-outer .tr.top { color: #039;color: #565656; }
+.hor-minimalist-outer .tr.top .td.top-left{ color: #565656; border-left: 2px solid #009; }
+.hor-minimalist-a  .thead .tr{ background: #AEAEAE; }
+.hor-minimalist-a{	min-width: 600px;max-width: 1200px;border-collapse: collapse;text-align: left; }
+.hor-minimalist-a .th{ font-size: 12px;font-weight: normal;color: #565656;padding: 10px 8px;border-bottom: 2px solid #6678b1; }
+.hor-minimalist-a .td{ color: #000;padding: 9px 8px 0px 8px; }
+.hor-minimalist-a .tbody .tr:hover .td{ color: #009; }
+.hor-minimalist-a .tfoot tr{	font-size: 12px;	font-weight: normal;	color: #565656;	padding: 10px 8px;	border-top: 2px solid #6678b1;	}
+.hor-minimalist-a .tfoot .tr:hover .td{color: #009;}
+
+.hor-minimalist-b{ min-width: 600px;	max-width: 1200px;	border-collapse: collapse;	text-align: left;}
+.hor-minimalist-b .thead .tr{ background: #AEAEAE; }
+.hor-minimalist-b .th{	font-size: 12px;	font-weight: normal; color: #565656;	padding: 10px 8px;	border-bottom: 2px solid #6678b1;}
+.hor-minimalist-b .td{	border-bottom: 1px solid #ccc;	color: #565656;	padding: 6px 8px;}
+.hor-minimalist-b .tbody .tr:hover .td{	color: #009;}
+
+.even{  }
+.odd{ background-color: #E8EDFF; }
+.ln { border-bottom: 2px solid #E8EDFF; }
+input[type="text"], input[type="password"], input.text, input.title, textarea, select { width: 400px; }
+textarea{ height: 60px; }
+
+
+.message{ height: auto; }
+.message .error { height: auto; }
+.message .error ul { height: 100%; }
+
+
+.padded{ padding: 4px; }
+.top-padded{ padding: 4px 0 0 0; }
+.bottom-padded{ padding: 0 0 4px 0; }
+.top-bottom-padded{ padding: 4px 0; }
+
+
+
+/***styling buttons*/
+.button {	
+	margin: 0px; padding : 0px; display: block; min-width: 40px; float : left; min-width: 100px;
+	display: inline-block; color:#555555; font-weight:bolder; height:20px; line-height:19px; text-decoration:none; 
+	/*border:solid 1px #DEDEDE; color:#222222;*/
+}
+.button span { display: block; margin: 0; padding: 0; width: 100%; height: 100%; text-indent:30px; display:block; background-repeat: no-repeat; background-position: 5px 2px; background-attachment: scroll; }
+/**adding images to commonly used button spans*/
+.button span.add{ background-image: url('/assets/icons/add.png'); }
+.button span.accept{ background-image: url('/assets/icons/accept.png'); }
+.button span.delete{ background-image: url('/assets/icons/delete.png'); }
+.button span.view{ background-image: url('/assets/icons/view.png');  }
+.button span.watch{ background-image: url('/assets/icons/eye.png'); }
+.button span.map{ background-image: url('/assets/icons/map.png'); }
+.button span.like{ background-image: url('/assets/icons/heart.png'); }
+.button span.date{ background-image: url('/assets/icons/date.png');  }
+.button span.save{ background-image: url('/assets/icons/disk.png'); }
+.button span.book{ background-image: url('/assets/icons/book.png'); }
+.button span.check{ background-image: url('/assets/icons/tick.png'); }
+.button span.edit{ background-image: url('/assets/icons/pencil.png'); }
+.button span.memo{ background-image: url('/assets/icons/heart.png'); }
+
+.user.list { height: 100px; }
+.user .image, .user .img { width : 8%; float: left; height: 100%; min-height: 80px; }
+.user .right { width : 90%; float: left; }
+
+
+
+
+.artwork.main {
+	float: left; 
+	height: 250px; 
+}
+.artwork.main .image{ height: 220px; }
+
+.artwork.sub {
+	float: left; 
+	height: 80px; 
+}
+
+
+.artwork.sub .title{ font-weight: 700; }
+.artwork.sub .image{ float: left; padding-right: 8px; }
+
+
+
+.copyright{
+	text-align: center; 
+	float: left;
+	border-top: 1px solid #000; 
+}
+
+
+/*is being used with artist card at the end of front end page */
+
+.card {
+	float: left; 
+	text-align: left; 
+	min-height: 80px;
+}
+	.card img{
+		float: left; 
+	}
+	.card .el {
+		float: left; text-align: left; padding: 0px 8px; height: 76px;
+	}
+	.card .el ul { width: 190px; padding: 0px; }
+	.card .el ul li { width: 100%;  padding: 0px; }
+	
+/**adding checkboxes to elements */
