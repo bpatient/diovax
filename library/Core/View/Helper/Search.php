@@ -10,46 +10,101 @@
 class Core_View_Helper_Search extends Core_View_Helper_Base{
 	
 	
-	public function search($options = null ){
-		return '<div class="rentable-search span-24 last">
-					<input class="search" id="search" value="" name="q"/>
-					<button class="button rounded"><span class="search">search</span></button>
-				</div>';
+	public function search($options = array() ){
+		return "<div id='search'>
+
+		<!-- Search form using the expose effect, remove the class if you don't wish to have it -->
+		<form class='expose' action='index' method='get' name='search'>
+
+			<h3>Search Property</h3>
+
+			<!-- Start of a row -->
+			<div class='row'>
+				<label>Location</label>
+			</div>
+
+			<div class='row'>
+				<div class='box large border_light'>
+					<select class='large' name='location'>
+						<optgroup label='England'>
+							<option>Anywhere, I don't mind</option>
+							<option>Bedfordshire</option>
+							<option>Berkshire</option>
+							<option>Bristol</option>
+						</optgroup>
+						<optgroup label='Wales'>
+							<option>Anglesey</option>
+							<option>Brecknockshire</option>
+						</optgroup>
+					</select>
+				</div>
+			</div>
+
+			<div class='row'>
+				<label>Bedrooms</label> <label>Buying Price</label> <label>Renting
+					Price</label>
+			</div>
+
+			<div class='row'>
+				<div class='box small border_light'>
+					<select class='small' name='beds'>
+						<option value='any'>Any</option>
+						<option value='1'>1</option>
+						<option value='2'>2</option>
+						<option value='3'>3</option>
+						<option value='4'>4</option>
+						<option value='5'>5+</option>
+					</select>
+				</div>
+				<div class='box medium border_light'>
+					<select class='medium' name='min'>
+						<option value='any'>Any</option>
+						<option value='100000'>&pound;100,000+</option>
+						<option value='200000'>&pound;200,000+</option>
+						<option value='300000'>&pound;300,000+</option>
+						<option value='400000'>&pound;400,000+</option>
+						<option value='500000'>&pound;500,000+</option>
+					</select>
+				</div>
+
+				<div class='box medium border_light'>
+					<select class='medium' name='max'>
+						<option value='any'>Any</option>
+						<option value='100000'>&pound;400+</option>
+						<option value='200000'>&pound;600+</option>
+						<option value='300000'>&pound;800+</option>
+						<option value='400000'>&pound;1000+</option>
+					</select>
+				</div>
+			</div>
+
+			<div class='row'>
+				<label>Renting or Buying</label>
+			</div>
+
+			<div class='row'>
+				<div class='box medium2 border_light'>
+					<select class='medium2' name='date'>
+						<option value='any'>Any, I don't mind</option>
+						<option value='rent'>I'm looking to rent</option>
+						<option value='buy'>I'm looking to buy</option>
+					</select>
+				</div>
+
+				<div class='left'>
+					<input id='submit' type='image' src='/assets/images/search_btn.jpg'
+						onmouseover='this.src=\'/assets/images/search_btn_hover.jpg\''
+						onmouseout='this.src=\'/assets/images/search_btn.jpg\'' />
+				</div>
+			</div>
+			<div class='clear'></div>
+		</form>
+	</div>";
 	}
 	
 	
 	
-	private function _srch( $options = array ( 'q' => '' , 'id' => '' , 'type' => '' , 'class' => '' , 'selected' => '' , 'name' => '' , 'onclick' => '' , 'onchange' => '' , 'onchange' => '','category_lookup'=> array() , 'selected' => 0 ) ) {
 	
-		/**among parameters to search from, we have categories */
-		$category_lookup = ( !empty( $options['category_lookup']) ) ? $options['category_lookup'] :  array();
-		$q = ( isset( $options['q']) && !empty($options['q']) ) ? $options['q'] : '';
-		$id = ( isset($options['id']) && !empty($options['id']) ) ? ' id = \''.$options['id'].'\' ' : ' id = \'search-box\' ';
-		$value = ( $q != '' ) ? ' value = \''.$q.'\' ' : '';
-		$type = ( isset($options['type'])  && !empty($options['type']) ) ? $options['type'] : 'submit';
-		$class = ( isset($options['class'])  && !empty($options['class'])  )? ' class = \''.$options['class'].'\' ':' class = \'search-box\' ';
-		$selected = ( isset( $options['selected']) && $options['selected'] > 0 )? $options['selected'] : 0;
-		$name = ( isset( $options['name'])  && !empty( $options['name']) )? ' name = \''.$options['name'].'\' ' : ' name = \'q\' ';
-		$onclick = ( isset( $options['onclick'])  && !empty( $options['onclick'])  )? ' onClick = \''.$options['onclick'].'\'' : '' ;
-		$onchange = ( isset( $options['onchange'])  && !empty( $options['onchange'])  )? ' onChange = \''.$options['onchange'].'\'' : '' ;
-		$style = ( isset( $options['style'] ) && !empty( $options['style'] )  )? ' style = \''.$options['style'].'\'' : '' ;
-		$input = '<input type=\'text\' '.$id.'  '.$name.' '.$class.'   '.$style.'  '.$value.' '.$onclick.' '.$onchange.' />';
-	
-		$button = '<input type=\''.$type.'\' name=\'search\' class=\'search-button\' id=\'search-button\' value=\''.$this->translate->_('front_search').'\' />';
-		$category_select = '<select class=\'category-select\'  name=\'ctg\'  id=\'category-selects\' >';
-		$category_select .= '<option value=\'0\' label=\'All\'>All Categories</option>';
-		if ( count( $category_lookup )  > 0  ):
-		foreach ( $category_lookup as $clk => $category ):
-		$_selected = ( $clk >= 0 && $clk == $selected) ? ' selected=\'selected\' ' : '';
-		if( is_array($category) ) $category_select .= '<option '.$_selected.' value=\''.$category['id'].'\' label=\''.$category['label'].'\'>'.$category['label'].' </option>';
-		else  $category_select .= '<option  '.$_selected.'  value=\''.$clk.'\' label=\''.$category.'\'>'.$category.'</option>';
-		endforeach;
-		endif;
-		$category_select .= '</select>';
-		$input = '<span class=\'span-'.$type.'\'>'.$input.'  '.$category_select.' '.$button.'</span>';
-		return  $input;
-	
-	}
 	
 }
 

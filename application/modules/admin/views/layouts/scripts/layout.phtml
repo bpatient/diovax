@@ -1,155 +1,68 @@
-echo $this->doctype();?>
+<?php echo $this->doctype();?>
 <html>
 <head>
 <base href="<?php echo BASE_URL;?>" />
+
+
+
+
 <?php echo $this->headMeta();?>
 <?php echo $this->headTitle();?>
-<?php echo $this->headLink();?>
 
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Realist - The Ultimate Real Estate Theme</title>
 
-<link href="/css/960.css" rel="stylesheet" type="text/css" />
-<link href="/css/reset.css" rel="stylesheet" type="text/css" />
-<link href="/css/text.css" rel="stylesheet" type="text/css" />
+<meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script> 
+<link href="/js/fancybox/jquery.fancybox-1.3.1.css" media="screen" rel="stylesheet" type="text/css" />
+<link href="/css/blueprint/screen.css" media="screen, projection" rel="stylesheet" type="text/css" />
+<link href="/css/blueprint/print.css" media="print" rel="stylesheet" type="text/css" />
+<link href="/css/blueprint/ie.css" media="" rel="stylesheet" type="text/css" />
+<link rel="stylesheet" media="screen" href="/css/admin.css" />
 
-<link href="/css/style.css" rel="stylesheet" type="text/css" />
 
-<!-- These are all the different colour variations. To create your own please see the help file -->
-
-<!--<link href="/css/style_rouge.css" rel="stylesheet" type="text/css" />-->
-<!--<link href="/css/style_forest.css" rel="stylesheet" type="text/css" />-->
-<!--<link href="/css/style_lake.css" rel="stylesheet" type="text/css" />-->
-<!--<link href="/css/style_fame.css" rel="stylesheet" type="text/css" />-->
-<!--<link href="/css/style_old.css" rel="stylesheet" type="text/css" />-->
-
-<!-- Loads jquery -->
-<script type="text/javascript"
-	src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-<!-- Load expose, gallery -->
-<script type="text/javascript" src="/js/jquery.tools.min.js"></script>
-<!-- Fix all png images -->
-<script type="text/javascript" src="/js/pngfix/jquery.pngFix.js"></script>
-<!-- Loads cycle -->
-<script type="text/javascript" src="/js/jquery.cycle.all.min.js"></script>
-<!-- Loads tooltips -->
-<script type="text/javascript" src="/js/jquery.qtip.min.js"></script>
-<!-- Loads navigation menu -->
-<script type="text/javascript" src="/js/superfish.js"></script>
-<!-- Loads the include scripts -->
-<script type="text/javascript" src="/js/inc.js"></script>
-
+<!-- followin files are needed to make YUI editor work -->
+<!-- Skin CSS file -->
+<link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/2.8.2r1/build/assets/skins/sam/skin.css">
+<!-- no such links in views, except it extremely needed -->
 </head>
-
-<body>
-
-	<div class="container_12">
-
-		<!-- This is the faint shine effect -->
-
-		<div id="wrap">
-			<!-- This is to fix postitioning bug in IE6 -->
-			<div id="header_shine"></div>
+<body class="yui-skin-sam admin">
+	<!-- container is bluepring specific -->
+	<div class='container' id="container">
+		<!-- blueprint specific-->
+		<!-- start header -->
+		<div id="header" class="header span-24 last">
+			<div id="logo" class='logo span-24 last'>
+				<a href='/app/index/index'><?php echo $this->logo('<h1>Diovax</h1>', array( 'class' => 'widget-logo-index-top span-4'));?>
+				</a>
+			</div>
+			<div id="menu" class="menu span-21">
+				<?php echo $this->menu; ?>
+			</div>
+	    <?php echo " ".$this->welcome( $this->user , array('welcome_class' => 'span-2 last')); ?>
+	
+</div>
+		<!-- end header -->
+		<div id="wrapper" class='wrapper span-24 last'>
+			<!-- start content -->
+			<div id="content" class='content span-3 right'>
+				<?php echo $this->subMenu; ?>
+			</div>
+			<div id="content" class='content span-20 right'>
+				<?php echo $this->layout()->content; ?>
+			</div>
+			<!-- end content -->
 		</div>
-
-		<!-- Spacers are used to generate equal spacing between grids -->
-		<div class="grid_12 spacer">&nbsp;</div>
-
-
-		<!-- The logo uses a background image and hides this text -->
-		<div class="grid_4 logo">
-
-			<h1>Realist - The Ultimate Real Estate Theme</h1>
-		</div>
-
-
-		<div class="grid_8 colour_darkest" id="phone_number">
-
-			<img src="/assets/images/phone_icon.jpg" alt=" " />01787 123456<br />
-			<span class="tagline">Call for free now</span>
-		</div>
-
-		<div class="grid_12 spacer">&nbsp;</div>
-
-		<div class="grid_12" id="nav">
-
-			<!-- The Navigation in simple list format -->
-			<ul class="sf-menu">
-
-				<li><a title="" href="index.html">Home</a></li>
-				<li><a title="" href="search_results.html">Buying</a>
-
-					<ul>
-						<li><a title="" href="page.html">Dropdown</a></li>
-						<li><a title="" href="page.html">Dropdown</a></li>
-						<li><a title="" href="page.html">Dropdown</a></li>
-						<li><a title="" href="page.html">Dropdown</a></li>
-						<li><a title="" href="page.html">An Example -</a>
-							<ul>
-								<li><a title="" href="page.html">Another</a></li>
-								<li><a title="" href="page.html">Another</a></li>
-								<li><a title="" href="page.html">Example -</a>
-									<ul>
-										<li><a title="" href="page.html">Oh Look</a></li>
-										<li><a title="" href="page.html">It's another!</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-					</ul>
-				</li>
-				<li><a title="" href="search_results.html">Renting</a></li>
-				<li><a title="" href="search_results.html">Selling</a>
-
-					<ul>
-						<li><a title="" href="page.html">Hello</a></li>
-						<li><a title="" href="page.html">how's you?</a></li>
-					</ul>
-				</li>
-				<li><a title="" href="news.html">News</a></li>
-				<li><a title="" href="contact.html">Contact</a></li>
-			</ul>
-		</div>
-		<!-- nav -->
-
-		<div class="clear"></div>
-		<!-- Header finished, these are needed everytime a main section is eneded -->
-		 <?php echo " ".$this->welcome('', array('welcome_class' => 'span-2 last' )); ?>
-		<div class="spacer">&nbsp;</div>
-
-		
-
-		<!-- The wrapper section -->
-		<div id="wrapper" class="grid_12 omega wrapper" >
-			<?php echo $this->layout()->content; ?>
-		</div>
-
-
-		
-		<div id="footer" class="grid_12">
-		
+		<!-- footer -->
+		<div id="footer" class="footer span-24 last">
 			<?php echo $this->render('_footer.phtml'); ?></div>
-
-			<!-- 
-			<p class="left">&copy; 2008-2009 The Ultimate Real Estate Theme</p>
-			<p class="right">
-				<a href="#">Terms &amp; Conditions</a> | <a href="#">Contact</a>
-			</p>
-			-->
-			
-			
-		</div>
+		<!-- end of footer -->
+		<!-- End of the container -->
 	</div>
 
+	
+	
+	
 
+<script type="text/javascript" src="/js/lib.js"></script>
+<script type="text/javascript" src="/js/app.js"></script>
 </body>
-<?php echo $this->headScript();?>
-<script src="http://yui.yahooapis.com/2.8.2r1/build/yahoo-dom-event/yahoo-dom-event.js"></script> 
-<script src="http://yui.yahooapis.com/2.8.2r1/build/element/element-min.js"></script> 
-<!-- Needed for Menus, Buttons and Overlays used in the Toolbar -->
-<script src="http://yui.yahooapis.com/2.8.2r1/build/container/container_core-min.js"></script>
-<script src="http://yui.yahooapis.com/2.8.2r1/build/menu/menu-min.js"></script>
-<script src="http://yui.yahooapis.com/2.8.2r1/build/button/button-min.js"></script>
-<!-- Source file for Rich Text Editor-->
-<script src="http://yui.yahooapis.com/2.8.2r1/build/editor/editor-min.js"></script>
 </html>

@@ -1,336 +1,117 @@
 <!-- The banner -->
-    <div id="banner" class="grid_12 border_light">
-    
-    	<!-- Starting the search -->
-   		<div id="search">
-        
-        <!-- Search form using the expose effect, remove the class if you don't wish to have it -->
-        <form class="expose" action="search_results.html" method="get" name="search">
-        
-        <h3>Search Property</h3>
-        
-        <!-- Start of a row -->
-        <div class="row">
-        	<label>Location</label>
-        </div>
-        
-        <div class="row">
-            <div class="box large border_light">
-            	<select class="large" name="location">
-                	 <optgroup label="England">
-                     <option>Anywhere, I don't mind</option>
-                     <option>Bedfordshire</option>
-                     <option>Berkshire</option>
-                     <option>Bristol</option>
-                     <option>Buckinghamshire</option>
-                     <option>Cambridgeshire</option>
-                     <option>Cheshire</option>
-                     <option>City of London</option>
-                     <option>Cornwall</option>
-                     <option>Cumbria</option>
-                     <option>Derbyshire</option>
-                     <option>Devon</option>
-                     <option>Dorset</option>
-                     <option>Durham</option>
-                     <option>East Riding of Yorkshire</option>
-                     <option>East Sussex</option>
-                     <option>Essex</option>
-                     <option>Gloucestershire</option>
-                     <option>Greater London</option>
-                     <option>Greater Manchester</option>
-                     <option>Hampshire</option>
-                     <option>Herefordshire</option>
-                     <option>Hertfordshire</option>
-                     <option>Isle of Wight</option>
-                     <option>Kent</option>
-                     <option>Lancashire</option>
-                     <option>Leicestershire</option>
-                     <option>Lincolnshire</option>
-                     <option>Merseyside</option>
-                     <option>Norfolk</option>
-                     <option>North Yorkshire</option>
-                     <option>Northamptonshire</option>
-                     <option>Northumberland</option>
-                     <option>Nottinghamshire</option>
-                     <option>Oxfordshire</option>
-                     <option>Rutland</option>
-                     <option>Shropshire</option>
-                     <option>Somerset</option>
-                     <option>South Yorkshire</option>
-                     <option>Staffordshire</option>
-                     <option>Suffolk</option>
-                     <option>Surrey</option>
-                     <option>Tyne and Wear</option>
-                     <option>Warwickshire</option>
-                     <option>West Midlands</option>
-                     <option>West Sussex</option>
-                     <option>West Yorkshire</option>
-                     <option>Wiltshire</option>
-                     <option>Worcestershire</option>
-                     </optgroup>
-                     <optgroup label="Wales">
-                     <option>Anglesey</option>
-                     <option>Brecknockshire</option>
-                     <option>Caernarfonshire</option>
-                     <option>Carmarthenshire</option>
-                     <option>Cardiganshire</option>
-                     <option>Denbighshire</option>
-                     <option>Flintshire</option>
-                     <option>Glamorgan</option>
-                     <option>Merioneth</option>
-                     <option>Monmouthshire</option>
-                     <option>Montgomeryshire</option>
-                     <option>Pembrokeshire</option>
-                     <option>Radnorshire</option>
-                     </optgroup>
-                     <optgroup label="Scotland">
-                     <option>Aberdeenshire</option>
-                     <option>Angus</option>
-                     <option>Argyllshire</option>
-                     <option>Ayrshire</option>
-                     <option>Banffshire</option>
-                     <option>Berwickshire</option>
-                     <option>Buteshire</option>
-                     <option>Cromartyshire</option>
-                     <option>Caithness</option>
-                     <option>Clackmannanshire</option>
-                     <option>Dumfriesshire</option>
-                     <option>Dunbartonshire</option>
-                     <option>East Lothian</option>
-                     <option>Fife</option>
-                     <option>Inverness-shire</option>
-                     <option>Kincardineshire</option>
-                     <option>Kinross</option>
-                     <option>Kirkcudbrightshire</option>
-                     <option>Lanarkshire</option>
-                     <option>Midlothian</option>
-                     <option>Morayshire</option>
-                     <option>Nairnshire</option>
-                     <option>Orkney</option>
-                     <option>Peeblesshire</option>
-                     <option>Perthshire</option>
-                     <option>Renfrewshire</option>
-                     <option>Ross-shire</option>
-                     <option>Roxburghshire</option>
-                     <option>Selkirkshire</option>
-                     <option>Shetland</option>
-                     <option>Stirlingshire</option>
-                     <option>Sutherland</option>
-                     <option>West Lothian</option>
-                     <option>Wigtownshire</option>
-                     </optgroup>
-                     <optgroup label="Northern Ireland">
-                     <option>Antrim</option>
-                     <option>Armagh</option>
-                     <option>Down</option>
-                     <option>Fermanagh</option>
-                    <option>Londonderry</option>
-                    <option>Tyrone</option>
-                    </optgroup>
-                </select>
-            </div>
-		</div>
-        
-        <div class="row">
-            <label>Bedrooms</label>
-            <label>Buying Price</label>
-            <label>Renting Price</label>
-        </div>
-        
-       <div class="row">
-            <div class="box small border_light">
-            	<select class="small" name="beds">
-                	<option value="any">Any</option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
-                    <option value="5">5+</option>
-                </select>
-            </div>
-          <div class="box medium border_light">
-           	  <select class="medium" name="min">
-                	<option value="any">Any</option>
-                    <option value="100000">&pound;100,000+</option>
-                    <option value="200000">&pound;200,000+</option>
-                    <option value="300000">&pound;300,000+</option>
-                    <option value="400000">&pound;400,000+</option>
-                    <option value="500000">&pound;500,000+</option>
-                </select>
-          </div>
-            
-            <div class="box medium border_light">
-            	<select class="medium" name="max">
-                	<option value="any">Any</option>
-                    <option value="100000">&pound;400+</option>
-                    <option value="200000">&pound;600+</option>
-                    <option value="300000">&pound;800+</option>
-                    <option value="400000">&pound;1000+</option>
-            </select>
-          </div>
-		</div>
-        
-       <div class="row">
-        	<label>Renting or Buying</label>
-        </div>
-        
-        <div class="row">
-            <div class="box medium2 border_light">
-            	<select class="medium2" name="date">
-                	<option value="any">Any, I don't mind</option>
-                    <option value="rent">I'm looking to rent</option>
-                    <option value="buy">I'm looking to buy</option>
-                </select>
-            </div>
-            
-            <div class="left">
-          	  <input id="submit" type='image' src='/assets/images/search_btn.jpg' onmouseover="this.src='/assets/images/search_btn_hover.jpg'" onmouseout="this.src='/assets/images/search_btn.jpg'"/>
-            </div>
-		</div>
-        <div class="clear"></div>
-        </form>
-        </div><!-- End of search -->
-        
-        <!-- Random_posts is the wrapper for all the images in the cycle -->
-        <div id="random_posts">
-          
-          <!-- this is the first cycle -->	
-          <div>
-          
-          <div class="random_image">
-          	<a title="post title" href="#"><img src="/assets/images/random_listing.jpg" alt="post title" /></a>          </div>
-          
-          <div class="description">
-          	<h2>The Priory</h2>
-          	<p>30 Deanery Close, Sudbury, Suffolk, CO10 1GE</p>
-          	<p class="random_price">&pound;250,000</p>
-          </div>
-         </div><!-- end first cylce -->
-         
-         <div><!-- this is the second cycle -->
-         
-          <div class="random_image">
-          	<a title="post title" href="#"><img src="/assets/images/random_listing2.jpg" alt="post title" /></a>          </div>
-          
-          <div class="description">
-          	<h2>The Mansion</h2>
-          	<p>4 Amazing Street, Best, Cool, CO89 980</p>
-          	<p class="random_price">&pound;999,000</p>
-          </div>
-         </div><!-- end of second cycle -->
-         
-         <div><!-- this is the third cycle -->
-         
-          <div class="random_image">
-          	<a title="post title" href="#"><img src="/assets/images/random_listing3.jpg" alt="post title" /></a>          </div>
-          
-          <div class="description">
-          	<h2>Pinecroft</h2>
-          	<p>4 Pinecroft Rise, Sudbury, Suffolk, CO10 7PA</p>
-          	<p class="random_price">&pound;100,999</p>
-          </div>
-         </div><!-- end of third cycle -->
-         
-         <div><!-- this is the fourth cycle -->
-         
-          <div class="random_image">
-          	<a title="post title" href="#"><img src="/assets/images/random_listing4.jpg" alt="post title" /></a>          </div>
-          
-          <div class="description">
-          	<h2>100a Ballingdon</h2>
-          	<p>100a Ballingdon Street, Cornard, West Sussex, TW8 298</p>
-          	<p class="random_price">&pound;120,023</p>
-          </div>
-         </div><!-- end of fourth cycle -->
-         
-         <!-- repeat the above here to add more cycles -->
-        </div><!-- random posts-->
-    </div><!--banner-->
-    
-    <div class="clear"></div> <!-- Banner finished -->
-    
-    <div class="spacer">&nbsp;</div>
-    
-    <!-- This displays the 4 properties using a list -->
-    <div id="listing" class="grid_8 alpha omega">
-    
-        <ul>
-        	<!-- The first property -->
-            <!-- The onmouseover and onmouseout attributes create the hover effect -->
-        	<li onmouseover="this.className='grid_4 border_medium background_lightest hover'" onmouseout="this.className='grid_4 border_light background_white'" class="grid_4 border_light background_white">
-            <a class="link" title="This property has &lt;strong&gt;5&lt;/strong&gt; images" href="#">
-            	
-                <!-- The propert image -->
-                <span class="listing_image"><img src="/assets/images/temp.jpg" alt="test pic" /></span>
-                <!-- the property text -->
-                <span class="text_wrap">
-                	<span class="city">Sudbury, Suffolk<br /></span>
-                    <span class="address">30 Deanery Close<br /></span>
-                    <span class="price colour_dark">&pound;250,000<br /></span>
-                    <span class="icon_number">6</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_shower.png" alt="Bathrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_car.png" alt="Garages" /></span>                </span>            </a>            </li>
 
-            <!-- The second property -->
-            <li onmouseover="this.className='grid_4 border_medium background_lightest hover'" onmouseout="this.className='grid_4 border_light background_white'" class="grid_4 border_light background_white">
-            <a class="link" title="This property has &lt;strong&gt;15&lt;/strong&gt; images" href="#">
-                <span class="listing_image"><img src="/assets/images/temp.jpg" alt="test pic" /></span>
-                <span class="text_wrap">
-                	<span class="city">Sudbury, Suffolk<br /></span>
-                    <span class="address">30 Deanery Close<br /></span>
-                    <span class="price colour_dark">&pound;250,000<br /></span>
-                    <span class="icon_number">6</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_shower.png" alt="Bathrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_car.png" alt="Garages" /></span>                </span>            </a>            </li>
+<!--banner-->
+<?php echo $this->render('site/_banner.phtml'); ?>
+<div class="clear"></div>
+<!-- Banner finished -->
 
-           <!-- The third property -->
-           <li onmouseover="this.className='grid_4 border_medium background_lightest hover'" onmouseout="this.className='grid_4 border_light background_white'" class="grid_4 border_light background_white">
-            <a class="link" title="This property has &lt;strong&gt;2&lt;/strong&gt; images" href="#">
-                <span class="listing_image"><img src="/assets/images/temp.jpg" alt="test pic" /></span>
-                <span class="text_wrap">
-                	<span class="city">Sudbury, Suffolk<br /></span>
-                    <span class="address">30 Deanery Close<br /></span>
-                    <span class="price colour_dark">&pound;250,000<br /></span>
-                    <span class="icon_number">6</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_shower.png" alt="Bathrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_car.png" alt="Garages" /></span>                </span>            </a>            </li>
+<div class="spacer">&nbsp;</div>
 
-            <!-- The fourth property -->
-            <li onmouseover="this.className='grid_4 border_medium background_lightest hover'" onmouseout="this.className='grid_4 border_light background_white'" class="grid_4 border_light background_white">
-            <a class="link" title="This property has &lt;strong&gt;14&lt;/strong&gt; images" href="#">
-                <span class="listing_image"><img src="/assets/images/temp.jpg" alt="test pic" /></span>
-                <span class="text_wrap">
-                	<span class="city">Sudbury, Suffolk<br /></span>
-                    <span class="address">30 Deanery Close<br /></span>
-                    <span class="price colour_dark">&pound;250,000<br /></span>
-                    <span class="icon_number">6</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_shower.png" alt="Bathrooms" /></span>
-                    <span class="icon_number">2</span>
-                    <span class="icon"><img width="18" height="14" src="/assets/images/icon_car.png" alt="Garages" /></span>                </span>            </a>            </li>
-			
-            <!-- Add more propertys here -->
-        </ul>
-    </div>
-    
-    <!-- The welcome text -->
-    <div id="welcome" class="grid_4 omega" style="width:300px;">
-      <h2>Buying a Home</h2>
-            <p>Nam velit pede, pretium eget, dapibus accumsan, suscipit non, tortor. Pellentesque justo. Nam lacinia interdum lacus. Nunc gravida blandit est. Mauris vulputate semper dolor.</p>
-        
-            <p>Vivamus et odio. Nulla at leo ac pede aliquam dapibus. Donec vestibulum varius ligula. Vivamus et odio.</p>
-        
-            <p>Donec vestibulum varius ligula. Vivamus et odio. Nulla at leo ac pede aliquam dapibus.</p>
-    </div>
-    
-    
+<!-- This displays the 4 properties using a list -->
+<div id="listing" class="grid_8 alpha omega">
+
+	<ul>
+		<!-- The first property -->
+		<!-- The onmouseover and onmouseout attributes create the hover effect -->
+		<li
+			onmouseover="this.className='grid_4 border_medium background_lightest hover'"
+			onmouseout="this.className='grid_4 border_light background_white'"
+			class="grid_4 border_light background_white"><a class="link"
+			title="This property has &lt;strong&gt;5&lt;/strong&gt; images"
+			href="/app/site/view/"> <!-- The propert image --> <span class="listing_image"><img
+					src="/assets/images/temp.jpg" alt="test pic" /> </span> <!-- the property text -->
+				<span class="text_wrap"> <span class="city">Sudbury, Suffolk<br /> </span>
+					<span class="address">30 Deanery Close<br /> </span> <span
+					class="price colour_dark">&pound;250,000<br /> </span> <span
+					class="icon_number">6</span> <span class="icon"><img width="18"
+						height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /> </span>
+					<span class="icon_number">2</span> <span class="icon"><img
+						width="18" height="14" src="/assets/images/icon_shower.png"
+						alt="Bathrooms" /> </span> <span class="icon_number">2</span> <span
+					class="icon"><img width="18" height="14"
+						src="/assets/images/icon_car.png" alt="Garages" /> </span> </span>
+		</a>
+		</li>
+
+		<!-- The second property -->
+		<li
+			onmouseover="this.className='grid_4 border_medium background_lightest hover'"
+			onmouseout="this.className='grid_4 border_light background_white'"
+			class="grid_4 border_light background_white"><a class="link"
+			title="This property has &lt;strong&gt;15&lt;/strong&gt; images"
+			href="/app/site/view/"> <span class="listing_image"><img
+					src="/assets/images/temp.jpg" alt="test pic" /> </span> <span
+				class="text_wrap"> <span class="city">Sudbury, Suffolk<br /> </span>
+					<span class="address">30 Deanery Close<br /> </span> <span
+					class="price colour_dark">&pound;250,000<br /> </span> <span
+					class="icon_number">6</span> <span class="icon"><img width="18"
+						height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /> </span>
+					<span class="icon_number">2</span> <span class="icon"><img
+						width="18" height="14" src="/assets/images/icon_shower.png"
+						alt="Bathrooms" /> </span> <span class="icon_number">2</span> <span
+					class="icon"><img width="18" height="14"
+						src="/assets/images/icon_car.png" alt="Garages" /> </span> </span>
+		</a>
+		</li>
+
+		<!-- The third property -->
+		<li
+			onmouseover="this.className='grid_4 border_medium background_lightest hover'"
+			onmouseout="this.className='grid_4 border_light background_white'"
+			class="grid_4 border_light background_white"><a class="link"
+			title="This property has &lt;strong&gt;2&lt;/strong&gt; images"
+			href="/app/site/view/"> <span class="listing_image"><img
+					src="/assets/images/temp.jpg" alt="test pic" /> </span> <span
+				class="text_wrap"> <span class="city">Sudbury, Suffolk<br /> </span>
+					<span class="address">30 Deanery Close<br /> </span> <span
+					class="price colour_dark">&pound;250,000<br /> </span> <span
+					class="icon_number">6</span> <span class="icon"><img width="18"
+						height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /> </span>
+					<span class="icon_number">2</span> <span class="icon"><img
+						width="18" height="14" src="/assets/images/icon_shower.png"
+						alt="Bathrooms" /> </span> <span class="icon_number">2</span> <span
+					class="icon"><img width="18" height="14"
+						src="/assets/images/icon_car.png" alt="Garages" /> </span> </span>
+		</a>
+		</li>
+
+		<!-- The fourth property -->
+		<li
+			onmouseover="this.className='grid_4 border_medium background_lightest hover'"
+			onmouseout="this.className='grid_4 border_light background_white'"
+			class="grid_4 border_light background_white"><a class="link"
+			title="This property has &lt;strong&gt;14&lt;/strong&gt; images"
+			href="/app/site/view/"> <span class="listing_image"><img
+					src="/assets/images/temp.jpg" alt="test pic" /> </span> <span
+				class="text_wrap"> <span class="city">Sudbury, Suffolk<br /> </span>
+					<span class="address">30 Deanery Close<br /> </span> <span
+					class="price colour_dark">&pound;250,000<br /> </span> <span
+					class="icon_number">6</span> <span class="icon"><img width="18"
+						height="14" src="/assets/images/icon_bed.png" alt="Bedrooms" /> </span>
+					<span class="icon_number">2</span> <span class="icon"><img
+						width="18" height="14" src="/assets/images/icon_shower.png"
+						alt="Bathrooms" /> </span> <span class="icon_number">2</span> <span
+					class="icon"><img width="18" height="14"
+						src="/assets/images/icon_car.png" alt="Garages" /> </span> </span>
+		</a>
+		</li>
+
+		<!-- Add more propertys here -->
+	</ul>
+</div>
+
+<!-- The welcome text -->
+<div id="welcome" class="grid_4 omega" style="width: 300px;">
+	<h2>Buying a Home</h2>
+	<p>Nam velit pede, pretium eget, dapibus accumsan, suscipit non,
+		tortor. Pellentesque justo. Nam lacinia interdum lacus. Nunc gravida
+		blandit est. Mauris vulputate semper dolor.</p>
+
+	<p>Vivamus et odio. Nulla at leo ac pede aliquam dapibus. Donec
+		vestibulum varius ligula. Vivamus et odio.</p>
+
+	<p>Donec vestibulum varius ligula. Vivamus et odio. Nulla at leo ac
+		pede aliquam dapibus.</p>
+</div>
+
+

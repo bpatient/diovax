@@ -155,8 +155,8 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		switch($this->mdl):
 		case "admin":
 			$_menu = Zend_Registry::get('admin_navigation');
-		$this->view->navigation($_menu)->setTranslator($this->translate);
-		$this->view->menu = $this->view->navigation();
+			$this->view->navigation($_menu)->setTranslator($this->translate);
+			$this->view->menu = $this->view->navigation();
 		break;
 		case "customer":
 			$_menu = Zend_Registry::get('customer_navigation');
@@ -193,7 +193,7 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		/**
 		 * initilization of session
 		 */
-		$this->session = new Zend_Session_Namespace('default');
+		$this->session =  Zend_Registry::get('session');
 		if ( !$this->session->initialized ){
 			Zend_Session::regenerateId();
 			$sessionid_cookie = $this->getRequest()->getCookie('sessionid');

@@ -19,8 +19,6 @@ class Core_Form_Signup extends Core_Form_Base{
 		$this->token = new Zend_Form_Element_Hidden('token');
 		$this->removeHiddenDecorators($this->token);
 		
-		$this->category = new Zend_Form_Element_Select('category');
-		$this->category->setAttribs(array("class" => "text"))->addMultiOptions($this->_categories)->setDecorators($this->elementDecorators)->setRequired(true)->setLabel( $this->translate->_(' I am a ') );//" I am a "
 		
 		$this->name = new Zend_Form_Element_Text('name');
 		$this->name->setLabel( "Full name" )
@@ -44,7 +42,7 @@ class Core_Form_Signup extends Core_Form_Base{
 				'id' => (int)$this->id->getValue(),
 				'name' => $this->name->getValue(),				
 				'email' => $this->email->getValue(),
-				'category' => $this->category->getValue(),
+				'category' => 'admin',
 			    'token' => (string)$this->token->getValue()
 		));
 	}

@@ -13,15 +13,15 @@
 class Core_Entity_Auth extends Core_Entity_Abstract {
 		protected $_data = array (
 		'id' => 0,
-		'user_id' => 0,
-		'service' => null,
-		'key' => null,
-		'value' => null,
-		'modified' => 0,
-		'active_time' => 0,
-		'active' => false
+		'users_id' => 0,
+		'password' => null,
+		'type' => 'password',
+		'connected' => '000-00-00 00:00:00',
+		'disconnected' => '000-00-00 00:00:00',
+		'ip' => 0,
+		'country' => null
 	);
-		public function __construct($data = null ){			
+		public function __construct($data = array() ){			
 			parent::__construct($data );
 			
 		}

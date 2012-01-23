@@ -11,7 +11,7 @@
  */
 
 class Core_Entity_Expense extends Core_Entity_Abstract {
-		public $_data = array( 'id' => 0 , 'name' => '', 'url' => '',   'enabled' => '',  'address' => '', 'logo'  => '', 'telephone'  => '',	'user_id'  => '' );
+		public $_data = array( 'id' => 0 , 'property_id'=> 0 , 'name' => null, 'description' => '',   'amount' => 0,  'doneby' => null );
 		public function __construct( $data  = array()  ){
                     parent::__construct($data);
 		}

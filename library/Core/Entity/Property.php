@@ -12,19 +12,18 @@
  class Core_Entity_Property extends Core_Entity_Abstract {
         protected $_data = array ( 
 		'id' => 0, 	
-		'parent' => -1,
-		'site_id' => 0 ,	
-		'unit' => 0,
-		'unit_code' => "",
-		'rent' => 0,
-		'name' => 0,
-		'description' => '',
-		'built' => '0000-00-00 00:00:00',	
+		'unitcode' => null,
+		'name' => null ,	
+		'title' => null,
+		'url' => null,
+		'token' => null,
+		'description' => '',	
 		'created' => '0000-00-00 00:00:00',
 		'modified' => '0000-00-00 00:00:00',		
-		'token' => '' 
+		'approved' => false,
+		'leased' => false 
      );
-        public function __construct( $data = null ){
+        public function __construct( $data = array() ){
             parent::__construct( $data );
         }
 }

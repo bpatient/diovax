@@ -13,17 +13,13 @@
 class Core_Entity_Media extends Core_Entity_Abstract {
 		protected $_data = array (
 		'id' => 0,
-		'title' => "",				
-		'caption' => "",				
-		'description' => "",				
-		'media_order' => 0,				
-		'media_key' => "",				
-		'media_value' => "",
-		'displayed' => true,
-		'ordering' => 1,
-		'owner' => "",
-		'token' => ""
-			
+		'title' => null,					
+		'description' => '',				
+		'url' => null,
+		'owner' => null,
+		'displayed' => false,
+		'created' => '0000-00-00 00:00:00',
+		'modified' => '0000-00-00 00:00:00'			
 	);
 		function __construct($data = array() ){			
 			parent::__construct($data );

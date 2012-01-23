@@ -1,8 +1,42 @@
-<div id="" class="form auth">
+<div class="container_12">
+
+
+
+	<div class="spacer">&nbsp;</div>
+
+
+	<div class="grid_12 border_light" id="holder">
+		<div id="sidebar_image">
+
+			<div id="sidebar">
+				<h3></h3>
+				<ul>
+					
+				</ul>
+				<div class="clear">&amp;</div>
+				<!--sidebar end-->
+			</div>
+			<!--sidebar-->
+
+			<div id="right_side">
 <?php echo $this->lower_title;?>
     <?php
             $_class = isset($this->error) && !empty($this->error)? $this->error : "error";
             echo  $this->message(  $this->message , array( "class" => $_class ) );
 ?>
 <?php echo $this->form;?>
+	</div>
+			<!--right side-->
+
+			<div class="clear">&amp;</div>
+			<!--sidebar image end-->
+		</div>
+		<!--sidebar_image-->
+
+	</div>
+	<!--holder-->
+
+	<div class="clear"></div>
+	<!-- holder finished -->
 </div>
+<!-- container_12 -->

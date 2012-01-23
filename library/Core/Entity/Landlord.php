@@ -11,7 +11,7 @@
  */
 
 class Core_Entity_Landlord extends Core_Entity_Abstract {
-		protected $_data = array( 'property_id' => 0, 'user_id' => 0, 'status' => '', 'since' => '0000-00-00 00:00:00', 'created' => '0000-00-00 00:00:00', 'modified' => '0000-00-00 00:00:00' );
+		protected $_data = array( 'users_id' => 0 , 'property_id' => 0 );
 		public function __construct( $data = array() ){
                     parent::__construct($data);
 		}

@@ -5,6 +5,27 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 {
 
 
+	
+	
+	public $session;
+	
+	/**
+	* Initialization of session variable
+	* enables each page to have each page enhanced with session facility.
+	* This function works on dev/deployment but leads to an output before initialization session bug.
+	* comment session initialization when unit testing, and enable those after unit testing
+	*/
+	protected function _initSession(){
+	Zend_Session::start();
+	Zend_Session::setOptions( array ('strict'=> true) ); //reducing overhead by enhancing the session functionality for only pages that needs a session /
+	if(!Zend_Registry::isRegistered('session'))
+			{
+				$this->session = new Zend_Session_Namespace('default');
+				Zend_Registry::set('session', $this->session);
+	}
+	
+	}
+	
 
 	protected function _initAutoload(){
 
@@ -67,19 +88,6 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 
 
-	protected function _initSession(){
-		
-		
-		
-		Zend_Session::start();
-		//echo "<pre>".print_r( Zend_Controller_Front::getInstance() , 1 )."</pre>"; exit();
-		Zend_Session::setOptions( array ('strict'=> true) );
-	}
-
-
-
-
-
 	protected function _initLayoutHelper(){
 		$this->bootstrap('frontController'); //instead of this, use the following
 		$layout = Zend_Controller_Action_HelperBroker::addHelper(
@@ -129,14 +137,8 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 
 		$view->headScript()->appendFile('http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js')->appendFile('http://ajax.googleapis.com/ajax/libs/jqueryui/1.8/jquery-ui.min.js');///js/jquery-ui-custom-combined-min.js
 		$view->headScript()->appendFile('/js/fancybox/jquery.fancybox-1.3.1.pack.js');
-		$view->headScript()->appendFile('/js/superfish.js')
-		->appendFile('/js/jquery.json-2.2.min.js')
-		->appendFile('/js/yui-min.js');
-
-
-
-		$view->headLink()->appendStylesheet('/js/fancybox/jquery.fancybox-1.3.1.css');
-		$view->headLink()->appendStylesheet('/css/gantt.style.css')->appendStylesheet('/css/jquery.timepicker.css')->appendStylesheet("/css/dijit/themes/tundra/tundra.css");//->appendStylesheet("http://o.aolcdn.com/dojo/1.0.0/dojo/resources/dojo.css");
+		$view->headScript()->appendFile('/js/superfish.js')->appendFile('/js/jquery.json-2.2.min.js')->appendFile('/js/yui-min.js');
+		
 		$view->headLink()->appendStylesheet("/css/main.css")->appendStylesheet("http://fonts.googleapis.com/css?family=Cuprum");
 		$view->env = APPLICATION_ENV;
 		return $view;

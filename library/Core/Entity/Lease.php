@@ -13,20 +13,15 @@
 class Core_Entity_Lease extends Core_Entity_Abstract {
 		protected $_data =  array (
                 'id' => 0,
-                'payment' => "",
-                'lease_type_id' => 1,
-                'booking_id' => 0,
-                'rent' => 0.00,
-                'status' => '',
-                'cycle' => '',
-                'movein' => '000-00-00 00:00:00',
-                'moveout' => '000-00-00 00:00:00',
-                'created' => '000-00-00 00:00:00',
-				'modified' => '000-00-00 00:00:00'
+                'property_id' => 0,
+                'start' => '000-00-00 00:00:00',
+                'ends' => '000-00-00 00:00:00',
+                'started' => false,
+                'owner' => null
                );
 		
 		
-		public function __construct( $data ){
+		public function __construct( $data = array() ){
                     parent::__construct($data);
 		}
 		

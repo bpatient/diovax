@@ -15,13 +15,14 @@ class Core_Entity_Address extends Core_Entity_Abstract {
 	
 		protected $_data =	array (	
 							'id' => 0,
-							'user_id' => 0,
-							'displayed' => true,
-							'address_type' => null,
-							'address_key' => null,
-							'address_value' => null,
-							'note' => null,
-							'modified' =>'0000-00-00 00:00:00'	
+							'owner' => null,
+							'line_one' => null,
+							'line_two' => null,
+							'city' => null,
+							'country' => null,
+							'prs' => null,
+							'latitude'=>0,
+							'longitude'=>0
 						);	
 		public function __construct($data = array() ){			
 			parent::__construct($data );
