@@ -88,10 +88,22 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		$this->config = Zend_Registry::get('config');/****/
 
 
+		/**
+		 * initilization of session
+		 */
+		$this->session =  Zend_Registry::get('session');
+		if ( !$this->session->initialized ){
+			Zend_Session::regenerateId();
+			$sessionid_cookie = $this->getRequest()->getCookie('sessionid');
+			if (  $sessionid_cookie ) $options['cookie'] = $sessionid_cookie;
+			$this->session->sessionid = Zend_Session::getId();
+			$cookie  = new Zend_Http_Cookie('sessionid', $this->session->sessionid,	$this->config->system->app->base->url , time() + 7200, "/" );
+			$this->session->initialized = true;
+		}
 
 
-		
-		
+
+
 
 		//initialization
 		$this->_entities();
@@ -155,8 +167,8 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		switch($this->mdl):
 		case "admin":
 			$_menu = Zend_Registry::get('admin_navigation');
-			$this->view->navigation($_menu)->setTranslator($this->translate);
-			$this->view->menu = $this->view->navigation();
+		$this->view->navigation($_menu)->setTranslator($this->translate);
+		$this->view->menu = $this->view->navigation();
 		break;
 		case "customer":
 			$_menu = Zend_Registry::get('customer_navigation');
@@ -175,7 +187,7 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		$this->logger = Zend_Registry::get("logger");//logging events
 
 
-		
+
 		$this->client = new stdClass();
 		$this->client->ip = $this->getRequest()->getServer("REMOTE_ADDR");
 		if ( $this->getRequest()->getServer("HTTP_VIA") )$this->client->ip = $this->getRequest()->getServer("HTTP_X_FORWARDED_FOR");
@@ -190,26 +202,15 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		/**This step allows the synch function to add a new record in the database*/
 		$options['step'] = 'connect';
 
-		/**
-		 * initilization of session
-		 */
-		$this->session =  Zend_Registry::get('session');
-		if ( !$this->session->initialized ){
-			Zend_Session::regenerateId();
-			$sessionid_cookie = $this->getRequest()->getCookie('sessionid');
-			if (  $sessionid_cookie ) $options['cookie'] = $sessionid_cookie;
-			$this->session->sessionid = Zend_Session::getId();
-			$cookie  = new Zend_Http_Cookie('sessionid', $this->session->sessionid,	$this->config->system->app->base->url , time() + 7200, "/" );
-			$this->session->initialized = true;
-		}
-		
+
+
 
 
 
 
 		$this->view->header = $this->config->system->app->name;
 		$this->per_page = $this->config->system->backend->page->perpage;
-		
+
 
 
 
@@ -462,10 +463,11 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		echo "<pre>".print_r( $msg, true)."</pre>";
 	}
 
-	/***
-	 * This function will write to logger.txt file.
-	* make sure its disabled in production.
-	*/
+
+	/**
+	 * Logging mechanism to be used in actions
+	 * @param unknown_type $msg
+	 */
 	public function log( $msg ){
 		if ( $this->logger ) $this->logger->log ( $msg , Zend_Log::DEBUG );
 	}
@@ -480,11 +482,7 @@ class Core_Controller_Base extends Zend_Controller_Action{
 	 */
 	private function _services(){
 
-		/**
-		 * 
-		 * @todo move all functions and links from user service to user manager 
-		 * @var unknown_type
-		 */
+
 		$this->user_service = Zend_Registry::get("user_service");
 		$this->user_manager = Zend_Registry::get("user_manager");
 		$this->auth_service = Zend_Registry::get("auth_service");//for authentication

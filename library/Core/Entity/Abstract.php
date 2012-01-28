@@ -94,4 +94,3 @@ class Core_Entity_Abstract implements Core_Entity_Dto{
 
 }
 ?>
-

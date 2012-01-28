@@ -46,10 +46,27 @@ class Admin_PropertyController extends Core_Controller_Base
 	}
 	
 	
-	/*lists all users in the system */
+	/**
+	 * @internal to stick on specs, the form has to have both the property and the property address. 
+	 * @todo there should be the scroll down to designate the owner of this property as well 
+	 */
 	public function editAction()
 	{
-	 
+		$this->property = Core_Util_Factory::build(array(), Core_Util_Factory::ENTITY_PROPERTY);
+		$this->address = Core_Util_Factory::build(array(), Core_Util_Factory::ENTITY_ADDRESS);
+	 	$this->view->form  = new Core_Form_Property();
+	 	if( $this->isPost ){
+	 		if( $this->view->form->isValid($this->post) ){
+	 			$this->property = $this->view->form->getPropertyObject();
+	 			$this->address = $this->view->form->getAddressObject();
+	 			//@todo add a user as well 
+	 			$_combo = array ( "property" => $this->property , "address" => $this->address );
+	 			$this->view->property = $this->property_manager->editPropertyAndAddress( $_combo );
+	 		}else{
+	 			$this->view->message = $this->view->form->getMessages();
+	 		}
+	 	}
+		
 	}
 	
 	
