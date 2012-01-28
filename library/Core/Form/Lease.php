@@ -71,16 +71,11 @@ class Core_Form_Lease extends Core_Form_Base{
 		return new Core_Entity_Lease(
 		array(
                                     'id'  => (int)$this->id->getValue(),
-                                    'movein' => $this->movein->getValue(),
-                                    'moveout' => $this->moveout->getValue(),
-                                    'rent' => $this->rent->getValue(),
-                                    'status' => $this->status->getValue(),
-                                    'payment' => $this->payment->getValue(),
-                                    'cycle' => $this->cycle->getValue(),
-                                    'created' => $this->created->getValue(),
-                                    'modified'=> $this->modified->getValue(),
-                                    'lease_type_id' => (int)$this->lease_type_id->getValue(),
-                                    'booking_id' => (int)$this->booking_id->getValue()
+                                    'property_id' => $this->property_id->getValue(),
+                                    'start' => $this->start->getValue(),
+                                    'ends' => $this->ends->getValue(),
+                                    'started' => $this->started->getValue(),
+                                    'owner' => $this->owner->getValue()
 		)
 		);
 	}/*validation and decorations*/
