@@ -195,7 +195,7 @@ class Bootstrap extends Zend_Application_Bootstrap_Bootstrap
 		Zend_Registry::set('user_manager', new Core_Service_UserManager() );
 		Zend_Registry::set('message_service', new Core_Service_Message());
 		Zend_Registry::set('analytics_service', new Core_Service_Analytics());
-		Zend_Registry::set('property_manager_service',  new Core_Service_PropertyManager());
+		Zend_Registry::set('property_manager',  new Core_Service_PropertyManager());
 			
 		try{
 			$writter = new Zend_Log_Writer_Stream(APPLICATION_PATH.'/configs/logger.txt');

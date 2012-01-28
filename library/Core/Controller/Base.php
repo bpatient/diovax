@@ -489,7 +489,7 @@ class Core_Controller_Base extends Zend_Controller_Action{
 		$this->message_service = Zend_Registry::get("message_service");//sending emails
 		$this->analytics_service = Zend_Registry::get("analytics_service");//for authentication
 		$this->media_service = Zend_Registry::get("media_service");
-		$this->property_manager_service = Zend_Registry::get("property_manager_service");
+		$this->property_manager = Zend_Registry::get("property_manager");
 
 
 	}

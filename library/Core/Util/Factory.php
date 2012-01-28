@@ -106,6 +106,9 @@ class Core_Util_Factory{
 			break;
 		}
 
+		
+		
+		
 		return $_object;
 	}
 

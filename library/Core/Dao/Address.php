@@ -17,13 +17,18 @@ class Core_Dao_Address extends Core_Dao_Abstract {
 
 	public function save(){
 		$data = new Core_Model_Address( $this->dto );
-		if ( (int)$data->id == 0 ){
+		if ( (int)$data->id == 0 || !(strlen($this->dto->owner) > 0 ) ){
 			$data->insert( $this->dto->toArray() );
 			$this->dto->id = $data->getAdapter()->lastInsertId();
 		}else{
 			$_arr = $this->dto->toArray();
+			$params = array();
+			if(  (int)$this->dto->id > 0 ) $params["id"]  = $this->dto->id; 
+			if(  strlen($this->dto->owner) > 0 ) $params["owner"]  = $this->dto->owner; 
 			unset( $_arr["id"]);
-			$data->update(  $_arr, array ( "id" => $this->dto->id ) );
+			if(count($params) > 0 ) { 
+				$data->update(  $_arr, $params );
+			}
 		}
 		return $this->dto;
 	}
@@ -43,30 +48,7 @@ class Core_Dao_Address extends Core_Dao_Abstract {
 	}
 
 
-	/**
-	 * @todo should use get() and set some variables instead of doing it this way
-	 */
-	public function getLandlordContactInfo(){
-		$contactInfo = new Core_Model_Address( $this->dto );
-		$params = array();
-		if( isset( $this->dto->id ) && (int)$this->dto->id > 0 ){
-			$params["id = ?"] = (int)$this->dto->id;
-		}
-		if( isset( $this->dto->displayed )  ){
-			$params["displayed = ?"] = $this->dto->displayed;
-		}
-		if( isset( $this->dto->user_id ) && (int)$this->dto->user_id > 0 ){
-			$params["user_id = ?"] = (int)$this->dto->user_id;
-		}
-		if( isset( $this->dto->address_type ) && strlen( $this->dto->address_type ) > 0 ){
-			$params["address_type = ?"] = (int)$this->dto->address_type;
-		}
-		if( isset( $this->dto->address_key ) && strlen( $this->dto->address_key ) > 0 ){
-			$params["address_key = ?"] = (int)$this->dto->address_key;
-		}
-		return $contactInfo->fetchAll($params)->toArray();
-	}
-
+	
 
 
 	/**
@@ -76,11 +58,7 @@ class Core_Dao_Address extends Core_Dao_Abstract {
 		$model = new Core_Model_Address( $this->dto );
 		$params = array();
 		if( $this->dto->id > 0 ) $params["id = ? "] = $this->dto->id;
-		if( (int)$this->dto->user_id > 0 ) $params["user_id = ? "] = $this->dto->user_id;
-		if( isset($this->dto->displayed) && $this->dto->displayed >= 0 ) $params["displayed = ? "] = $this->dto->displayed;
-		if( isset($this->dto->address_type) && strlen($this->dto->address_type >= 1 ) ) $params["address_type = ? "] = $this->dto->address_type;
-		if( isset($this->dto->address_key) && strlen($this->dto->address_key >= 1 ) ) $params["address_key = ? "] = $this->dto->address_key;
-		//
+		if( isset($this->dto->owner) && strlen($this->dto->owner) > 0 ) $params["owner = ? "] = $this->dto->owner;
 		$_arr  = $model->fetchAll($params)->toArray();
 		if( is_array($_arr) ){
 			if( isset($_arr[0]) && is_array( $_arr[0] ) ) {

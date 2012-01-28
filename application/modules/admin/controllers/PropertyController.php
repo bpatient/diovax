@@ -52,6 +52,8 @@ class Admin_PropertyController extends Core_Controller_Base
 	 */
 	public function editAction()
 	{
+		
+		$_combo = array();
 		$this->property = Core_Util_Factory::build(array(), Core_Util_Factory::ENTITY_PROPERTY);
 		$this->address = Core_Util_Factory::build(array(), Core_Util_Factory::ENTITY_ADDRESS);
 	 	$this->view->form  = new Core_Form_Property();
@@ -65,6 +67,10 @@ class Admin_PropertyController extends Core_Controller_Base
 	 		}else{
 	 			$this->view->message = $this->view->form->getMessages();
 	 		}
+	 	}
+	 	//
+	 	if( isset($_combo) ){
+	 		$this->view->form->populate( $_combo );
 	 	}
 		
 	}
